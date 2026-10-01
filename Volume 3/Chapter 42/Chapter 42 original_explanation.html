@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 • Chapter 42: Differential Rent II — Second Case: Falling Price of Production — Das Kapital</title>
+
+<!-- KaTeX Math & Markdown Parsing (Local Vendor with CDN Fallback) -->
+  <link rel="stylesheet" href="../../assets/vendor/katex.min.css">
+  <link rel="stylesheet" href="../../assets/reader.css">
+  <script defer src="../../assets/vendor/katex.min.js"></script>
+  <script defer src="../../assets/vendor/auto-render.min.js"></script>
+  <script defer src="../../assets/vendor/marked.min.js"></script>
+  <script defer src="../../assets/reader.js"></script>
+</head>
+<body>
+
+<div id="reading-progress"></div>
+
+<div class="layout">
+  <!-- Sticky Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand"><a href="../../index.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:0.4rem;"><span>🏠 📖 Chapter Analysis</span></a></div>
+    <div class="sidebar-title">Table of Contents</div>
+    <ul class="toc-list" id="toc-list">
+      <!-- Populated dynamically from headings -->
+    </ul>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    <div class="article-container">
+      <!-- Top Action Toolbar -->
+      <header class="toolbar">
+        <div class="meta-badges">
+          <span class="badge">📝 9,140 words</span>
+          <span class="badge">⏱️ ~46 min read</span>
+        </div>
+        <div class="actions">
+          <!-- Multi-Font Typography Selector & Sizing -->
+          <div class="font-control-group">
+            <select id="reader-font-select" class="font-select" title="Reading font">
+              <option value="sans">System Sans</option>
+              <option value="georgia">Georgia</option>
+              <option value="garamond">EB Garamond</option>
+              <option value="charter">Charter / Merriweather</option>
+              <option value="palatino">Palatino</option>
+              <option value="baskerville">Baskerville</option>
+              <option value="times">Times New Roman</option>
+              <option value="humanist">Humanist Sans</option>
+              <option value="dyslexic">Dyslexic / Clear</option>
+              <option value="mono">Monospace</option>
+            </select>
+            <button class="btn-size-step" onclick="adjustFontSize(-1)" title="Decrease font size (A-)">A-</button>
+            <button class="btn-size-step" onclick="adjustFontSize(1)" title="Increase font size (A+)">A+</button>
+          </div>
+
+          <!-- TTS Audio Reader Button -->
+          <button class="btn" id="tts-btn" title="Read Aloud (Text-to-Speech)">🔊 Listen</button>
+
+          <a href="../../index.html" class="btn btn-nav-home">🏠 Navigator</a>
+          <button class="btn" id="theme-btn" onclick="cycleTheme()">🌙 Dark</button>
+          <button class="btn" onclick="window.print()">🖨️ Print</button>
+        </div>
+      </header>
+
+      <!-- Expandable TTS Audio Player Dock -->
+      <div id="tts-dock" class="tts-dock">
+        <div class="tts-left">
+          <button id="tts-play-btn" class="tts-btn-play">▶️ Play</button>
+          <button id="tts-stop-btn" class="tts-btn-stop" title="Stop audio">⏹️</button>
+          <select id="tts-speed-select" class="tts-speed-select" title="Playback speed">
+            <option value="0.75">0.75x</option>
+            <option value="1.0" selected>1.0x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="2.0">2.0x</option>
+          </select>
+        </div>
+        <div id="tts-status" class="tts-status-text">Click Play to listen to chapter</div>
+      </div>
+
+      <!-- Rendered Article Content -->
+      <article class="content" id="content">
+        <h1 id="chapter-title">Volume 3 • Chapter 42: Differential Rent II — Second Case: Falling Price of Production</h1>
+<hr />
+<h2 id="1-executive-chapter-overview-thesis">1. EXECUTIVE CHAPTER OVERVIEW &amp; THESIS</h2>
+<p>Chapter 42 of Volume III of <em>Capital</em> — "Differential Rent II: Second Case — Price of Production Falling" — is a rigorous, almost laboratory-like exercise in Marx's theory of ground-rent. Its central problem is deceptively narrow but theoretically decisive: <strong>what happens to differential rent when the <em>governing production price</em> of agricultural produce falls, and this fall is brought about by additional capital investments on the better (rent-bearing) lands?</strong> The chapter is the second of three cases of Differential Rent II (the rent that arises from <em>successive</em> capital investments on the <em>same</em> land, as opposed to Differential Rent I, which arises from equal investments on lands of <em>different</em> natural fertility). Having completed the case where the production price <em>rises</em> in earlier material and the case of Differential Rent I in full, Marx here isolates the mechanics of a <em>falling</em> price.</p>
+<p>The chapter's thesis can be stated as a series of linked propositions. First, <strong>a falling production price does not by itself annihilate rent</strong>; on the contrary, it can coexist with, and even be the vehicle of, a rising corn rent and a stable or rising money rent per acre. Second, the fall in price is <em>only possible</em> when capital is withdrawn from the previously governing — rentless — worst land (A), so that a <em>new</em> Differential Rent I forms, this time with the next better land (B) as the new "no-rent" benchmark. Third, the outcome for total rent depends on a small set of determinate variables: the ratio in which the price falls, the ratio of the differences among the better lands, the <em>amount</em> of extra capital newly invested, and its <em>distribution</em> across the different soil qualities. Fourth, and most subtly, Differential Rent II introduces an element absent from Differential Rent I: when successive investments become the <em>normal</em> mode of cultivation, the individual contributions of each separate capital advance are <em>averaged and blurred</em> into a single "normal" capital requirement per acre — a social average that then functions, for purposes of rent and tenancy contracts, as if it were a natural property of the soil itself.</p>
+<p>The chapter's intellectual objective is therefore twofold. Analytically, it constructs a complete parametric map of the falling-price case across three sub-variants — <strong>constant</strong> productivity of the extra capital, <strong>falling</strong> productivity, and <strong>rising</strong> productivity — showing in each how corn rent and money rent move, sometimes in opposite directions. Polemically, it delivers a sharp methodological blow against the tradition (classical political economy) that treats corn rent — rent measured in bushels or quarters — as economically meaningful in itself. Marx demonstrates that corn rent and money rent can move in opposite directions, so that a landlord may become <em>richer relative to the produce of his land</em> while receiving <em>less</em> corn rent in absolute terms, and vice versa.</p>
+<p>The chapter sits at the hinge of Part VI ("The Transformation of Surplus Profit into Ground-Rent"). It presupposes the whole preceding apparatus: production price = cost price + average profit; surplus profit = excess of individual production price over the <em>governing</em> (regulating) monetary return; the conversion of that surplus profit into rent by virtue of landed property. Its central diagrammatic device is a family of numerical tables (I–VIa) in which four types of land A, B, C, D of ascending fertility expose how rent behaves when the price-governing terrain shifts from A to B. It is a work of comparative statics: Marx holds the <em>given</em> differences between lands constant and varies the <em>intensive margin</em> (capital per acre) and the <em>extensive margin</em> (which land governs the price) to isolate the pure logic of rent under falling prices. For the reader, mastering it yields the essential Marxian insight that ground-rent is not a fixed quantity extracted from nature but a fluid social magnitude that rises or falls with the scale and distribution of capital investment on the land.</p>
+<hr />
+<h2 id="2-unified-exhaustive-chapter-deconstruction-analysis">2. UNIFIED EXHAUSTIVE CHAPTER DECONSTRUCTION &amp; ANALYSIS</h2>
+<h3 id="framing-the-field-the-three-sub-variants-and-their-logical-order">Framing the Field: The Three Sub-Variants and Their Logical Order</h3>
+<p>The chapter opens with a synoptic statement of its scope: "The production price may fall while productivity on the additional investments of capital remains constant, falls or rises." This single sentence generates the entire architecture. Marx will treat, in order: (I) a falling price with <strong>constant</strong> productivity of the extra capital; (II) a falling price with <strong>falling</strong> productivity; and (III) a falling price with <strong>rising</strong> productivity. The ordering is not arbitrary. Variant I is the "purest" case because, by assuming that each unit of extra capital yields produce in proportion to itself, it strips away any change in the <em>technical</em> return on capital and lets the reader see the rent-effects of the falling price <em>as such</em>. Variants II and III then re-introduce technical change, but in opposite directions, bracketing the result.</p>
+<p>Throughout, a crucial distinction must be kept in view. <strong>Productivity of the extra capital</strong> refers to the <em>physical yield per unit of capital</em> on a given soil. <strong>The rate of surplus profit</strong> (for a parcel of land) is the money surplus profit expressed as a percentage of the capital advanced on that land — it is <em>not</em> identical to physical productivity, because it also depends on the governing price. Keeping these distinct is the key to understanding why, in certain tables, the <em>rate of surplus profit remains constant while the total rent collapses</em>.</p>
+<h3 id="section-i-constant-productivity-of-the-extra-capital">Section I: Constant Productivity of the Extra Capital</h3>
+<h4 id="the-assumption-and-its-immediate-consequence">The Assumption and Its Immediate Consequence</h4>
+<p>Marx stipulates that "the product from the various types of land, corresponding to their respective quality, grows to the same extent as does the capital invested on them." This is a <em>proportionality</em> assumption: if you double the capital on land C, you double C's output; if you triple it, you triple it. Combined with the assumption that "the differences between types of land remain the same," the result is that the surplus profit on each land grows <em>in step</em> with the capital invested.</p>
+<p>From this, one conclusion follows immediately and is stated with emphasis: "any surplus investment of capital on land A does not affect the differential rent. On this land, the rate of surplus profit is zero; it therefore remains zero." The rationale is the cornerstone of the whole theory. Land A is the <em>price-governing</em> land: it is the least fertile land whose cultivation is still necessary to meet demand, and therefore it yields no differential surplus — its individual production price <em>equals</em> the governing production price. If A's productivity rises proportionally with new capital (say doubling along with all others), the <em>relative</em> position of A is unchanged, and because A sets the price, nothing about the rent structure is disturbed. <strong>A cannot pay rent to itself.</strong> This is why extra capital invested on the <em>price-governing</em> land is "quite immaterial for the differential rent as such."</p>
+<h4 id="the-condition-for-a-falling-price">The Condition for a Falling Price</h4>
+<p>If extra capital on the rent-bearing lands B, C, D proportionally increases their output, then a falling price can occur <strong>only if the totality of this extra produce makes the produce of A redundant</strong>. In Marx's words, the governing production price "can fall under these assumptions only when the governing factor ceases to be the production price of A, the latter's place being taken by the next better land B or some other land better than A." This requires that "the extra product of the additional capital investments satisfies the demand, and hence the production of the inferior land A, etc. is superfluous for the supply required."</p>
+<p>This is the precise logical relationship: the <em>cause</em> of the price fall is <em>not</em> a technological miracle on the best land but the <strong>eviction of the worst land from cultivation by the increased supply flowing from more intensive cultivation of the better lands</strong>. The sequence is: more capital on B/C/D → more total output → demand now satisfiable without A → A ceases to be cultivated → A ceases to regulate the price → the next land (B) becomes the regulator → the governing price falls to B's individual production price. And because B now occupies A's old position as the rentless price-governing land, <strong>B's own rent disappears</strong>, even though <em>nothing has changed</em> in the natural differences among B, C, and D. As Marx puts it bluntly: "a new differential rent I has been formed in which the better land B plays the same role as the inferior land A did before."</p>
+<p>This is a profound point. Rent on B was <em>not</em> a physical fact about B; it was a <em>relational</em> fact about B's position in the spectrum of cultivated soils. Move the baseline, and B's rent evaporates — not because B became less fertile, but because B became the new benchmark against which all rent is measured.</p>
+<h4 id="table-iv-the-first-illustration">Table IV: The First Illustration</h4>
+<p>Marx takes Table II (from the preceding chapter, where A still regulated the price) and modifies it so that "instead of 20 qrs, 18 qrs now satisfies the demand." A drops out; B, with a production price of 30s. = £1½ per quarter, becomes the governing land. The resulting structure is:</p>
+<table>
+<thead>
+<tr>
+<th>Type of land</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Price of prod. (£)</th>
+<th>Output (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Rent in corn (qrs)</th>
+<th>Rent in money (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>1½</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>6</td>
+<td>1½</td>
+<td>9</td>
+<td>2</td>
+<td>3</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>8</td>
+<td>1½</td>
+<td>12</td>
+<td>4</td>
+<td>6</td>
+<td>120%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>3</strong></td>
+<td><strong>15</strong></td>
+<td><strong>3</strong></td>
+<td><strong>18</strong></td>
+<td><strong>18</strong></td>
+<td></td>
+<td><strong>27</strong></td>
+<td><strong>6</strong></td>
+<td><strong>9</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Two definitions are embedded here that govern every subsequent table. The <strong>"price of production" column</strong> (£6) is the <em>individual</em> production price of the produce of that parcel: capital advanced (here £5) plus the average profit (here £1). The <strong>"selling price"</strong> (£1½ per quarter) is the <em>governing</em> market price, set by the worst cultivated land (now B). <strong>Proceeds</strong> = output × selling price. <strong>Rent in money</strong> = proceeds − individual price of production (e.g. C: £9 − £6 = £3). <strong>Rent in corn</strong> = money rent ÷ selling price (C: £3 ÷ £1½ = 2 qrs). The <strong>rate of surplus profit</strong> = money rent ÷ capital advanced (C: £3 ÷ £5 = 60%).</p>
+<p>The comparative findings are sharp. "The total rent, therefore, compared with Table II, would have fallen from £36 to £9, and in corn from 12 qrs to 6 qrs, though the total production has fallen only by 2 qrs, from 20 qrs to 18 qrs." In other words, a <em>small</em> absolute change in output (a 10% contraction) produces a <em>massive</em> collapse in rent (a 75% fall in money rent). "The rate of surplus profit, reckoned on the capital, would have fallen to a third of its former level, from 180 per cent to 60 per cent. Thus a decline in both corn and money rent goes together here with the fall in the production price."</p>
+<p>Compared with <strong>Table I</strong> (the base table where A was still the regulator), the outcome is subtler: "there is simply a decline in the money rent; the corn rent in both cases is 6 qrs, but in the one case this amounts to £18, in the other case to £9." For land C specifically, "the corn rent has remained the same as in Table I." The crucial mechanism is again relational: A's product "has been displaced in the market by the additional production obtained from the uniformly operating additional capital, and land A thus excluded as a competing agent of production." <strong>"The part of the product that is transformed into rent falls."</strong></p>
+<h4 id="the-alternative-where-the-extra-capital-is-placed-matters">The Alternative: Where the Extra Capital Is Placed Matters</h4>
+<p>Marx now varies the <em>distribution</em> of the extra capital. If the task of satisfying demand "had been brought about by the investment of more than twice the capital on C or D," the outcome differs. Suppose a third capital investment (an additional £2½ beyond the initial £5) is made on C:</p>
+<p><strong>Table IVa</strong> — additional investment on C:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Price of prod. (£)</th>
+<th>Output (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>1½</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>7½</td>
+<td>1½</td>
+<td>9</td>
+<td>9</td>
+<td>1½</td>
+<td>13½</td>
+<td>3</td>
+<td>4½</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>8</td>
+<td>1½</td>
+<td>12</td>
+<td>4</td>
+<td>6</td>
+<td>120%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>3</strong></td>
+<td><strong>17½</strong></td>
+<td><strong>3½</strong></td>
+<td><strong>21</strong></td>
+<td><strong>21</strong></td>
+<td></td>
+<td><strong>31½</strong></td>
+<td><strong>7</strong></td>
+<td><strong>10½</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Here "the product on C has risen from 6 qrs in Table IV to 9 qrs, the surplus product from 2 qrs to 3 qrs, the money rent from £3 to £4½." Yet <em>relative to Tables II and I</em> this C-rent "has now fallen" (£4½ against £12 and £6 respectively). The total corn rent (7 qrs) has fallen against Table II (12 qrs) and risen against Table I (6 qrs); the money rent (£10½) has fallen against both.</p>
+<p>Marx then dispatches a degenerate case in one sentence: if the third investment of £2½ were applied to <strong>land B</strong>, it "would certainly have altered the amount of production, but it would have left the rent unaffected, since the successive capital investments are assumed not to produce any difference on the same type of land, and land B does not yield any rent." This is the constant-productivity assumption doing its work: extra capital on the <em>price-governing</em> land can never generate differential rent on that land, because all of its produce is absorbed at the governing price with no surplus.</p>
+<p>If instead the third investment goes to <strong>land D</strong>:</p>
+<p><strong>Table IVb</strong> — additional investment on D:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Price of prod. (£)</th>
+<th>Output (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>1½</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>6</td>
+<td>1½</td>
+<td>9</td>
+<td>2</td>
+<td>3</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>7½</td>
+<td>1½</td>
+<td>9</td>
+<td>12</td>
+<td>1½</td>
+<td>18</td>
+<td>6</td>
+<td>9</td>
+<td>120%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>3</strong></td>
+<td><strong>17½</strong></td>
+<td><strong>3½</strong></td>
+<td><strong>21</strong></td>
+<td><strong>22</strong></td>
+<td></td>
+<td><strong>33</strong></td>
+<td><strong>8</strong></td>
+<td><strong>12</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The total product (22 qrs) is now "more than double that of Table I, even though the capital advanced is only £17½ as against £10, i.e. less than double." On D the corn rent has grown from 3 qrs (Table I) to 6 qrs, while the money rent has stayed at £9; compared with Table II the corn rent is unchanged (6 qrs) but the money rent has halved (from £18 to £9). Total corn rent (8 qrs) now exceeds both Table I (6) and IVa (7), though still below Table II (12); the money rent (£12) exceeds IVa (£10½) but is below I (£18) and II (£36).</p>
+<h4 id="restoring-the-total-rental-tables-ivc-and-ivd">Restoring the Total Rental: Tables IVc and IVd</h4>
+<p>Marx asks a sharp comparative question: how much extra capital would be required, under the IVb conditions, for the <em>total</em> rental to recover the Table I level of £18 — even though the rent on B has vanished? "We must have a further £6 surplus profit, i.e. 4 qrs at £1½," the new production price. He then calculates the "capital required" for this on each land: "On C, £5 capital yields 2 qrs surplus product, and so £10 additional capital will give 4 qrs additional surplus profit. On D, £5 additional capital will be sufficient to produce the 4 qrs additional corn rent."</p>
+<p><strong>Table IVc</strong> — extra capital concentrated on C:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Price of prod. (£)</th>
+<th>Output (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>1½</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>15</td>
+<td>3</td>
+<td>18</td>
+<td>18</td>
+<td>1½</td>
+<td>27</td>
+<td>6</td>
+<td>9</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>7½</td>
+<td>1½</td>
+<td>9</td>
+<td>12</td>
+<td>1½</td>
+<td>18</td>
+<td>6</td>
+<td>9</td>
+<td>120%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>3</strong></td>
+<td><strong>27½</strong></td>
+<td><strong>5½</strong></td>
+<td><strong>33</strong></td>
+<td><strong>34</strong></td>
+<td></td>
+<td><strong>51</strong></td>
+<td><strong>12</strong></td>
+<td><strong>18</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table IVd</strong> — extra capital concentrated on D:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Price of prod. (£)</th>
+<th>Output (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>1½</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>6</td>
+<td>1½</td>
+<td>9</td>
+<td>2</td>
+<td>3</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>12½</td>
+<td>2½</td>
+<td>15</td>
+<td>20</td>
+<td>1½</td>
+<td>30</td>
+<td>10</td>
+<td>15</td>
+<td>120%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>3</strong></td>
+<td><strong>22½</strong></td>
+<td><strong>4½</strong></td>
+<td><strong>27</strong></td>
+<td><strong>30</strong></td>
+<td></td>
+<td><strong>45</strong></td>
+<td><strong>12</strong></td>
+<td><strong>18</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Both restore the total money rental of £18 (which "would be exactly half of what it was in Table II"), and both double the corn rent (from 6 to 12 qrs). The <em>path</em> differs: IVc achieves it by pouring capital into the less fertile of the two rent-bearing lands (C), requiring £27½ total capital; IVd achieves it by concentrating capital on the most fertile (D), needing only £22½. This establishes a law: <strong>the greater the fertility of the land on which the extra capital is concentrated, the less capital is required to restore or raise the money rent</strong> — because a given quantity of surplus product (needed to offset the price fall) can be produced with less capital where nature is more generous.</p>
+<h4 id="the-great-comparison-with-table-i">The Great Comparison with Table I</h4>
+<p>The pivot of Section I is the comparison of IVc and IVd against Table I:</p>
+<blockquote>
+<p>"the total money rental remains the same, i.e. £18, despite a fall of a half in the production price, from 60s. per qr to 30s., and the corn rent has accordingly doubled, i.e. from 6 qrs to 12 qrs."</p>
+</blockquote>
+<p>Several sub-results deserve excavation:</p>
+<ul>
+<li><strong>Rent on B has disappeared</strong> (from £3/1 qr to zero), yet total rent is unchanged.</li>
+<li><strong>On C</strong>, money rent "has risen by a half in IVc, and fallen by a half in IVd."</li>
+<li><strong>On D</strong>, money rent "remained the same, £9, in IVc, and risen from £9 to £15 in IVd."</li>
+<li>Production rose "in IVc from 10 qrs to 34 qrs, and in IVd to 30 qrs"; profit rose from £2 to £5½ (IVc) and £4½ (IVd); total capital "has risen in the one case from £10 to £27½, in the other from £10 to £22½, i.e. in both cases to more than double."</li>
+<li><strong>The rate of rent</strong> (rent ÷ capital advanced) is "the same throughout in Tables IV to IVd" for each land — a direct consequence of the constant-productivity assumption. But <em>compared with Table I</em> it "has fallen both for the average of all types of land and for each individual type": from an average of 180% in I to about 65⅓% in IVc and 80% in IVd.</li>
+<li><strong>The average money rent per acre has risen</strong>: from £4½ per acre over 4 acres (Table I) to £6 per acre over 3 acres. On the rent-bearing land alone, the average rose from £6 to £9 per acre.</li>
+<li>Yet the 12 qrs of corn rent are "now less than half of the total product of 34 or 30 qrs, whereas in Table I the 6 qrs made up three-fifths of the total product of 10 qrs."</li>
+</ul>
+<p>This last point is the conceptual payoff: <strong>"even though the rent has fallen, taken as an aliquot part of the total product, and similarly if reckoned on the capital laid out, its money value reckoned per acre has risen, and its value in product still more."</strong> Rent can simultaneously <em>shrink as a share</em> and <em>grow as an absolute magnitude per acre</em>. The reason is that the price fall (50%) is <em>more than offset</em> by the growth in the surplus product (100%). Marx then generalizes with a numerical illustration on land D: in Table I, D's money rent (£9) was three times its £3 production costs and almost four times its £2½ capital; in IVd, D's money rent (£15) is "almost exactly equal to the production costs and only a fifth greater than the capital" — yet the money rent <em>per acre</em> is "two-thirds greater, £15 instead of £9." And in Table I, D's corn rent of 3 qrs was three-quarters of its 4-qr product; in IVd, at 10 qrs, it is half of the 20-qr product. Likewise, the rent's share of total product value falls from "more than half" (£18 of £30) in Table I to "less than half" (£18 of £45) in IVd.</p>
+<h4 id="the-general-law-and-its-four-determinants">The General Law and Its Four Determinants</h4>
+<p>Marx states the causal law that generates the entire result: "The reason why despite the fall of £1½ per qr in the price … the total money rent remains the same while the corn rent doubles … lies in the fact that more quarters of surplus product are produced. The corn price falls by 50 per cent, the surplus product grows by 100 per cent." But he adds a critical proportionality caveat: "in order to bring about this result, the total production must grow by a factor of three, under the conditions we have set, and the capital investment on the better types of land must more than double." The amount of capital required depends above all on <strong>how the extra capital is divided between the better and the best types of land</strong> — assuming productivity grows in proportion to capital.</p>
+<p>He then identifies the <strong>four determinants</strong> that fix the specific proportion:</p>
+<ol>
+<li><strong>The ratio in which the price falls</strong> — i.e. the gap between B (the new rentless land) and A (which it replaced);</li>
+<li><strong>The ratio of the differences among the better lands</strong> from B upward;</li>
+<li><strong>The amount of new extra capital invested</strong>;</li>
+<li><strong>Its distribution across the various qualities of land.</strong></li>
+</ol>
+<p>He also extends the analysis to counterfactuals: if the price fall were <em>smaller</em>, <em>less</em> extra capital would be needed for the same money rent; if a <em>greater supply</em> were needed to evict A — which "depends not only on the product per acre of A but also on the proportionate share that A takes out of the total cultivated area" — then money and corn rent "would have grown still further … even though both disappeared on land B."</p>
+<p>To underline that <em>everything here is relative</em>, Marx gives two limiting comparisons. If the capital withdrawn from A had been £5, the comparison would be between Table II and IVd: the total product would rise from 20 to 30 qrs, but the money rent would be only half as large (£18 instead of £36), while the corn rent would be unchanged at 12 qrs. And if a total product of 44 qrs = £66 could be produced on D with £27½ of capital (preserving D's old ratio of 4 qrs per £2½), the total rental would <em>again reach</em> the Table II level:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Capital (£)</th>
+<th>Output (qrs)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>5</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>5</td>
+<td>6</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>D</td>
+<td>27½</td>
+<td>44</td>
+<td>22</td>
+<td>33</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>37½</strong></td>
+<td><strong>54</strong></td>
+<td><strong>24</strong></td>
+<td><strong>36</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Here the total product is 54 qrs (against 20 in Table II) and money rent is the same £36, but the capital advanced is nearly double (£37½ against £20). Marx derives the general tendency: "if the price falls as a result of the investment of excess money capital on the lands yielding higher rent … while productivity remains the same, the total capital tends not to grow in the same proportion as production and the corn rent; so that the fall-off in the money rent that results from the falling price may be balanced by a rise in the corn rent."</p>
+<p>He also registers the <em>distributional</em> asymmetry: capital "must be greater in the proportion that it is applied more to C than to D, more to the land bearing less rent than to that bearing more rent." The reason is straightforward: to keep or increase money rent, "a definite additional quantity of surplus product must be produced, and this requires less capital, the greater the fertility of the lands yielding surplus product."</p>
+<h4 id="the-reduction-to-the-first-case-and-the-polemic-on-corn-rent">The Reduction to the First Case, and the Polemic on Corn Rent</h4>
+<p>Marx then makes an elegant theoretical reduction: "this law expresses nothing more than was already developed in the first case: that if the production price is given, whatever its level might be, the rent can rise as a result of extra capital investment." The exclusion of A simply installs "a new differential rent I with B now as the worst land and £1½ per qr as the new production price." It is "the same law, simply that land B is taken as the starting-point instead of land A and the production price as £1½ instead of £3."</p>
+<p>The practical significance he flags is that the process "may be accompanied by a rising, a falling, or a stable rent per acre, if not on all lands, then at least on some, and for the average of the lands tilled." This leads to a memorable <strong>polemic against corn rent</strong>: "We have seen that corn rent and money rent do not behave in the same way. It is only tradition, however, that still gives corn rent any role in economics." He mocks the error by analogy: "One might just as well prove that a manufacturer could buy far more of his own yarn with a profit of £5 than he formerly could with a profit of £10." The analogy exposes the fallacy of treating a <em>physical quantity</em> as if it were a measure of economic gain. The real-world implication is that "the landowning gentlemen, if they also happen to own or have a share in manufacturing, sugar refining, spirit distilling, etc., can still draw very considerable profits while money rents are falling, as producers of their own raw materials." In other words, a landlord integrated into processing his own agricultural raw materials gains precisely because the raw material (his falling-price corn) is cheap, while his manufactured output sells at industrial prices.</p>
+<h4 id="footnote-34-engelss-editorial-caveat">Footnote 34: Engels's Editorial Caveat</h4>
+<p>The section closes with an editor's note by Friedrich Engels that is theoretically important in its own right. Engels records that "an error in calculation running through the above tables IVa to IVd made it necessary to rework them." He insists, however, that "this in no way affected the theoretical perspectives developed from the tables," though "it did lead in places to quite monstrous numerical ratios for production per acre." He defends these ratios by analogy with topographic and relief maps, which legitimately use a larger vertical than horizontal scale. He offers a practical fix: the reader may multiply the number of acres by any figure, or interpret the "1, 2, 3, 4 qrs per acre" of Table I as "10, 12, 14, 16 bushels (8 bushels = 1 qr)." The conclusion — "the relationship between rise in rent and rise in capital, still comes out just the same" — is a valuable methodological reminder that the <strong>relational structure</strong> of the tables, not the absolute magnitudes, is what carries the theory.</p>
+<h3 id="section-ii-a-falling-rate-of-productivity-for-the-extra-capital">Section II: A Falling Rate of Productivity for the Extra Capital</h3>
+<p>This section is deliberately brief, because its principal finding has already been established. Marx states: "Nothing new is involved here except that the production price can also fall, as in the case last considered, if the extra capital investments on better types of land than A make A's product superfluous and hence cause capital to be withdrawn from A, or if A is applied to the production of a different crop." The <em>mechanism</em> of the price fall is identical to Variant I. The difference is the <em>technical</em> premise: now the additional capital advances yield <em>less</em> than proportionally more produce — the "law of diminishing returns" of successive investment, in Marx's treatment not as a natural law but as a historically contingent tendency of intensive cultivation.</p>
+<p>He reminds us that "the corn and money rents per acre may grow, decline, or remain the same," and reproduces Table I in its original form for comparison:</p>
+<p><strong>Table I [a]</strong> — the baseline:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Price of prod. per qr (£)</th>
+<th>Output (qrs)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1</td>
+<td>2½</td>
+<td>½</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>2½</td>
+<td>½</td>
+<td>1½</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>120%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>2½</td>
+<td>½</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>6</td>
+<td>240%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>2½</td>
+<td>½</td>
+<td>¾</td>
+<td>4</td>
+<td>3</td>
+<td>9</td>
+<td>360%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>4</strong></td>
+<td><strong>10</strong></td>
+<td><strong>2</strong></td>
+<td></td>
+<td><strong>10</strong></td>
+<td><strong>6</strong></td>
+<td><strong>18</strong></td>
+<td><strong>180%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Two features of this table are worth noting because they frame the whole chapter. First, the <strong>"price of production per qr"</strong> column declines with quality (3, 1½, 1, ¾), reflecting higher fertility: with £3 of production price (capital £2½ + profit ½) each land produces more quarters, so its <em>individual</em> cost per quarter is lower. Second, the <strong>governing</strong> price is A's £3 per quarter; rent is the excess of the governing price over each land's individual production price. A yields no rent; D yields the largest.</p>
+<p>Now, Marx assumes "that a figure of 16 qrs supplied by B, C and D, with a declining rate of productivity, is sufficient to remove A from cultivation," so that Table III is transformed into Table V:</p>
+<p><strong>Table V</strong> — falling productivity, price falls, A evicted:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Investment of capital (£)</th>
+<th>Profit (£)</th>
+<th>Output (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>2½+2½ = 5</td>
+<td>1</td>
+<td>2 + 1½ = 3½</td>
+<td>1½</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>3 + 2 = 5</td>
+<td>1½</td>
+<td>8½</td>
+<td>1½</td>
+<td>2½</td>
+<td>51⅓%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>4 + 3½ = 7½</td>
+<td>1½</td>
+<td>12½</td>
+<td>4</td>
+<td>6½</td>
+<td>137½%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>3</strong></td>
+<td><strong>15</strong></td>
+<td><strong>3</strong></td>
+<td><strong>16</strong></td>
+<td></td>
+<td><strong>27½</strong></td>
+<td><strong>5½</strong></td>
+<td><strong>9½</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The critical comparative results are:</p>
+<blockquote>
+<p>"Here, with a declining rate of productivity on the extra capitals and a varying decline on the different types of land, the governing production price has fallen from £3 to £1½. The capital investment has risen by half, from £10 to £15. The money rent has fallen by almost half, from £18 to £9½, but the corn rent by only a twelfth, from 6 qrs to 5½ qrs. The total product has risen from 10 qrs to 16 qrs, or by 60 per cent. The corn rent is somewhat over a third of the total product. The capital advanced stands in a ratio of 15 : 9½ to the money rent, whereas the previous ratio was 10 : 18."</p>
+</blockquote>
+<p>The lesson embedded here is a striking asymmetry between corn and money rent: capital rises 50%, output rises 60%, yet money rent collapses by almost half <em>while</em> corn rent falls by only one-twelfth. The reason is the halving of the governing price, which slashes the <em>money valuation</em> of a nearly constant <em>corn</em> surplus. As a share of output, corn rent falls from three-fifths (6 of 10) to "somewhat over a third" (5½ of 16). This is the "falling productivity" case where money rent is hardest hit relative to production — but crucially, it still <em>is</em> rent, and the mechanism (eviction of A, new Differential Rent I on B) is identical to Variant I.</p>
+<h3 id="section-iii-a-rising-rate-of-productivity-for-the-extra-capital">Section III: A Rising Rate of Productivity for the Extra Capital</h3>
+<h4 id="the-special-position-of-land-a">The Special Position of Land A</h4>
+<p>Marx opens by distinguishing this variant from Variant I "simply by the way that, if a given additional product is needed to remove land A from cultivation, this happens more speedily in the present case" — because rising productivity on the extra capital means that a <em>smaller</em> capital outlay suffices to generate the surplus product that evicts A. But he immediately adds a caveat: the effect "can be very uneven, according to how the investments are distributed over the different types of land." Depending on whether the varying effect "tends to even out the differences or to intensify them, the differential rent on the better types of land will fall or rise, and so too … will the total rental, as was already the case with differential rent I." Everything depends on the "size of the land area and capital that is displaced with A" and "the relative amount of capital which has to be advanced."</p>
+<p>The section's distinctive analytical contribution is its treatment of <strong>land A under rising productivity</strong>. Marx rehearses the logic of the prior variants to isolate what is new:</p>
+<ul>
+<li>In the case of a <em>constant price</em>, "the excess capital that might be invested on land A is quite immaterial for the differential rent as such, since now as before land A bears no rent."</li>
+<li>In Variant I (falling price, constant productivity), "land A necessarily drops out, and still more so in variant II (falling production price with a falling rate of productivity), since otherwise the excess capital on land A would necessarily increase the production price."</li>
+<li>But in Variant III — falling price because productivity of the excess capital <em>rises</em> — "this additional capital can under certain circumstances be invested as well on land A as on the better types of land."</li>
+</ul>
+<p>This is the pivot. Whereas under constant or falling productivity, extra capital on A would <em>raise</em> A's individual production price and thus the governing price (defeating the very purpose), under <em>rising</em> productivity on A, A's individual production price can <em>fall</em>, so extra capital on A is compatible with a falling governing price. This makes the "improvement" of the worst land a genuine competitive possibility.</p>
+<h4 id="table-vi-rising-productivity-on-all-lands">Table VI: Rising Productivity on All Lands</h4>
+<p>Marx assumes "an extra capital of £2½ invested on land A produces 1½ qrs instead of 1 qr," and applies the same proportional improvement to the better lands:</p>
+<p><strong>Table VI</strong> — rising productivity, falling price:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Price of prod. (£)</th>
+<th>Output (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+<th>Rate of surplus profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1</td>
+<td>2½ + 2½ = 5</td>
+<td>1</td>
+<td>6</td>
+<td>2½</td>
+<td>~2⅖</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>~4½</td>
+<td>~2⅖</td>
+<td>12</td>
+<td>~2¼</td>
+<td>6</td>
+<td>120%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>~6¾</td>
+<td>~2⅖</td>
+<td>18</td>
+<td>~4½</td>
+<td>12</td>
+<td>240%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>6</td>
+<td>~9</td>
+<td>~2⅖</td>
+<td>24</td>
+<td>~6¾</td>
+<td>18</td>
+<td>360%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>4</strong></td>
+<td><strong>20</strong></td>
+<td><strong>4</strong></td>
+<td><strong>24</strong></td>
+<td><strong>~22</strong></td>
+<td></td>
+<td><strong>60</strong></td>
+<td><strong>~13½</strong></td>
+<td><strong>36</strong></td>
+<td><strong>240%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>(The manuscript's figures, as Engels acknowledges in footnote 34, contain internal arithmetic roughness; the money rents £6/£12/£18 and the rates of surplus profit 120%/240%/360% are the load-bearing values.)</p>
+<p>The key comparisons: "the corn rent has risen to more than double as against Table I, and by 1½ qrs as against Table II; while the money rent has doubled as against I, but is unchanged from II." That is, money rent returns to the Table II level (£36) while corn rent <em>exceeds</em> Table II's (13½ &gt; 12). The rate of surplus profit, 240%, is <em>higher</em> than the 180% of Table I. Marx adds that rent "would have grown significantly either if the extra capital had fallen more on the better types of land, or alternatively if the effect of the extra capital had been less on A, so that the governing average price per qr from A was higher."</p>
+<h4 id="why-a-rent-can-appear-on-a-and-how-it-is-averaged-away">Why a Rent Can Appear on A — and How It Is "Averaged Away"</h4>
+<p>Marx now develops the deepest conceptual material of the chapter. He asks what would happen if the price did <em>not</em> fall but remained at £3. A — previously rentless with £2½ of capital — would now yield a rent, <em>without</em> any inferior land being drawn in, because productivity increased on the same land for <em>part</em> of the capital. "The first £3 in production costs brings in 1 qr; the second £3 brings in 1½ qrs; the total product of 2½ qrs, however, is now sold at its average price." Since the rate of productivity grows with the extra capital, this "implies an improvement," which may consist either in "the application of more capital as such to each acre (more fertilizer, more mechanized labour, etc.)" or in the fact "that it is only with this extra capital that a qualitatively different and more productive investment of capital can be brought about."</p>
+<p>But this rent on A is transitory and conditional. "Leaving aside transitory market conditions, the product of land A could continue to be sold at a higher production price … only if a significant area of class A land continued to be cultivated with a capital of only £2½ per acre. But as soon as the new proportion of £5 per acre, and hence this improved mode of operation, became universal, the governing production price would have to fall to £2⅖." At that point, "the distinction between the two portions of capital would disappear," and an acre of A tilled with only £2½ "would be abnormal and would not be tilled according to the new conditions of production. The distinction would no longer be between the products of different portions of capital on the same acre, but rather between a satisfactory total capital investment per acre and an unsatisfactory one."</p>
+<p>From this Marx extracts <strong>two general lessons</strong>:</p>
+<ol>
+<li>
+<p><strong>Inadequate capital mimics natural infertility.</strong> "When a large number of farmers have insufficient capital (it has to be a large number, for a small number would simply be compelled to sell below their production price), this has just the same effect as the differentiation of types of land themselves in a diminishing series. The poorer type of agriculture on worse soil increases the rent on the better; it can even create a rent on better cultivated land of the same poor quality, which this would not otherwise yield." This is a crucial sociological point: rent can be <em>socially manufactured</em> out of differences in capital endowment rather than natural fertility. Under-capitalization on the poor soils functions as a "diminishing series" and props up rent on the better-cultivated land.</p>
+</li>
+<li>
+<p><strong>Successive investments are averaged into an indistinguishable norm.</strong> "differential rent, in so far as it arises from successive investments of capital on the same total area, is actually reduced to an average in which the effects of the different capital investments can no longer be recognized or distinguished." These investments do not produce rent on the worst lands; rather, they (1) "make the average price of the total product, say on an acre of A, into the new governing price," and (2) "present themselves as changes in the total amount of capital per acre required under the new conditions for satisfactory cultivation of this land, in which both the individual successive capital investments and their respective effects melt indistinguishably together." The same holds for the differential rents of the better lands, which "are in any case determined by the difference between the average product of the type of land in question and the product of the worst land, in a situation where an increased investment of capital has now become normal."</p>
+</li>
+</ol>
+<h4 id="the-normal-minimum-capital-and-the-tenancy-contract">The "Normal" Minimum Capital and the Tenancy Contract</h4>
+<p>Marx widens the argument to a general principle of political economy: "No land yields any product without a capital investment. This is true even in the case of simple differential rent, differential rent I." Whenever we say that an acre of A yields such-and-such a product at such-and-such a price, and that B, C, D yield differential products and hence ground-rent, "this always assumes that a definite capital is applied, i.e. that considered normal under the given conditions of production. Just as in industry a definite minimum of capital is required in each line of business to produce commodities at their price of production." The analogy to industry is exact: just as a manufacturer below the normal minimum capital will fail to realize the average profit, so a farmer cultivating with less than the normal capital per acre will sell below the governing price.</p>
+<p>When this minimum <em>changes</em> due to successive investments, "it happens only gradually." As long as a certain number of acres of A do not receive the extra working capital, rent on the better cultivated acres of A is generated (the price being constant), and the rents on B, C, D are thereby increased. "But as soon as the new type of cultivation has spread sufficiently to become normal, the production price falls; the rent for the better lands falls again, and the portion of land A that does not possess what is now the average working capital must sell below its individual production price, i.e. below the average profit."</p>
+<p>Marx then gives a concrete historical illustration: "this average capital investment, e.g. £8 per acre before 1848 in England and £12 per acre afterwards, is what provides the standard when tenancy contracts are drawn up." This connects the abstract theory of rent to the concrete institution of the lease. "For the farmer who spends more than this, the surplus profit is not transformed into rent for the duration of the lease. Whether this happens when the contract expires will depend on the competition of those farmers in a position to make the same extra advance." He carefully distinguishes this from "permanent improvements to the land, which continue to provide an increased product with the same outlay of capital or even a declining one. Although these are the product of capital, they operate just like the natural differential quality of the soil."</p>
+<h4 id="what-differential-rent-ii-adds-to-differential-rent-i">What Differential Rent II Adds to Differential Rent I</h4>
+<p>Marx here isolates the theoretical <em>novum</em> of Differential Rent II:</p>
+<blockquote>
+<p>"differential rent II involves an element that does not develop as such in the case of differential rent I, since this can persist independently of any change in the normal capital investment per acre."</p>
+</blockquote>
+<p>Three elements are new. First, "the results of different capital investments on the price-governing land A are blurred, their product simply appearing as the normal average product per acre." Second, "there is a change in the normal minimum or average size of the capital outlay per acre, so that this change appears as a property of the soil." Third — of particular institutional importance — "there is a distinction in the way the surplus profit is transformed into the form of rent." Whereas in Differential Rent I rent is determined by the natural difference between lands, in Differential Rent II it is <em>also</em> determined by the historical-social normalization of a particular capital intensity, which then becomes the yardstick of tenancy and rent.</p>
+<h4 id="the-conditions-under-which-rent-rises-or-falls">The Conditions Under Which Rent Rises or Falls</h4>
+<p>Marx closes the chapter with a systematic enumeration of the conditions determining the movement of corn and money rent. The overarching finding: "when the production price falls as a result of a rising rate of productivity on the extra capital investment … the rent per acre for a doubled capital investment, say, may not just double, but can more than double. However, it might also fall, if the production price were to fall much lower as a result of a rapid growth in productivity on land A."</p>
+<p>He illustrates the falling case with Table VIa, in which "the additional investments of capital, on B and C for example, did not increase productivity in the same proportion as on A, so that the proportionate differences for B and C would decline":</p>
+<p><strong>Table VIa</strong> — uneven improvement (A and D improve more; B, C less):</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Acres</th>
+<th>Capital (£)</th>
+<th>Profit (£)</th>
+<th>Output per acre (qrs)</th>
+<th>Selling price (£/qr)</th>
+<th>Proceeds (£)</th>
+<th>Corn rent (qrs)</th>
+<th>Money rent (£)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1</td>
+<td>2½ + 2½ = 5</td>
+<td>1</td>
+<td>1 + 3 = 4</td>
+<td>1½</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>2 + 2½ = 4½</td>
+<td>1½</td>
+<td>6¾</td>
+<td>½</td>
+<td>¾</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>3 + 5 = 8</td>
+<td>1½</td>
+<td>12</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>4 + 12 = 16</td>
+<td>1½</td>
+<td>24</td>
+<td>12</td>
+<td>18</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>4</strong></td>
+<td><strong>20</strong></td>
+<td><strong>4</strong></td>
+<td><strong>32½</strong></td>
+<td></td>
+<td></td>
+<td><strong>16½</strong></td>
+<td><strong>24¾</strong></td>
+</tr>
+</tbody>
+</table>
+<p>"The rent on D would then rise and that on B and C fall, as compared with the case of Table II." Note that here A's productivity rises so much (from 1 to 4 qrs per £5, i.e. a 4× improvement) that the governing price falls to £1½, <em>raising</em> D's rent in corn (to 12 qrs) while <em>lowering</em> B's and C's. This confirms the "unevenness" thesis: differential rent is not monotone in productivity; it is driven by the <em>pattern</em> of productivity change across lands.</p>
+<p>Marx then lays out the full set of directional conditions:</p>
+<ul>
+<li><strong>Money rent rises</strong> if "more capital is added to the rent-bearing than to the non-rent-bearing land, in conditions where the proportionate differences in the additional fertility remain the same, and more capital is added to the lands of higher rent than to those of lower rent," <em>or</em> if "given the same additional capital, the fertility on the better and best lands grows more than on A." In the latter case, "the rent rises in relation to the degree to which the increase in fertility is greater in the superior categories of land than in the inferior ones."</li>
+<li><strong>Money rent falls</strong> "if the improvement resulting from extra capital investment reduces the differences, either all or some, by having more effect on A than on B and C." Whether the corn rent rises, falls, or remains stationary "depends on the degree of unevenness in this effect."</li>
+<li><strong>Corn rent</strong> follows money rent where the price is stable, but can move independently when the price moves.</li>
+</ul>
+<h4 id="the-absolute-conclusion-additional-capital-as-the-cause-of-rent">The Absolute Conclusion: Additional Capital as the Cause of Rent</h4>
+<p>The chapter's final paragraph delivers the <em>absolute</em> theoretical point that transcends all the parametric variation:</p>
+<blockquote>
+<p>"Under all circumstances, however, the rent experiences a relative rise if the increased productivity is the result of a new addition of capital and not simply of increased fertility for a constant capital investment."</p>
+</blockquote>
+<p>This is the "absolute point of view." It shows that, as in all earlier cases, "the rent per acre … is the result of increased capital investment on the land," whether that capital functions "with a constant rate of productivity in a situation of constant or falling prices, with a declining rate of productivity in a situation of constant or falling prices, or with an increasing rate of productivity in a situation of constant or falling prices." Marx then makes an important logical reduction: the apparent combinatorial explosion of cases — constant price with constant/falling/rising productivity, and falling price with constant/falling/rising productivity — "can be reduced to the assumption of a constant rate of productivity for the excess capital in a situation of constant or falling price, a falling rate of productivity in a situation of constant or falling price, [and] a rising rate of productivity with constant and falling price." And the invariant that survives all permutations is this: "Even though in all these cases the rent may remain stationary or even fall, it would fall further if the additional application of capital, in otherwise unchanged conditions, were not the condition for higher fertility. The additional capital is then always the cause of the relatively high level of rent, even though this may have fallen in absolute terms."</p>
+<p>This is the dialectical conclusion of the chapter: <strong>the very forces that can depress rent in absolute terms (falling prices, eviction of worst lands) are inseparable from the forces that sustain it relatively (intensified capital).</strong> Rent is not a natural datum but the social form assumed by surplus profit generated by capital investment on landed property.</p>
+<hr />
+<h2 id="3-synthesis-lessons-broader-implications">3. SYNTHESIS, LESSONS &amp; BROADER IMPLICATIONS</h2>
+<h3 id="the-fundamental-principles-revealed">The Fundamental Principles Revealed</h3>
+<p>Several systemic laws emerge from the chapter's dense comparative statics. <strong>First, rent is relational, not intrinsic.</strong> Land B's rent vanishes the moment B becomes the price-governing benchmark, even though B's fertility has not changed. What determines rent is not the land's inherent quality but its <em>position within the spectrum</em> of cultivated soils and the <em>identity of the marginal land</em> that regulates the price. This relational character is what makes rent a social category rather than a physical quantity.</p>
+<p><strong>Second, corn rent and money rent are not interchangeable measures.</strong> The chapter's sharpest theoretical weapon is the demonstration that the two can move in opposite directions. In Tables IVc/IVd, money rent stays at £18 while corn rent <em>doubles</em>; in Table V, money rent falls by almost half while corn rent falls by only a twelfth; in Table VI, money rent doubles relative to Table I while corn rent more than doubles. Marx's polemic — that "it is only tradition" which gives corn rent a role in economics — dismantles the illusion that physical produce measures economic gain. The landlord who receives fewer quarters of wheat may nonetheless command more value, and vice versa.</p>
+<p><strong>Third, the rate of rent and the total rent are distinct magnitudes, and both are distinct from the rent's share of output.</strong> Table IVc/IVd shows rent per acre <em>rising</em> while rent as a share of total product <em>falls</em> and the rate of rent on capital <em>falls</em>. This three-way divergence is one of the most sophisticated results in the entire theory of rent.</p>
+<p><strong>Fourth, differential rent II introduces a socio-historical "norm" of cultivation.</strong> The "normal" capital per acre (£8 before 1848, £12 after, in England) is a <em>social</em> average that functions, in tenancy contracts and in the very determination of rent, as though it were a natural property of the soil. This shows that rent under advanced capitalism is governed not only by nature but by the historically established intensity of farming, itself a product of capital accumulation.</p>
+<p><strong>Fifth, under-capitalization can create rent.</strong> The demonstration that a "large number of farmers with insufficient capital" acts just like a "diminishing series" of natural soil qualities — generating rent on better-cultivated land of the same poor quality — grounds rent in the <em>distribution of capital</em> rather than exclusively in the distribution of fertility.</p>
+<h3 id="broader-practical-theoretical-and-philosophical-implications">Broader Practical, Theoretical, and Philosophical Implications</h3>
+<p>Practically, the chapter explains the dynamics of the tenancy relationship with unusual precision. The distinction between "average" and "excess" capital per acre determines who captures the surplus profit: the farmer enjoys it during the lease (as he is not charged for improvements he alone financed), while the landlord captures it at renewal through competition among farmers able to make the same advance. This is a concrete theory of why agricultural improvement redistributes income between tenant and landlord, and why the duration and renewal of leases matters economically.</p>
+<p>Theoretically, the chapter completes and refines the general theory of Differential Rent II by mapping the falling-price case across all three productivity variants. It shows that the rent law established for the "first case" (rising price, developed earlier) is not peculiar to rising prices: the same relational logic — surplus profit as the excess of the governing over the individual production price — governs the falling-price case, simply with B substituted for A as the benchmark. The combinatorial reduction at the end — collapsing six configurations into three canonical ones — reveals the underlying unity beneath the bewildering table machinery.</p>
+<p>Philosophically, the chapter is a sustained demonstration of Marx's dialectical method. The categories of corn and money rent, of worst and best land, of constant and falling productivity, are shown to be <em>mutually determining</em> rather than fixed. Rent appears here neither as a natural rent of land nor as a simple deduction from output, but as the <em>social form</em> impressed upon a surplus profit that is itself the product of capital accumulated on landed property. The final and "absolute" conclusion — that additional capital is "always the cause of the relatively high level of rent, even though this may have fallen in absolute terms" — is the mature expression of the Marxian insight that in capitalist agriculture, as in industry, it is capital that <em>produces</em> value, while landed property merely <em>appropriates</em> a portion of it. Nature conditions the differences; capital and social relations determine what those differences are <em>worth</em>, and to whom.</p>
+        <!-- Bottom Chapter Navigation -->
+        <nav class="chapter-nav-bottom">
+          <a href="../Chapter 41/Chapter 41 original_explanation.html" class="chapter-nav-btn prev">
+            <span class="nav-btn-sub">← Previous Chapter</span>
+            <span class="nav-btn-title">Volume 3 • Chapter 41</span>
+          </a>
+          <a href="../../index.html" class="chapter-nav-btn home">
+            <span class="nav-btn-sub">Dashboard</span>
+            <span class="nav-btn-title">🏠 All Chapters</span>
+          </a>
+          <a href="../Chapter 43/Chapter 43 original_explanation.html" class="chapter-nav-btn next">
+            <span class="nav-btn-sub">Next Chapter →</span>
+            <span class="nav-btn-title">Volume 3 • Chapter 43</span>
+          </a>
+        </nav>
+      </article>
+    </div>
+  </main>
+</div>
+
+<!-- Raw Markdown Store (Base64 Encoded for safe client hydration) -->
+<script type="text/plain" id="raw-markdown-b64">IyBWb2x1bWUgMyDigKIgQ2hhcHRlciA0MjogRGlmZmVyZW50aWFsIFJlbnQgSUkg4oCUIFNlY29uZCBDYXNlOiBGYWxsaW5nIFByaWNlIG9mIFByb2R1Y3Rpb24KCi0tLQoKIyMgMS4gRVhFQ1VUSVZFIENIQVBURVIgT1ZFUlZJRVcgJiBUSEVTSVMKCkNoYXB0ZXIgNDIgb2YgVm9sdW1lIElJSSBvZiAqQ2FwaXRhbCog4oCUICJEaWZmZXJlbnRpYWwgUmVudCBJSTogU2Vjb25kIENhc2Ug4oCUIFByaWNlIG9mIFByb2R1Y3Rpb24gRmFsbGluZyIg4oCUIGlzIGEgcmlnb3JvdXMsIGFsbW9zdCBsYWJvcmF0b3J5LWxpa2UgZXhlcmNpc2UgaW4gTWFyeCdzIHRoZW9yeSBvZiBncm91bmQtcmVudC4gSXRzIGNlbnRyYWwgcHJvYmxlbSBpcyBkZWNlcHRpdmVseSBuYXJyb3cgYnV0IHRoZW9yZXRpY2FsbHkgZGVjaXNpdmU6ICoqd2hhdCBoYXBwZW5zIHRvIGRpZmZlcmVudGlhbCByZW50IHdoZW4gdGhlICpnb3Zlcm5pbmcgcHJvZHVjdGlvbiBwcmljZSogb2YgYWdyaWN1bHR1cmFsIHByb2R1Y2UgZmFsbHMsIGFuZCB0aGlzIGZhbGwgaXMgYnJvdWdodCBhYm91dCBieSBhZGRpdGlvbmFsIGNhcGl0YWwgaW52ZXN0bWVudHMgb24gdGhlIGJldHRlciAocmVudC1iZWFyaW5nKSBsYW5kcz8qKiBUaGUgY2hhcHRlciBpcyB0aGUgc2Vjb25kIG9mIHRocmVlIGNhc2VzIG9mIERpZmZlcmVudGlhbCBSZW50IElJICh0aGUgcmVudCB0aGF0IGFyaXNlcyBmcm9tICpzdWNjZXNzaXZlKiBjYXBpdGFsIGludmVzdG1lbnRzIG9uIHRoZSAqc2FtZSogbGFuZCwgYXMgb3Bwb3NlZCB0byBEaWZmZXJlbnRpYWwgUmVudCBJLCB3aGljaCBhcmlzZXMgZnJvbSBlcXVhbCBpbnZlc3RtZW50cyBvbiBsYW5kcyBvZiAqZGlmZmVyZW50KiBuYXR1cmFsIGZlcnRpbGl0eSkuIEhhdmluZyBjb21wbGV0ZWQgdGhlIGNhc2Ugd2hlcmUgdGhlIHByb2R1Y3Rpb24gcHJpY2UgKnJpc2VzKiBpbiBlYXJsaWVyIG1hdGVyaWFsIGFuZCB0aGUgY2FzZSBvZiBEaWZmZXJlbnRpYWwgUmVudCBJIGluIGZ1bGwsIE1hcnggaGVyZSBpc29sYXRlcyB0aGUgbWVjaGFuaWNzIG9mIGEgKmZhbGxpbmcqIHByaWNlLgoKVGhlIGNoYXB0ZXIncyB0aGVzaXMgY2FuIGJlIHN0YXRlZCBhcyBhIHNlcmllcyBvZiBsaW5rZWQgcHJvcG9zaXRpb25zLiBGaXJzdCwgKiphIGZhbGxpbmcgcHJvZHVjdGlvbiBwcmljZSBkb2VzIG5vdCBieSBpdHNlbGYgYW5uaWhpbGF0ZSByZW50Kio7IG9uIHRoZSBjb250cmFyeSwgaXQgY2FuIGNvZXhpc3Qgd2l0aCwgYW5kIGV2ZW4gYmUgdGhlIHZlaGljbGUgb2YsIGEgcmlzaW5nIGNvcm4gcmVudCBhbmQgYSBzdGFibGUgb3IgcmlzaW5nIG1vbmV5IHJlbnQgcGVyIGFjcmUuIFNlY29uZCwgdGhlIGZhbGwgaW4gcHJpY2UgaXMgKm9ubHkgcG9zc2libGUqIHdoZW4gY2FwaXRhbCBpcyB3aXRoZHJhd24gZnJvbSB0aGUgcHJldmlvdXNseSBnb3Zlcm5pbmcg4oCUIHJlbnRsZXNzIOKAlCB3b3JzdCBsYW5kIChBKSwgc28gdGhhdCBhICpuZXcqIERpZmZlcmVudGlhbCBSZW50IEkgZm9ybXMsIHRoaXMgdGltZSB3aXRoIHRoZSBuZXh0IGJldHRlciBsYW5kIChCKSBhcyB0aGUgbmV3ICJuby1yZW50IiBiZW5jaG1hcmsuIFRoaXJkLCB0aGUgb3V0Y29tZSBmb3IgdG90YWwgcmVudCBkZXBlbmRzIG9uIGEgc21hbGwgc2V0IG9mIGRldGVybWluYXRlIHZhcmlhYmxlczogdGhlIHJhdGlvIGluIHdoaWNoIHRoZSBwcmljZSBmYWxscywgdGhlIHJhdGlvIG9mIHRoZSBkaWZmZXJlbmNlcyBhbW9uZyB0aGUgYmV0dGVyIGxhbmRzLCB0aGUgKmFtb3VudCogb2YgZXh0cmEgY2FwaXRhbCBuZXdseSBpbnZlc3RlZCwgYW5kIGl0cyAqZGlzdHJpYnV0aW9uKiBhY3Jvc3MgdGhlIGRpZmZlcmVudCBzb2lsIHF1YWxpdGllcy4gRm91cnRoLCBhbmQgbW9zdCBzdWJ0bHksIERpZmZlcmVudGlhbCBSZW50IElJIGludHJvZHVjZXMgYW4gZWxlbWVudCBhYnNlbnQgZnJvbSBEaWZmZXJlbnRpYWwgUmVudCBJOiB3aGVuIHN1Y2Nlc3NpdmUgaW52ZXN0bWVudHMgYmVjb21lIHRoZSAqbm9ybWFsKiBtb2RlIG9mIGN1bHRpdmF0aW9uLCB0aGUgaW5kaXZpZHVhbCBjb250cmlidXRpb25zIG9mIGVhY2ggc2VwYXJhdGUgY2FwaXRhbCBhZHZhbmNlIGFyZSAqYXZlcmFnZWQgYW5kIGJsdXJyZWQqIGludG8gYSBzaW5nbGUgIm5vcm1hbCIgY2FwaXRhbCByZXF1aXJlbWVudCBwZXIgYWNyZSDigJQgYSBzb2NpYWwgYXZlcmFnZSB0aGF0IHRoZW4gZnVuY3Rpb25zLCBmb3IgcHVycG9zZXMgb2YgcmVudCBhbmQgdGVuYW5jeSBjb250cmFjdHMsIGFzIGlmIGl0IHdlcmUgYSBuYXR1cmFsIHByb3BlcnR5IG9mIHRoZSBzb2lsIGl0c2VsZi4KClRoZSBjaGFwdGVyJ3MgaW50ZWxsZWN0dWFsIG9iamVjdGl2ZSBpcyB0aGVyZWZvcmUgdHdvZm9sZC4gQW5hbHl0aWNhbGx5LCBpdCBjb25zdHJ1Y3RzIGEgY29tcGxldGUgcGFyYW1ldHJpYyBtYXAgb2YgdGhlIGZhbGxpbmctcHJpY2UgY2FzZSBhY3Jvc3MgdGhyZWUgc3ViLXZhcmlhbnRzIOKAlCAqKmNvbnN0YW50KiogcHJvZHVjdGl2aXR5IG9mIHRoZSBleHRyYSBjYXBpdGFsLCAqKmZhbGxpbmcqKiBwcm9kdWN0aXZpdHksIGFuZCAqKnJpc2luZyoqIHByb2R1Y3Rpdml0eSDigJQgc2hvd2luZyBpbiBlYWNoIGhvdyBjb3JuIHJlbnQgYW5kIG1vbmV5IHJlbnQgbW92ZSwgc29tZXRpbWVzIGluIG9wcG9zaXRlIGRpcmVjdGlvbnMuIFBvbGVtaWNhbGx5LCBpdCBkZWxpdmVycyBhIHNoYXJwIG1ldGhvZG9sb2dpY2FsIGJsb3cgYWdhaW5zdCB0aGUgdHJhZGl0aW9uIChjbGFzc2ljYWwgcG9saXRpY2FsIGVjb25vbXkpIHRoYXQgdHJlYXRzIGNvcm4gcmVudCDigJQgcmVudCBtZWFzdXJlZCBpbiBidXNoZWxzIG9yIHF1YXJ0ZXJzIOKAlCBhcyBlY29ub21pY2FsbHkgbWVhbmluZ2Z1bCBpbiBpdHNlbGYuIE1hcnggZGVtb25zdHJhdGVzIHRoYXQgY29ybiByZW50IGFuZCBtb25leSByZW50IGNhbiBtb3ZlIGluIG9wcG9zaXRlIGRpcmVjdGlvbnMsIHNvIHRoYXQgYSBsYW5kbG9yZCBtYXkgYmVjb21lICpyaWNoZXIgcmVsYXRpdmUgdG8gdGhlIHByb2R1Y2Ugb2YgaGlzIGxhbmQqIHdoaWxlIHJlY2VpdmluZyAqbGVzcyogY29ybiByZW50IGluIGFic29sdXRlIHRlcm1zLCBhbmQgdmljZSB2ZXJzYS4KClRoZSBjaGFwdGVyIHNpdHMgYXQgdGhlIGhpbmdlIG9mIFBhcnQgVkkgKCJUaGUgVHJhbnNmb3JtYXRpb24gb2YgU3VycGx1cyBQcm9maXQgaW50byBHcm91bmQtUmVudCIpLiBJdCBwcmVzdXBwb3NlcyB0aGUgd2hvbGUgcHJlY2VkaW5nIGFwcGFyYXR1czogcHJvZHVjdGlvbiBwcmljZSA9IGNvc3QgcHJpY2UgKyBhdmVyYWdlIHByb2ZpdDsgc3VycGx1cyBwcm9maXQgPSBleGNlc3Mgb2YgaW5kaXZpZHVhbCBwcm9kdWN0aW9uIHByaWNlIG92ZXIgdGhlICpnb3Zlcm5pbmcqIChyZWd1bGF0aW5nKSBtb25ldGFyeSByZXR1cm47IHRoZSBjb252ZXJzaW9uIG9mIHRoYXQgc3VycGx1cyBwcm9maXQgaW50byByZW50IGJ5IHZpcnR1ZSBvZiBsYW5kZWQgcHJvcGVydHkuIEl0cyBjZW50cmFsIGRpYWdyYW1tYXRpYyBkZXZpY2UgaXMgYSBmYW1pbHkgb2YgbnVtZXJpY2FsIHRhYmxlcyAoSeKAk1ZJYSkgaW4gd2hpY2ggZm91ciB0eXBlcyBvZiBsYW5kIEEsIEIsIEMsIEQgb2YgYXNjZW5kaW5nIGZlcnRpbGl0eSBleHBvc2UgaG93IHJlbnQgYmVoYXZlcyB3aGVuIHRoZSBwcmljZS1nb3Zlcm5pbmcgdGVycmFpbiBzaGlmdHMgZnJvbSBBIHRvIEIuIEl0IGlzIGEgd29yayBvZiBjb21wYXJhdGl2ZSBzdGF0aWNzOiBNYXJ4IGhvbGRzIHRoZSAqZ2l2ZW4qIGRpZmZlcmVuY2VzIGJldHdlZW4gbGFuZHMgY29uc3RhbnQgYW5kIHZhcmllcyB0aGUgKmludGVuc2l2ZSBtYXJnaW4qIChjYXBpdGFsIHBlciBhY3JlKSBhbmQgdGhlICpleHRlbnNpdmUgbWFyZ2luKiAod2hpY2ggbGFuZCBnb3Zlcm5zIHRoZSBwcmljZSkgdG8gaXNvbGF0ZSB0aGUgcHVyZSBsb2dpYyBvZiByZW50IHVuZGVyIGZhbGxpbmcgcHJpY2VzLiBGb3IgdGhlIHJlYWRlciwgbWFzdGVyaW5nIGl0IHlpZWxkcyB0aGUgZXNzZW50aWFsIE1hcnhpYW4gaW5zaWdodCB0aGF0IGdyb3VuZC1yZW50IGlzIG5vdCBhIGZpeGVkIHF1YW50aXR5IGV4dHJhY3RlZCBmcm9tIG5hdHVyZSBidXQgYSBmbHVpZCBzb2NpYWwgbWFnbml0dWRlIHRoYXQgcmlzZXMgb3IgZmFsbHMgd2l0aCB0aGUgc2NhbGUgYW5kIGRpc3RyaWJ1dGlvbiBvZiBjYXBpdGFsIGludmVzdG1lbnQgb24gdGhlIGxhbmQuCgotLS0KCiMjIDIuIFVOSUZJRUQgRVhIQVVTVElWRSBDSEFQVEVSIERFQ09OU1RSVUNUSU9OICYgQU5BTFlTSVMKCiMjIyBGcmFtaW5nIHRoZSBGaWVsZDogVGhlIFRocmVlIFN1Yi1WYXJpYW50cyBhbmQgVGhlaXIgTG9naWNhbCBPcmRlcgoKVGhlIGNoYXB0ZXIgb3BlbnMgd2l0aCBhIHN5bm9wdGljIHN0YXRlbWVudCBvZiBpdHMgc2NvcGU6ICJUaGUgcHJvZHVjdGlvbiBwcmljZSBtYXkgZmFsbCB3aGlsZSBwcm9kdWN0aXZpdHkgb24gdGhlIGFkZGl0aW9uYWwgaW52ZXN0bWVudHMgb2YgY2FwaXRhbCByZW1haW5zIGNvbnN0YW50LCBmYWxscyBvciByaXNlcy4iIFRoaXMgc2luZ2xlIHNlbnRlbmNlIGdlbmVyYXRlcyB0aGUgZW50aXJlIGFyY2hpdGVjdHVyZS4gTWFyeCB3aWxsIHRyZWF0LCBpbiBvcmRlcjogKEkpIGEgZmFsbGluZyBwcmljZSB3aXRoICoqY29uc3RhbnQqKiBwcm9kdWN0aXZpdHkgb2YgdGhlIGV4dHJhIGNhcGl0YWw7IChJSSkgYSBmYWxsaW5nIHByaWNlIHdpdGggKipmYWxsaW5nKiogcHJvZHVjdGl2aXR5OyBhbmQgKElJSSkgYSBmYWxsaW5nIHByaWNlIHdpdGggKipyaXNpbmcqKiBwcm9kdWN0aXZpdHkuIFRoZSBvcmRlcmluZyBpcyBub3QgYXJiaXRyYXJ5LiBWYXJpYW50IEkgaXMgdGhlICJwdXJlc3QiIGNhc2UgYmVjYXVzZSwgYnkgYXNzdW1pbmcgdGhhdCBlYWNoIHVuaXQgb2YgZXh0cmEgY2FwaXRhbCB5aWVsZHMgcHJvZHVjZSBpbiBwcm9wb3J0aW9uIHRvIGl0c2VsZiwgaXQgc3RyaXBzIGF3YXkgYW55IGNoYW5nZSBpbiB0aGUgKnRlY2huaWNhbCogcmV0dXJuIG9uIGNhcGl0YWwgYW5kIGxldHMgdGhlIHJlYWRlciBzZWUgdGhlIHJlbnQtZWZmZWN0cyBvZiB0aGUgZmFsbGluZyBwcmljZSAqYXMgc3VjaCouIFZhcmlhbnRzIElJIGFuZCBJSUkgdGhlbiByZS1pbnRyb2R1Y2UgdGVjaG5pY2FsIGNoYW5nZSwgYnV0IGluIG9wcG9zaXRlIGRpcmVjdGlvbnMsIGJyYWNrZXRpbmcgdGhlIHJlc3VsdC4KClRocm91Z2hvdXQsIGEgY3J1Y2lhbCBkaXN0aW5jdGlvbiBtdXN0IGJlIGtlcHQgaW4gdmlldy4gKipQcm9kdWN0aXZpdHkgb2YgdGhlIGV4dHJhIGNhcGl0YWwqKiByZWZlcnMgdG8gdGhlICpwaHlzaWNhbCB5aWVsZCBwZXIgdW5pdCBvZiBjYXBpdGFsKiBvbiBhIGdpdmVuIHNvaWwuICoqVGhlIHJhdGUgb2Ygc3VycGx1cyBwcm9maXQqKiAoZm9yIGEgcGFyY2VsIG9mIGxhbmQpIGlzIHRoZSBtb25leSBzdXJwbHVzIHByb2ZpdCBleHByZXNzZWQgYXMgYSBwZXJjZW50YWdlIG9mIHRoZSBjYXBpdGFsIGFkdmFuY2VkIG9uIHRoYXQgbGFuZCDigJQgaXQgaXMgKm5vdCogaWRlbnRpY2FsIHRvIHBoeXNpY2FsIHByb2R1Y3Rpdml0eSwgYmVjYXVzZSBpdCBhbHNvIGRlcGVuZHMgb24gdGhlIGdvdmVybmluZyBwcmljZS4gS2VlcGluZyB0aGVzZSBkaXN0aW5jdCBpcyB0aGUga2V5IHRvIHVuZGVyc3RhbmRpbmcgd2h5LCBpbiBjZXJ0YWluIHRhYmxlcywgdGhlICpyYXRlIG9mIHN1cnBsdXMgcHJvZml0IHJlbWFpbnMgY29uc3RhbnQgd2hpbGUgdGhlIHRvdGFsIHJlbnQgY29sbGFwc2VzKi4KCiMjIyBTZWN0aW9uIEk6IENvbnN0YW50IFByb2R1Y3Rpdml0eSBvZiB0aGUgRXh0cmEgQ2FwaXRhbAoKIyMjIyBUaGUgQXNzdW1wdGlvbiBhbmQgSXRzIEltbWVkaWF0ZSBDb25zZXF1ZW5jZQoKTWFyeCBzdGlwdWxhdGVzIHRoYXQgInRoZSBwcm9kdWN0IGZyb20gdGhlIHZhcmlvdXMgdHlwZXMgb2YgbGFuZCwgY29ycmVzcG9uZGluZyB0byB0aGVpciByZXNwZWN0aXZlIHF1YWxpdHksIGdyb3dzIHRvIHRoZSBzYW1lIGV4dGVudCBhcyBkb2VzIHRoZSBjYXBpdGFsIGludmVzdGVkIG9uIHRoZW0uIiBUaGlzIGlzIGEgKnByb3BvcnRpb25hbGl0eSogYXNzdW1wdGlvbjogaWYgeW91IGRvdWJsZSB0aGUgY2FwaXRhbCBvbiBsYW5kIEMsIHlvdSBkb3VibGUgQydzIG91dHB1dDsgaWYgeW91IHRyaXBsZSBpdCwgeW91IHRyaXBsZSBpdC4gQ29tYmluZWQgd2l0aCB0aGUgYXNzdW1wdGlvbiB0aGF0ICJ0aGUgZGlmZmVyZW5jZXMgYmV0d2VlbiB0eXBlcyBvZiBsYW5kIHJlbWFpbiB0aGUgc2FtZSwiIHRoZSByZXN1bHQgaXMgdGhhdCB0aGUgc3VycGx1cyBwcm9maXQgb24gZWFjaCBsYW5kIGdyb3dzICppbiBzdGVwKiB3aXRoIHRoZSBjYXBpdGFsIGludmVzdGVkLgoKRnJvbSB0aGlzLCBvbmUgY29uY2x1c2lvbiBmb2xsb3dzIGltbWVkaWF0ZWx5IGFuZCBpcyBzdGF0ZWQgd2l0aCBlbXBoYXNpczogImFueSBzdXJwbHVzIGludmVzdG1lbnQgb2YgY2FwaXRhbCBvbiBsYW5kIEEgZG9lcyBub3QgYWZmZWN0IHRoZSBkaWZmZXJlbnRpYWwgcmVudC4gT24gdGhpcyBsYW5kLCB0aGUgcmF0ZSBvZiBzdXJwbHVzIHByb2ZpdCBpcyB6ZXJvOyBpdCB0aGVyZWZvcmUgcmVtYWlucyB6ZXJvLiIgVGhlIHJhdGlvbmFsZSBpcyB0aGUgY29ybmVyc3RvbmUgb2YgdGhlIHdob2xlIHRoZW9yeS4gTGFuZCBBIGlzIHRoZSAqcHJpY2UtZ292ZXJuaW5nKiBsYW5kOiBpdCBpcyB0aGUgbGVhc3QgZmVydGlsZSBsYW5kIHdob3NlIGN1bHRpdmF0aW9uIGlzIHN0aWxsIG5lY2Vzc2FyeSB0byBtZWV0IGRlbWFuZCwgYW5kIHRoZXJlZm9yZSBpdCB5aWVsZHMgbm8gZGlmZmVyZW50aWFsIHN1cnBsdXMg4oCUIGl0cyBpbmRpdmlkdWFsIHByb2R1Y3Rpb24gcHJpY2UgKmVxdWFscyogdGhlIGdvdmVybmluZyBwcm9kdWN0aW9uIHByaWNlLiBJZiBBJ3MgcHJvZHVjdGl2aXR5IHJpc2VzIHByb3BvcnRpb25hbGx5IHdpdGggbmV3IGNhcGl0YWwgKHNheSBkb3VibGluZyBhbG9uZyB3aXRoIGFsbCBvdGhlcnMpLCB0aGUgKnJlbGF0aXZlKiBwb3NpdGlvbiBvZiBBIGlzIHVuY2hhbmdlZCwgYW5kIGJlY2F1c2UgQSBzZXRzIHRoZSBwcmljZSwgbm90aGluZyBhYm91dCB0aGUgcmVudCBzdHJ1Y3R1cmUgaXMgZGlzdHVyYmVkLiAqKkEgY2Fubm90IHBheSByZW50IHRvIGl0c2VsZi4qKiBUaGlzIGlzIHdoeSBleHRyYSBjYXBpdGFsIGludmVzdGVkIG9uIHRoZSAqcHJpY2UtZ292ZXJuaW5nKiBsYW5kIGlzICJxdWl0ZSBpbW1hdGVyaWFsIGZvciB0aGUgZGlmZmVyZW50aWFsIHJlbnQgYXMgc3VjaC4iCgojIyMjIFRoZSBDb25kaXRpb24gZm9yIGEgRmFsbGluZyBQcmljZQoKSWYgZXh0cmEgY2FwaXRhbCBvbiB0aGUgcmVudC1iZWFyaW5nIGxhbmRzIEIsIEMsIEQgcHJvcG9ydGlvbmFsbHkgaW5jcmVhc2VzIHRoZWlyIG91dHB1dCwgdGhlbiBhIGZhbGxpbmcgcHJpY2UgY2FuIG9jY3VyICoqb25seSBpZiB0aGUgdG90YWxpdHkgb2YgdGhpcyBleHRyYSBwcm9kdWNlIG1ha2VzIHRoZSBwcm9kdWNlIG9mIEEgcmVkdW5kYW50KiouIEluIE1hcngncyB3b3JkcywgdGhlIGdvdmVybmluZyBwcm9kdWN0aW9uIHByaWNlICJjYW4gZmFsbCB1bmRlciB0aGVzZSBhc3N1bXB0aW9ucyBvbmx5IHdoZW4gdGhlIGdvdmVybmluZyBmYWN0b3IgY2Vhc2VzIHRvIGJlIHRoZSBwcm9kdWN0aW9uIHByaWNlIG9mIEEsIHRoZSBsYXR0ZXIncyBwbGFjZSBiZWluZyB0YWtlbiBieSB0aGUgbmV4dCBiZXR0ZXIgbGFuZCBCIG9yIHNvbWUgb3RoZXIgbGFuZCBiZXR0ZXIgdGhhbiBBLiIgVGhpcyByZXF1aXJlcyB0aGF0ICJ0aGUgZXh0cmEgcHJvZHVjdCBvZiB0aGUgYWRkaXRpb25hbCBjYXBpdGFsIGludmVzdG1lbnRzIHNhdGlzZmllcyB0aGUgZGVtYW5kLCBhbmQgaGVuY2UgdGhlIHByb2R1Y3Rpb24gb2YgdGhlIGluZmVyaW9yIGxhbmQgQSwgZXRjLiBpcyBzdXBlcmZsdW91cyBmb3IgdGhlIHN1cHBseSByZXF1aXJlZC4iCgpUaGlzIGlzIHRoZSBwcmVjaXNlIGxvZ2ljYWwgcmVsYXRpb25zaGlwOiB0aGUgKmNhdXNlKiBvZiB0aGUgcHJpY2UgZmFsbCBpcyAqbm90KiBhIHRlY2hub2xvZ2ljYWwgbWlyYWNsZSBvbiB0aGUgYmVzdCBsYW5kIGJ1dCB0aGUgKipldmljdGlvbiBvZiB0aGUgd29yc3QgbGFuZCBmcm9tIGN1bHRpdmF0aW9uIGJ5IHRoZSBpbmNyZWFzZWQgc3VwcGx5IGZsb3dpbmcgZnJvbSBtb3JlIGludGVuc2l2ZSBjdWx0aXZhdGlvbiBvZiB0aGUgYmV0dGVyIGxhbmRzKiouIFRoZSBzZXF1ZW5jZSBpczogbW9yZSBjYXBpdGFsIG9uIEIvQy9EIOKGkiBtb3JlIHRvdGFsIG91dHB1dCDihpIgZGVtYW5kIG5vdyBzYXRpc2ZpYWJsZSB3aXRob3V0IEEg4oaSIEEgY2Vhc2VzIHRvIGJlIGN1bHRpdmF0ZWQg4oaSIEEgY2Vhc2VzIHRvIHJlZ3VsYXRlIHRoZSBwcmljZSDihpIgdGhlIG5leHQgbGFuZCAoQikgYmVjb21lcyB0aGUgcmVndWxhdG9yIOKGkiB0aGUgZ292ZXJuaW5nIHByaWNlIGZhbGxzIHRvIEIncyBpbmRpdmlkdWFsIHByb2R1Y3Rpb24gcHJpY2UuIEFuZCBiZWNhdXNlIEIgbm93IG9jY3VwaWVzIEEncyBvbGQgcG9zaXRpb24gYXMgdGhlIHJlbnRsZXNzIHByaWNlLWdvdmVybmluZyBsYW5kLCAqKkIncyBvd24gcmVudCBkaXNhcHBlYXJzKiosIGV2ZW4gdGhvdWdoICpub3RoaW5nIGhhcyBjaGFuZ2VkKiBpbiB0aGUgbmF0dXJhbCBkaWZmZXJlbmNlcyBhbW9uZyBCLCBDLCBhbmQgRC4gQXMgTWFyeCBwdXRzIGl0IGJsdW50bHk6ICJhIG5ldyBkaWZmZXJlbnRpYWwgcmVudCBJIGhhcyBiZWVuIGZvcm1lZCBpbiB3aGljaCB0aGUgYmV0dGVyIGxhbmQgQiBwbGF5cyB0aGUgc2FtZSByb2xlIGFzIHRoZSBpbmZlcmlvciBsYW5kIEEgZGlkIGJlZm9yZS4iCgpUaGlzIGlzIGEgcHJvZm91bmQgcG9pbnQuIFJlbnQgb24gQiB3YXMgKm5vdCogYSBwaHlzaWNhbCBmYWN0IGFib3V0IEI7IGl0IHdhcyBhICpyZWxhdGlvbmFsKiBmYWN0IGFib3V0IEIncyBwb3NpdGlvbiBpbiB0aGUgc3BlY3RydW0gb2YgY3VsdGl2YXRlZCBzb2lscy4gTW92ZSB0aGUgYmFzZWxpbmUsIGFuZCBCJ3MgcmVudCBldmFwb3JhdGVzIOKAlCBub3QgYmVjYXVzZSBCIGJlY2FtZSBsZXNzIGZlcnRpbGUsIGJ1dCBiZWNhdXNlIEIgYmVjYW1lIHRoZSBuZXcgYmVuY2htYXJrIGFnYWluc3Qgd2hpY2ggYWxsIHJlbnQgaXMgbWVhc3VyZWQuCgojIyMjIFRhYmxlIElWOiBUaGUgRmlyc3QgSWxsdXN0cmF0aW9uCgpNYXJ4IHRha2VzIFRhYmxlIElJIChmcm9tIHRoZSBwcmVjZWRpbmcgY2hhcHRlciwgd2hlcmUgQSBzdGlsbCByZWd1bGF0ZWQgdGhlIHByaWNlKSBhbmQgbW9kaWZpZXMgaXQgc28gdGhhdCAiaW5zdGVhZCBvZiAyMCBxcnMsIDE4IHFycyBub3cgc2F0aXNmaWVzIHRoZSBkZW1hbmQuIiBBIGRyb3BzIG91dDsgQiwgd2l0aCBhIHByb2R1Y3Rpb24gcHJpY2Ugb2YgMzBzLiA9IMKjMcK9IHBlciBxdWFydGVyLCBiZWNvbWVzIHRoZSBnb3Zlcm5pbmcgbGFuZC4gVGhlIHJlc3VsdGluZyBzdHJ1Y3R1cmUgaXM6Cgp8IFR5cGUgb2YgbGFuZCB8IEFjcmVzIHwgQ2FwaXRhbCAowqMpIHwgUHJvZml0ICjCoykgfCBQcmljZSBvZiBwcm9kLiAowqMpIHwgT3V0cHV0IChxcnMpIHwgU2VsbGluZyBwcmljZSAowqMvcXIpIHwgUHJvY2VlZHMgKMKjKSB8IFJlbnQgaW4gY29ybiAocXJzKSB8IFJlbnQgaW4gbW9uZXkgKMKjKSB8IFJhdGUgb2Ygc3VycGx1cyBwcm9maXQgfAp8LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwKfCBCIHwgMSB8IDUgfCAxIHwgNiB8IDQgfCAxwr0gfCA2IHwgMCB8IDAgfCAwIHwKfCBDIHwgMSB8IDUgfCAxIHwgNiB8IDYgfCAxwr0gfCA5IHwgMiB8IDMgfCA2MCUgfAp8IEQgfCAxIHwgNSB8IDEgfCA2IHwgOCB8IDHCvSB8IDEyIHwgNCB8IDYgfCAxMjAlIHwKfCAqKlRvdGFsKiogfCAqKjMqKiB8ICoqMTUqKiB8ICoqMyoqIHwgKioxOCoqIHwgKioxOCoqIHwgfCAqKjI3KiogfCAqKjYqKiB8ICoqOSoqIHwgfAoKVHdvIGRlZmluaXRpb25zIGFyZSBlbWJlZGRlZCBoZXJlIHRoYXQgZ292ZXJuIGV2ZXJ5IHN1YnNlcXVlbnQgdGFibGUuIFRoZSAqKiJwcmljZSBvZiBwcm9kdWN0aW9uIiBjb2x1bW4qKiAowqM2KSBpcyB0aGUgKmluZGl2aWR1YWwqIHByb2R1Y3Rpb24gcHJpY2Ugb2YgdGhlIHByb2R1Y2Ugb2YgdGhhdCBwYXJjZWw6IGNhcGl0YWwgYWR2YW5jZWQgKGhlcmUgwqM1KSBwbHVzIHRoZSBhdmVyYWdlIHByb2ZpdCAoaGVyZSDCozEpLiBUaGUgKioic2VsbGluZyBwcmljZSIqKiAowqMxwr0gcGVyIHF1YXJ0ZXIpIGlzIHRoZSAqZ292ZXJuaW5nKiBtYXJrZXQgcHJpY2UsIHNldCBieSB0aGUgd29yc3QgY3VsdGl2YXRlZCBsYW5kIChub3cgQikuICoqUHJvY2VlZHMqKiA9IG91dHB1dCDDlyBzZWxsaW5nIHByaWNlLiAqKlJlbnQgaW4gbW9uZXkqKiA9IHByb2NlZWRzIOKIkiBpbmRpdmlkdWFsIHByaWNlIG9mIHByb2R1Y3Rpb24gKGUuZy4gQzogwqM5IOKIkiDCozYgPSDCozMpLiAqKlJlbnQgaW4gY29ybioqID0gbW9uZXkgcmVudCDDtyBzZWxsaW5nIHByaWNlIChDOiDCozMgw7cgwqMxwr0gPSAyIHFycykuIFRoZSAqKnJhdGUgb2Ygc3VycGx1cyBwcm9maXQqKiA9IG1vbmV5IHJlbnQgw7cgY2FwaXRhbCBhZHZhbmNlZCAoQzogwqMzIMO3IMKjNSA9IDYwJSkuCgpUaGUgY29tcGFyYXRpdmUgZmluZGluZ3MgYXJlIHNoYXJwLiAiVGhlIHRvdGFsIHJlbnQsIHRoZXJlZm9yZSwgY29tcGFyZWQgd2l0aCBUYWJsZSBJSSwgd291bGQgaGF2ZSBmYWxsZW4gZnJvbSDCozM2IHRvIMKjOSwgYW5kIGluIGNvcm4gZnJvbSAxMiBxcnMgdG8gNiBxcnMsIHRob3VnaCB0aGUgdG90YWwgcHJvZHVjdGlvbiBoYXMgZmFsbGVuIG9ubHkgYnkgMiBxcnMsIGZyb20gMjAgcXJzIHRvIDE4IHFycy4iIEluIG90aGVyIHdvcmRzLCBhICpzbWFsbCogYWJzb2x1dGUgY2hhbmdlIGluIG91dHB1dCAoYSAxMCUgY29udHJhY3Rpb24pIHByb2R1Y2VzIGEgKm1hc3NpdmUqIGNvbGxhcHNlIGluIHJlbnQgKGEgNzUlIGZhbGwgaW4gbW9uZXkgcmVudCkuICJUaGUgcmF0ZSBvZiBzdXJwbHVzIHByb2ZpdCwgcmVja29uZWQgb24gdGhlIGNhcGl0YWwsIHdvdWxkIGhhdmUgZmFsbGVuIHRvIGEgdGhpcmQgb2YgaXRzIGZvcm1lciBsZXZlbCwgZnJvbSAxODAgcGVyIGNlbnQgdG8gNjAgcGVyIGNlbnQuIFRodXMgYSBkZWNsaW5lIGluIGJvdGggY29ybiBhbmQgbW9uZXkgcmVudCBnb2VzIHRvZ2V0aGVyIGhlcmUgd2l0aCB0aGUgZmFsbCBpbiB0aGUgcHJvZHVjdGlvbiBwcmljZS4iCgpDb21wYXJlZCB3aXRoICoqVGFibGUgSSoqICh0aGUgYmFzZSB0YWJsZSB3aGVyZSBBIHdhcyBzdGlsbCB0aGUgcmVndWxhdG9yKSwgdGhlIG91dGNvbWUgaXMgc3VidGxlcjogInRoZXJlIGlzIHNpbXBseSBhIGRlY2xpbmUgaW4gdGhlIG1vbmV5IHJlbnQ7IHRoZSBjb3JuIHJlbnQgaW4gYm90aCBjYXNlcyBpcyA2IHFycywgYnV0IGluIHRoZSBvbmUgY2FzZSB0aGlzIGFtb3VudHMgdG8gwqMxOCwgaW4gdGhlIG90aGVyIGNhc2UgdG8gwqM5LiIgRm9yIGxhbmQgQyBzcGVjaWZpY2FsbHksICJ0aGUgY29ybiByZW50IGhhcyByZW1haW5lZCB0aGUgc2FtZSBhcyBpbiBUYWJsZSBJLiIgVGhlIGNydWNpYWwgbWVjaGFuaXNtIGlzIGFnYWluIHJlbGF0aW9uYWw6IEEncyBwcm9kdWN0ICJoYXMgYmVlbiBkaXNwbGFjZWQgaW4gdGhlIG1hcmtldCBieSB0aGUgYWRkaXRpb25hbCBwcm9kdWN0aW9uIG9idGFpbmVkIGZyb20gdGhlIHVuaWZvcm1seSBvcGVyYXRpbmcgYWRkaXRpb25hbCBjYXBpdGFsLCBhbmQgbGFuZCBBIHRodXMgZXhjbHVkZWQgYXMgYSBjb21wZXRpbmcgYWdlbnQgb2YgcHJvZHVjdGlvbi4iICoqIlRoZSBwYXJ0IG9mIHRoZSBwcm9kdWN0IHRoYXQgaXMgdHJhbnNmb3JtZWQgaW50byByZW50IGZhbGxzLiIqKgoKIyMjIyBUaGUgQWx0ZXJuYXRpdmU6IFdoZXJlIHRoZSBFeHRyYSBDYXBpdGFsIElzIFBsYWNlZCBNYXR0ZXJzCgpNYXJ4IG5vdyB2YXJpZXMgdGhlICpkaXN0cmlidXRpb24qIG9mIHRoZSBleHRyYSBjYXBpdGFsLiBJZiB0aGUgdGFzayBvZiBzYXRpc2Z5aW5nIGRlbWFuZCAiaGFkIGJlZW4gYnJvdWdodCBhYm91dCBieSB0aGUgaW52ZXN0bWVudCBvZiBtb3JlIHRoYW4gdHdpY2UgdGhlIGNhcGl0YWwgb24gQyBvciBELCIgdGhlIG91dGNvbWUgZGlmZmVycy4gU3VwcG9zZSBhIHRoaXJkIGNhcGl0YWwgaW52ZXN0bWVudCAoYW4gYWRkaXRpb25hbCDCozLCvSBiZXlvbmQgdGhlIGluaXRpYWwgwqM1KSBpcyBtYWRlIG9uIEM6CgoqKlRhYmxlIElWYSoqIOKAlCBhZGRpdGlvbmFsIGludmVzdG1lbnQgb24gQzoKCnwgVHlwZSB8IEFjcmVzIHwgQ2FwaXRhbCAowqMpIHwgUHJvZml0ICjCoykgfCBQcmljZSBvZiBwcm9kLiAowqMpIHwgT3V0cHV0IChxcnMpIHwgU2VsbGluZyBwcmljZSAowqMvcXIpIHwgUHJvY2VlZHMgKMKjKSB8IENvcm4gcmVudCAocXJzKSB8IE1vbmV5IHJlbnQgKMKjKSB8IFJhdGUgb2Ygc3VycGx1cyBwcm9maXQgfAp8LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwKfCBCIHwgMSB8IDUgfCAxIHwgNiB8IDQgfCAxwr0gfCA2IHwgMCB8IDAgfCAwIHwKfCBDIHwgMSB8IDfCvSB8IDHCvSB8IDkgfCA5IHwgMcK9IHwgMTPCvSB8IDMgfCA0wr0gfCA2MCUgfAp8IEQgfCAxIHwgNSB8IDEgfCA2IHwgOCB8IDHCvSB8IDEyIHwgNCB8IDYgfCAxMjAlIHwKfCAqKlRvdGFsKiogfCAqKjMqKiB8ICoqMTfCvSoqIHwgKiozwr0qKiB8ICoqMjEqKiB8ICoqMjEqKiB8IHwgKiozMcK9KiogfCAqKjcqKiB8ICoqMTDCvSoqIHwgfAoKSGVyZSAidGhlIHByb2R1Y3Qgb24gQyBoYXMgcmlzZW4gZnJvbSA2IHFycyBpbiBUYWJsZSBJViB0byA5IHFycywgdGhlIHN1cnBsdXMgcHJvZHVjdCBmcm9tIDIgcXJzIHRvIDMgcXJzLCB0aGUgbW9uZXkgcmVudCBmcm9tIMKjMyB0byDCozTCvS4iIFlldCAqcmVsYXRpdmUgdG8gVGFibGVzIElJIGFuZCBJKiB0aGlzIEMtcmVudCAiaGFzIG5vdyBmYWxsZW4iICjCozTCvSBhZ2FpbnN0IMKjMTIgYW5kIMKjNiByZXNwZWN0aXZlbHkpLiBUaGUgdG90YWwgY29ybiByZW50ICg3IHFycykgaGFzIGZhbGxlbiBhZ2FpbnN0IFRhYmxlIElJICgxMiBxcnMpIGFuZCByaXNlbiBhZ2FpbnN0IFRhYmxlIEkgKDYgcXJzKTsgdGhlIG1vbmV5IHJlbnQgKMKjMTDCvSkgaGFzIGZhbGxlbiBhZ2FpbnN0IGJvdGguCgpNYXJ4IHRoZW4gZGlzcGF0Y2hlcyBhIGRlZ2VuZXJhdGUgY2FzZSBpbiBvbmUgc2VudGVuY2U6IGlmIHRoZSB0aGlyZCBpbnZlc3RtZW50IG9mIMKjMsK9IHdlcmUgYXBwbGllZCB0byAqKmxhbmQgQioqLCBpdCAid291bGQgY2VydGFpbmx5IGhhdmUgYWx0ZXJlZCB0aGUgYW1vdW50IG9mIHByb2R1Y3Rpb24sIGJ1dCBpdCB3b3VsZCBoYXZlIGxlZnQgdGhlIHJlbnQgdW5hZmZlY3RlZCwgc2luY2UgdGhlIHN1Y2Nlc3NpdmUgY2FwaXRhbCBpbnZlc3RtZW50cyBhcmUgYXNzdW1lZCBub3QgdG8gcHJvZHVjZSBhbnkgZGlmZmVyZW5jZSBvbiB0aGUgc2FtZSB0eXBlIG9mIGxhbmQsIGFuZCBsYW5kIEIgZG9lcyBub3QgeWllbGQgYW55IHJlbnQuIiBUaGlzIGlzIHRoZSBjb25zdGFudC1wcm9kdWN0aXZpdHkgYXNzdW1wdGlvbiBkb2luZyBpdHMgd29yazogZXh0cmEgY2FwaXRhbCBvbiB0aGUgKnByaWNlLWdvdmVybmluZyogbGFuZCBjYW4gbmV2ZXIgZ2VuZXJhdGUgZGlmZmVyZW50aWFsIHJlbnQgb24gdGhhdCBsYW5kLCBiZWNhdXNlIGFsbCBvZiBpdHMgcHJvZHVjZSBpcyBhYnNvcmJlZCBhdCB0aGUgZ292ZXJuaW5nIHByaWNlIHdpdGggbm8gc3VycGx1cy4KCklmIGluc3RlYWQgdGhlIHRoaXJkIGludmVzdG1lbnQgZ29lcyB0byAqKmxhbmQgRCoqOgoKKipUYWJsZSBJVmIqKiDigJQgYWRkaXRpb25hbCBpbnZlc3RtZW50IG9uIEQ6Cgp8IFR5cGUgfCBBY3JlcyB8IENhcGl0YWwgKMKjKSB8IFByb2ZpdCAowqMpIHwgUHJpY2Ugb2YgcHJvZC4gKMKjKSB8IE91dHB1dCAocXJzKSB8IFNlbGxpbmcgcHJpY2UgKMKjL3FyKSB8IFByb2NlZWRzICjCoykgfCBDb3JuIHJlbnQgKHFycykgfCBNb25leSByZW50ICjCoykgfCBSYXRlIG9mIHN1cnBsdXMgcHJvZml0IHwKfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18CnwgQiB8IDEgfCA1IHwgMSB8IDYgfCA0IHwgMcK9IHwgNiB8IDAgfCAwIHwgMCB8CnwgQyB8IDEgfCA1IHwgMSB8IDYgfCA2IHwgMcK9IHwgOSB8IDIgfCAzIHwgNjAlIHwKfCBEIHwgMSB8IDfCvSB8IDHCvSB8IDkgfCAxMiB8IDHCvSB8IDE4IHwgNiB8IDkgfCAxMjAlIHwKfCAqKlRvdGFsKiogfCAqKjMqKiB8ICoqMTfCvSoqIHwgKiozwr0qKiB8ICoqMjEqKiB8ICoqMjIqKiB8IHwgKiozMyoqIHwgKio4KiogfCAqKjEyKiogfCB8CgpUaGUgdG90YWwgcHJvZHVjdCAoMjIgcXJzKSBpcyBub3cgIm1vcmUgdGhhbiBkb3VibGUgdGhhdCBvZiBUYWJsZSBJLCBldmVuIHRob3VnaCB0aGUgY2FwaXRhbCBhZHZhbmNlZCBpcyBvbmx5IMKjMTfCvSBhcyBhZ2FpbnN0IMKjMTAsIGkuZS4gbGVzcyB0aGFuIGRvdWJsZS4iIE9uIEQgdGhlIGNvcm4gcmVudCBoYXMgZ3Jvd24gZnJvbSAzIHFycyAoVGFibGUgSSkgdG8gNiBxcnMsIHdoaWxlIHRoZSBtb25leSByZW50IGhhcyBzdGF5ZWQgYXQgwqM5OyBjb21wYXJlZCB3aXRoIFRhYmxlIElJIHRoZSBjb3JuIHJlbnQgaXMgdW5jaGFuZ2VkICg2IHFycykgYnV0IHRoZSBtb25leSByZW50IGhhcyBoYWx2ZWQgKGZyb20gwqMxOCB0byDCozkpLiBUb3RhbCBjb3JuIHJlbnQgKDggcXJzKSBub3cgZXhjZWVkcyBib3RoIFRhYmxlIEkgKDYpIGFuZCBJVmEgKDcpLCB0aG91Z2ggc3RpbGwgYmVsb3cgVGFibGUgSUkgKDEyKTsgdGhlIG1vbmV5IHJlbnQgKMKjMTIpIGV4Y2VlZHMgSVZhICjCozEwwr0pIGJ1dCBpcyBiZWxvdyBJICjCozE4KSBhbmQgSUkgKMKjMzYpLgoKIyMjIyBSZXN0b3JpbmcgdGhlIFRvdGFsIFJlbnRhbDogVGFibGVzIElWYyBhbmQgSVZkCgpNYXJ4IGFza3MgYSBzaGFycCBjb21wYXJhdGl2ZSBxdWVzdGlvbjogaG93IG11Y2ggZXh0cmEgY2FwaXRhbCB3b3VsZCBiZSByZXF1aXJlZCwgdW5kZXIgdGhlIElWYiBjb25kaXRpb25zLCBmb3IgdGhlICp0b3RhbCogcmVudGFsIHRvIHJlY292ZXIgdGhlIFRhYmxlIEkgbGV2ZWwgb2YgwqMxOCDigJQgZXZlbiB0aG91Z2ggdGhlIHJlbnQgb24gQiBoYXMgdmFuaXNoZWQ/ICJXZSBtdXN0IGhhdmUgYSBmdXJ0aGVyIMKjNiBzdXJwbHVzIHByb2ZpdCwgaS5lLiA0IHFycyBhdCDCozHCvSwiIHRoZSBuZXcgcHJvZHVjdGlvbiBwcmljZS4gSGUgdGhlbiBjYWxjdWxhdGVzIHRoZSAiY2FwaXRhbCByZXF1aXJlZCIgZm9yIHRoaXMgb24gZWFjaCBsYW5kOiAiT24gQywgwqM1IGNhcGl0YWwgeWllbGRzIDIgcXJzIHN1cnBsdXMgcHJvZHVjdCwgYW5kIHNvIMKjMTAgYWRkaXRpb25hbCBjYXBpdGFsIHdpbGwgZ2l2ZSA0IHFycyBhZGRpdGlvbmFsIHN1cnBsdXMgcHJvZml0LiBPbiBELCDCozUgYWRkaXRpb25hbCBjYXBpdGFsIHdpbGwgYmUgc3VmZmljaWVudCB0byBwcm9kdWNlIHRoZSA0IHFycyBhZGRpdGlvbmFsIGNvcm4gcmVudC4iCgoqKlRhYmxlIElWYyoqIOKAlCBleHRyYSBjYXBpdGFsIGNvbmNlbnRyYXRlZCBvbiBDOgoKfCBUeXBlIHwgQWNyZXMgfCBDYXBpdGFsICjCoykgfCBQcm9maXQgKMKjKSB8IFByaWNlIG9mIHByb2QuICjCoykgfCBPdXRwdXQgKHFycykgfCBTZWxsaW5nIHByaWNlICjCoy9xcikgfCBQcm9jZWVkcyAowqMpIHwgQ29ybiByZW50IChxcnMpIHwgTW9uZXkgcmVudCAowqMpIHwgUmF0ZSBvZiBzdXJwbHVzIHByb2ZpdCB8CnwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfAp8IEIgfCAxIHwgNSB8IDEgfCA2IHwgNCB8IDHCvSB8IDYgfCAwIHwgMCB8IDAgfAp8IEMgfCAxIHwgMTUgfCAzIHwgMTggfCAxOCB8IDHCvSB8IDI3IHwgNiB8IDkgfCA2MCUgfAp8IEQgfCAxIHwgN8K9IHwgMcK9IHwgOSB8IDEyIHwgMcK9IHwgMTggfCA2IHwgOSB8IDEyMCUgfAp8ICoqVG90YWwqKiB8ICoqMyoqIHwgKioyN8K9KiogfCAqKjXCvSoqIHwgKiozMyoqIHwgKiozNCoqIHwgfCAqKjUxKiogfCAqKjEyKiogfCAqKjE4KiogfCB8CgoqKlRhYmxlIElWZCoqIOKAlCBleHRyYSBjYXBpdGFsIGNvbmNlbnRyYXRlZCBvbiBEOgoKfCBUeXBlIHwgQWNyZXMgfCBDYXBpdGFsICjCoykgfCBQcm9maXQgKMKjKSB8IFByaWNlIG9mIHByb2QuICjCoykgfCBPdXRwdXQgKHFycykgfCBTZWxsaW5nIHByaWNlICjCoy9xcikgfCBQcm9jZWVkcyAowqMpIHwgQ29ybiByZW50IChxcnMpIHwgTW9uZXkgcmVudCAowqMpIHwgUmF0ZSBvZiBzdXJwbHVzIHByb2ZpdCB8CnwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfAp8IEIgfCAxIHwgNSB8IDEgfCA2IHwgNCB8IDHCvSB8IDYgfCAwIHwgMCB8IDAgfAp8IEMgfCAxIHwgNSB8IDEgfCA2IHwgNiB8IDHCvSB8IDkgfCAyIHwgMyB8IDYwJSB8CnwgRCB8IDEgfCAxMsK9IHwgMsK9IHwgMTUgfCAyMCB8IDHCvSB8IDMwIHwgMTAgfCAxNSB8IDEyMCUgfAp8ICoqVG90YWwqKiB8ICoqMyoqIHwgKioyMsK9KiogfCAqKjTCvSoqIHwgKioyNyoqIHwgKiozMCoqIHwgfCAqKjQ1KiogfCAqKjEyKiogfCAqKjE4KiogfCB8CgpCb3RoIHJlc3RvcmUgdGhlIHRvdGFsIG1vbmV5IHJlbnRhbCBvZiDCozE4ICh3aGljaCAid291bGQgYmUgZXhhY3RseSBoYWxmIG9mIHdoYXQgaXQgd2FzIGluIFRhYmxlIElJIiksIGFuZCBib3RoIGRvdWJsZSB0aGUgY29ybiByZW50IChmcm9tIDYgdG8gMTIgcXJzKS4gVGhlICpwYXRoKiBkaWZmZXJzOiBJVmMgYWNoaWV2ZXMgaXQgYnkgcG91cmluZyBjYXBpdGFsIGludG8gdGhlIGxlc3MgZmVydGlsZSBvZiB0aGUgdHdvIHJlbnQtYmVhcmluZyBsYW5kcyAoQyksIHJlcXVpcmluZyDCozI3wr0gdG90YWwgY2FwaXRhbDsgSVZkIGFjaGlldmVzIGl0IGJ5IGNvbmNlbnRyYXRpbmcgY2FwaXRhbCBvbiB0aGUgbW9zdCBmZXJ0aWxlIChEKSwgbmVlZGluZyBvbmx5IMKjMjLCvS4gVGhpcyBlc3RhYmxpc2hlcyBhIGxhdzogKip0aGUgZ3JlYXRlciB0aGUgZmVydGlsaXR5IG9mIHRoZSBsYW5kIG9uIHdoaWNoIHRoZSBleHRyYSBjYXBpdGFsIGlzIGNvbmNlbnRyYXRlZCwgdGhlIGxlc3MgY2FwaXRhbCBpcyByZXF1aXJlZCB0byByZXN0b3JlIG9yIHJhaXNlIHRoZSBtb25leSByZW50Kiog4oCUIGJlY2F1c2UgYSBnaXZlbiBxdWFudGl0eSBvZiBzdXJwbHVzIHByb2R1Y3QgKG5lZWRlZCB0byBvZmZzZXQgdGhlIHByaWNlIGZhbGwpIGNhbiBiZSBwcm9kdWNlZCB3aXRoIGxlc3MgY2FwaXRhbCB3aGVyZSBuYXR1cmUgaXMgbW9yZSBnZW5lcm91cy4KCiMjIyMgVGhlIEdyZWF0IENvbXBhcmlzb24gd2l0aCBUYWJsZSBJCgpUaGUgcGl2b3Qgb2YgU2VjdGlvbiBJIGlzIHRoZSBjb21wYXJpc29uIG9mIElWYyBhbmQgSVZkIGFnYWluc3QgVGFibGUgSToKCj4gInRoZSB0b3RhbCBtb25leSByZW50YWwgcmVtYWlucyB0aGUgc2FtZSwgaS5lLiDCozE4LCBkZXNwaXRlIGEgZmFsbCBvZiBhIGhhbGYgaW4gdGhlIHByb2R1Y3Rpb24gcHJpY2UsIGZyb20gNjBzLiBwZXIgcXIgdG8gMzBzLiwgYW5kIHRoZSBjb3JuIHJlbnQgaGFzIGFjY29yZGluZ2x5IGRvdWJsZWQsIGkuZS4gZnJvbSA2IHFycyB0byAxMiBxcnMuIgoKU2V2ZXJhbCBzdWItcmVzdWx0cyBkZXNlcnZlIGV4Y2F2YXRpb246CgotICoqUmVudCBvbiBCIGhhcyBkaXNhcHBlYXJlZCoqIChmcm9tIMKjMy8xIHFyIHRvIHplcm8pLCB5ZXQgdG90YWwgcmVudCBpcyB1bmNoYW5nZWQuCi0gKipPbiBDKiosIG1vbmV5IHJlbnQgImhhcyByaXNlbiBieSBhIGhhbGYgaW4gSVZjLCBhbmQgZmFsbGVuIGJ5IGEgaGFsZiBpbiBJVmQuIgotICoqT24gRCoqLCBtb25leSByZW50ICJyZW1haW5lZCB0aGUgc2FtZSwgwqM5LCBpbiBJVmMsIGFuZCByaXNlbiBmcm9tIMKjOSB0byDCozE1IGluIElWZC4iCi0gUHJvZHVjdGlvbiByb3NlICJpbiBJVmMgZnJvbSAxMCBxcnMgdG8gMzQgcXJzLCBhbmQgaW4gSVZkIHRvIDMwIHFycyI7IHByb2ZpdCByb3NlIGZyb20gwqMyIHRvIMKjNcK9IChJVmMpIGFuZCDCozTCvSAoSVZkKTsgdG90YWwgY2FwaXRhbCAiaGFzIHJpc2VuIGluIHRoZSBvbmUgY2FzZSBmcm9tIMKjMTAgdG8gwqMyN8K9LCBpbiB0aGUgb3RoZXIgZnJvbSDCozEwIHRvIMKjMjLCvSwgaS5lLiBpbiBib3RoIGNhc2VzIHRvIG1vcmUgdGhhbiBkb3VibGUuIgotICoqVGhlIHJhdGUgb2YgcmVudCoqIChyZW50IMO3IGNhcGl0YWwgYWR2YW5jZWQpIGlzICJ0aGUgc2FtZSB0aHJvdWdob3V0IGluIFRhYmxlcyBJViB0byBJVmQiIGZvciBlYWNoIGxhbmQg4oCUIGEgZGlyZWN0IGNvbnNlcXVlbmNlIG9mIHRoZSBjb25zdGFudC1wcm9kdWN0aXZpdHkgYXNzdW1wdGlvbi4gQnV0ICpjb21wYXJlZCB3aXRoIFRhYmxlIEkqIGl0ICJoYXMgZmFsbGVuIGJvdGggZm9yIHRoZSBhdmVyYWdlIG9mIGFsbCB0eXBlcyBvZiBsYW5kIGFuZCBmb3IgZWFjaCBpbmRpdmlkdWFsIHR5cGUiOiBmcm9tIGFuIGF2ZXJhZ2Ugb2YgMTgwJSBpbiBJIHRvIGFib3V0IDY14oWTJSBpbiBJVmMgYW5kIDgwJSBpbiBJVmQuCi0gKipUaGUgYXZlcmFnZSBtb25leSByZW50IHBlciBhY3JlIGhhcyByaXNlbioqOiBmcm9tIMKjNMK9IHBlciBhY3JlIG92ZXIgNCBhY3JlcyAoVGFibGUgSSkgdG8gwqM2IHBlciBhY3JlIG92ZXIgMyBhY3Jlcy4gT24gdGhlIHJlbnQtYmVhcmluZyBsYW5kIGFsb25lLCB0aGUgYXZlcmFnZSByb3NlIGZyb20gwqM2IHRvIMKjOSBwZXIgYWNyZS4KLSBZZXQgdGhlIDEyIHFycyBvZiBjb3JuIHJlbnQgYXJlICJub3cgbGVzcyB0aGFuIGhhbGYgb2YgdGhlIHRvdGFsIHByb2R1Y3Qgb2YgMzQgb3IgMzAgcXJzLCB3aGVyZWFzIGluIFRhYmxlIEkgdGhlIDYgcXJzIG1hZGUgdXAgdGhyZWUtZmlmdGhzIG9mIHRoZSB0b3RhbCBwcm9kdWN0IG9mIDEwIHFycy4iCgpUaGlzIGxhc3QgcG9pbnQgaXMgdGhlIGNvbmNlcHR1YWwgcGF5b2ZmOiAqKiJldmVuIHRob3VnaCB0aGUgcmVudCBoYXMgZmFsbGVuLCB0YWtlbiBhcyBhbiBhbGlxdW90IHBhcnQgb2YgdGhlIHRvdGFsIHByb2R1Y3QsIGFuZCBzaW1pbGFybHkgaWYgcmVja29uZWQgb24gdGhlIGNhcGl0YWwgbGFpZCBvdXQsIGl0cyBtb25leSB2YWx1ZSByZWNrb25lZCBwZXIgYWNyZSBoYXMgcmlzZW4sIGFuZCBpdHMgdmFsdWUgaW4gcHJvZHVjdCBzdGlsbCBtb3JlLiIqKiBSZW50IGNhbiBzaW11bHRhbmVvdXNseSAqc2hyaW5rIGFzIGEgc2hhcmUqIGFuZCAqZ3JvdyBhcyBhbiBhYnNvbHV0ZSBtYWduaXR1ZGUgcGVyIGFjcmUqLiBUaGUgcmVhc29uIGlzIHRoYXQgdGhlIHByaWNlIGZhbGwgKDUwJSkgaXMgKm1vcmUgdGhhbiBvZmZzZXQqIGJ5IHRoZSBncm93dGggaW4gdGhlIHN1cnBsdXMgcHJvZHVjdCAoMTAwJSkuIE1hcnggdGhlbiBnZW5lcmFsaXplcyB3aXRoIGEgbnVtZXJpY2FsIGlsbHVzdHJhdGlvbiBvbiBsYW5kIEQ6IGluIFRhYmxlIEksIEQncyBtb25leSByZW50ICjCozkpIHdhcyB0aHJlZSB0aW1lcyBpdHMgwqMzIHByb2R1Y3Rpb24gY29zdHMgYW5kIGFsbW9zdCBmb3VyIHRpbWVzIGl0cyDCozLCvSBjYXBpdGFsOyBpbiBJVmQsIEQncyBtb25leSByZW50ICjCozE1KSBpcyAiYWxtb3N0IGV4YWN0bHkgZXF1YWwgdG8gdGhlIHByb2R1Y3Rpb24gY29zdHMgYW5kIG9ubHkgYSBmaWZ0aCBncmVhdGVyIHRoYW4gdGhlIGNhcGl0YWwiIOKAlCB5ZXQgdGhlIG1vbmV5IHJlbnQgKnBlciBhY3JlKiBpcyAidHdvLXRoaXJkcyBncmVhdGVyLCDCozE1IGluc3RlYWQgb2YgwqM5LiIgQW5kIGluIFRhYmxlIEksIEQncyBjb3JuIHJlbnQgb2YgMyBxcnMgd2FzIHRocmVlLXF1YXJ0ZXJzIG9mIGl0cyA0LXFyIHByb2R1Y3Q7IGluIElWZCwgYXQgMTAgcXJzLCBpdCBpcyBoYWxmIG9mIHRoZSAyMC1xciBwcm9kdWN0LiBMaWtld2lzZSwgdGhlIHJlbnQncyBzaGFyZSBvZiB0b3RhbCBwcm9kdWN0IHZhbHVlIGZhbGxzIGZyb20gIm1vcmUgdGhhbiBoYWxmIiAowqMxOCBvZiDCozMwKSBpbiBUYWJsZSBJIHRvICJsZXNzIHRoYW4gaGFsZiIgKMKjMTggb2YgwqM0NSkgaW4gSVZkLgoKIyMjIyBUaGUgR2VuZXJhbCBMYXcgYW5kIEl0cyBGb3VyIERldGVybWluYW50cwoKTWFyeCBzdGF0ZXMgdGhlIGNhdXNhbCBsYXcgdGhhdCBnZW5lcmF0ZXMgdGhlIGVudGlyZSByZXN1bHQ6ICJUaGUgcmVhc29uIHdoeSBkZXNwaXRlIHRoZSBmYWxsIG9mIMKjMcK9IHBlciBxciBpbiB0aGUgcHJpY2Ug4oCmIHRoZSB0b3RhbCBtb25leSByZW50IHJlbWFpbnMgdGhlIHNhbWUgd2hpbGUgdGhlIGNvcm4gcmVudCBkb3VibGVzIOKApiBsaWVzIGluIHRoZSBmYWN0IHRoYXQgbW9yZSBxdWFydGVycyBvZiBzdXJwbHVzIHByb2R1Y3QgYXJlIHByb2R1Y2VkLiBUaGUgY29ybiBwcmljZSBmYWxscyBieSA1MCBwZXIgY2VudCwgdGhlIHN1cnBsdXMgcHJvZHVjdCBncm93cyBieSAxMDAgcGVyIGNlbnQuIiBCdXQgaGUgYWRkcyBhIGNyaXRpY2FsIHByb3BvcnRpb25hbGl0eSBjYXZlYXQ6ICJpbiBvcmRlciB0byBicmluZyBhYm91dCB0aGlzIHJlc3VsdCwgdGhlIHRvdGFsIHByb2R1Y3Rpb24gbXVzdCBncm93IGJ5IGEgZmFjdG9yIG9mIHRocmVlLCB1bmRlciB0aGUgY29uZGl0aW9ucyB3ZSBoYXZlIHNldCwgYW5kIHRoZSBjYXBpdGFsIGludmVzdG1lbnQgb24gdGhlIGJldHRlciB0eXBlcyBvZiBsYW5kIG11c3QgbW9yZSB0aGFuIGRvdWJsZS4iIFRoZSBhbW91bnQgb2YgY2FwaXRhbCByZXF1aXJlZCBkZXBlbmRzIGFib3ZlIGFsbCBvbiAqKmhvdyB0aGUgZXh0cmEgY2FwaXRhbCBpcyBkaXZpZGVkIGJldHdlZW4gdGhlIGJldHRlciBhbmQgdGhlIGJlc3QgdHlwZXMgb2YgbGFuZCoqIOKAlCBhc3N1bWluZyBwcm9kdWN0aXZpdHkgZ3Jvd3MgaW4gcHJvcG9ydGlvbiB0byBjYXBpdGFsLgoKSGUgdGhlbiBpZGVudGlmaWVzIHRoZSAqKmZvdXIgZGV0ZXJtaW5hbnRzKiogdGhhdCBmaXggdGhlIHNwZWNpZmljIHByb3BvcnRpb246CgoxLiAqKlRoZSByYXRpbyBpbiB3aGljaCB0aGUgcHJpY2UgZmFsbHMqKiDigJQgaS5lLiB0aGUgZ2FwIGJldHdlZW4gQiAodGhlIG5ldyByZW50bGVzcyBsYW5kKSBhbmQgQSAod2hpY2ggaXQgcmVwbGFjZWQpOwoyLiAqKlRoZSByYXRpbyBvZiB0aGUgZGlmZmVyZW5jZXMgYW1vbmcgdGhlIGJldHRlciBsYW5kcyoqIGZyb20gQiB1cHdhcmQ7CjMuICoqVGhlIGFtb3VudCBvZiBuZXcgZXh0cmEgY2FwaXRhbCBpbnZlc3RlZCoqOwo0LiAqKkl0cyBkaXN0cmlidXRpb24gYWNyb3NzIHRoZSB2YXJpb3VzIHF1YWxpdGllcyBvZiBsYW5kLioqCgpIZSBhbHNvIGV4dGVuZHMgdGhlIGFuYWx5c2lzIHRvIGNvdW50ZXJmYWN0dWFsczogaWYgdGhlIHByaWNlIGZhbGwgd2VyZSAqc21hbGxlciosICpsZXNzKiBleHRyYSBjYXBpdGFsIHdvdWxkIGJlIG5lZWRlZCBmb3IgdGhlIHNhbWUgbW9uZXkgcmVudDsgaWYgYSAqZ3JlYXRlciBzdXBwbHkqIHdlcmUgbmVlZGVkIHRvIGV2aWN0IEEg4oCUIHdoaWNoICJkZXBlbmRzIG5vdCBvbmx5IG9uIHRoZSBwcm9kdWN0IHBlciBhY3JlIG9mIEEgYnV0IGFsc28gb24gdGhlIHByb3BvcnRpb25hdGUgc2hhcmUgdGhhdCBBIHRha2VzIG91dCBvZiB0aGUgdG90YWwgY3VsdGl2YXRlZCBhcmVhIiDigJQgdGhlbiBtb25leSBhbmQgY29ybiByZW50ICJ3b3VsZCBoYXZlIGdyb3duIHN0aWxsIGZ1cnRoZXIg4oCmIGV2ZW4gdGhvdWdoIGJvdGggZGlzYXBwZWFyZWQgb24gbGFuZCBCLiIKClRvIHVuZGVybGluZSB0aGF0ICpldmVyeXRoaW5nIGhlcmUgaXMgcmVsYXRpdmUqLCBNYXJ4IGdpdmVzIHR3byBsaW1pdGluZyBjb21wYXJpc29ucy4gSWYgdGhlIGNhcGl0YWwgd2l0aGRyYXduIGZyb20gQSBoYWQgYmVlbiDCozUsIHRoZSBjb21wYXJpc29uIHdvdWxkIGJlIGJldHdlZW4gVGFibGUgSUkgYW5kIElWZDogdGhlIHRvdGFsIHByb2R1Y3Qgd291bGQgcmlzZSBmcm9tIDIwIHRvIDMwIHFycywgYnV0IHRoZSBtb25leSByZW50IHdvdWxkIGJlIG9ubHkgaGFsZiBhcyBsYXJnZSAowqMxOCBpbnN0ZWFkIG9mIMKjMzYpLCB3aGlsZSB0aGUgY29ybiByZW50IHdvdWxkIGJlIHVuY2hhbmdlZCBhdCAxMiBxcnMuIEFuZCBpZiBhIHRvdGFsIHByb2R1Y3Qgb2YgNDQgcXJzID0gwqM2NiBjb3VsZCBiZSBwcm9kdWNlZCBvbiBEIHdpdGggwqMyN8K9IG9mIGNhcGl0YWwgKHByZXNlcnZpbmcgRCdzIG9sZCByYXRpbyBvZiA0IHFycyBwZXIgwqMywr0pLCB0aGUgdG90YWwgcmVudGFsIHdvdWxkICphZ2FpbiByZWFjaCogdGhlIFRhYmxlIElJIGxldmVsOgoKfCBUeXBlIHwgQ2FwaXRhbCAowqMpIHwgT3V0cHV0IChxcnMpIHwgQ29ybiByZW50IChxcnMpIHwgTW9uZXkgcmVudCAowqMpIHwKfC0tLXwtLS18LS0tfC0tLXwtLS18CnwgQiB8IDUgfCA0IHwgMCB8IDAgfAp8IEMgfCA1IHwgNiB8IDIgfCAzIHwKfCBEIHwgMjfCvSB8IDQ0IHwgMjIgfCAzMyB8CnwgKipUb3RhbCoqIHwgKiozN8K9KiogfCAqKjU0KiogfCAqKjI0KiogfCAqKjM2KiogfAoKSGVyZSB0aGUgdG90YWwgcHJvZHVjdCBpcyA1NCBxcnMgKGFnYWluc3QgMjAgaW4gVGFibGUgSUkpIGFuZCBtb25leSByZW50IGlzIHRoZSBzYW1lIMKjMzYsIGJ1dCB0aGUgY2FwaXRhbCBhZHZhbmNlZCBpcyBuZWFybHkgZG91YmxlICjCozM3wr0gYWdhaW5zdCDCozIwKS4gTWFyeCBkZXJpdmVzIHRoZSBnZW5lcmFsIHRlbmRlbmN5OiAiaWYgdGhlIHByaWNlIGZhbGxzIGFzIGEgcmVzdWx0IG9mIHRoZSBpbnZlc3RtZW50IG9mIGV4Y2VzcyBtb25leSBjYXBpdGFsIG9uIHRoZSBsYW5kcyB5aWVsZGluZyBoaWdoZXIgcmVudCDigKYgd2hpbGUgcHJvZHVjdGl2aXR5IHJlbWFpbnMgdGhlIHNhbWUsIHRoZSB0b3RhbCBjYXBpdGFsIHRlbmRzIG5vdCB0byBncm93IGluIHRoZSBzYW1lIHByb3BvcnRpb24gYXMgcHJvZHVjdGlvbiBhbmQgdGhlIGNvcm4gcmVudDsgc28gdGhhdCB0aGUgZmFsbC1vZmYgaW4gdGhlIG1vbmV5IHJlbnQgdGhhdCByZXN1bHRzIGZyb20gdGhlIGZhbGxpbmcgcHJpY2UgbWF5IGJlIGJhbGFuY2VkIGJ5IGEgcmlzZSBpbiB0aGUgY29ybiByZW50LiIKCkhlIGFsc28gcmVnaXN0ZXJzIHRoZSAqZGlzdHJpYnV0aW9uYWwqIGFzeW1tZXRyeTogY2FwaXRhbCAibXVzdCBiZSBncmVhdGVyIGluIHRoZSBwcm9wb3J0aW9uIHRoYXQgaXQgaXMgYXBwbGllZCBtb3JlIHRvIEMgdGhhbiB0byBELCBtb3JlIHRvIHRoZSBsYW5kIGJlYXJpbmcgbGVzcyByZW50IHRoYW4gdG8gdGhhdCBiZWFyaW5nIG1vcmUgcmVudC4iIFRoZSByZWFzb24gaXMgc3RyYWlnaHRmb3J3YXJkOiB0byBrZWVwIG9yIGluY3JlYXNlIG1vbmV5IHJlbnQsICJhIGRlZmluaXRlIGFkZGl0aW9uYWwgcXVhbnRpdHkgb2Ygc3VycGx1cyBwcm9kdWN0IG11c3QgYmUgcHJvZHVjZWQsIGFuZCB0aGlzIHJlcXVpcmVzIGxlc3MgY2FwaXRhbCwgdGhlIGdyZWF0ZXIgdGhlIGZlcnRpbGl0eSBvZiB0aGUgbGFuZHMgeWllbGRpbmcgc3VycGx1cyBwcm9kdWN0LiIKCiMjIyMgVGhlIFJlZHVjdGlvbiB0byB0aGUgRmlyc3QgQ2FzZSwgYW5kIHRoZSBQb2xlbWljIG9uIENvcm4gUmVudAoKTWFyeCB0aGVuIG1ha2VzIGFuIGVsZWdhbnQgdGhlb3JldGljYWwgcmVkdWN0aW9uOiAidGhpcyBsYXcgZXhwcmVzc2VzIG5vdGhpbmcgbW9yZSB0aGFuIHdhcyBhbHJlYWR5IGRldmVsb3BlZCBpbiB0aGUgZmlyc3QgY2FzZTogdGhhdCBpZiB0aGUgcHJvZHVjdGlvbiBwcmljZSBpcyBnaXZlbiwgd2hhdGV2ZXIgaXRzIGxldmVsIG1pZ2h0IGJlLCB0aGUgcmVudCBjYW4gcmlzZSBhcyBhIHJlc3VsdCBvZiBleHRyYSBjYXBpdGFsIGludmVzdG1lbnQuIiBUaGUgZXhjbHVzaW9uIG9mIEEgc2ltcGx5IGluc3RhbGxzICJhIG5ldyBkaWZmZXJlbnRpYWwgcmVudCBJIHdpdGggQiBub3cgYXMgdGhlIHdvcnN0IGxhbmQgYW5kIMKjMcK9IHBlciBxciBhcyB0aGUgbmV3IHByb2R1Y3Rpb24gcHJpY2UuIiBJdCBpcyAidGhlIHNhbWUgbGF3LCBzaW1wbHkgdGhhdCBsYW5kIEIgaXMgdGFrZW4gYXMgdGhlIHN0YXJ0aW5nLXBvaW50IGluc3RlYWQgb2YgbGFuZCBBIGFuZCB0aGUgcHJvZHVjdGlvbiBwcmljZSBhcyDCozHCvSBpbnN0ZWFkIG9mIMKjMy4iCgpUaGUgcHJhY3RpY2FsIHNpZ25pZmljYW5jZSBoZSBmbGFncyBpcyB0aGF0IHRoZSBwcm9jZXNzICJtYXkgYmUgYWNjb21wYW5pZWQgYnkgYSByaXNpbmcsIGEgZmFsbGluZywgb3IgYSBzdGFibGUgcmVudCBwZXIgYWNyZSwgaWYgbm90IG9uIGFsbCBsYW5kcywgdGhlbiBhdCBsZWFzdCBvbiBzb21lLCBhbmQgZm9yIHRoZSBhdmVyYWdlIG9mIHRoZSBsYW5kcyB0aWxsZWQuIiBUaGlzIGxlYWRzIHRvIGEgbWVtb3JhYmxlICoqcG9sZW1pYyBhZ2FpbnN0IGNvcm4gcmVudCoqOiAiV2UgaGF2ZSBzZWVuIHRoYXQgY29ybiByZW50IGFuZCBtb25leSByZW50IGRvIG5vdCBiZWhhdmUgaW4gdGhlIHNhbWUgd2F5LiBJdCBpcyBvbmx5IHRyYWRpdGlvbiwgaG93ZXZlciwgdGhhdCBzdGlsbCBnaXZlcyBjb3JuIHJlbnQgYW55IHJvbGUgaW4gZWNvbm9taWNzLiIgSGUgbW9ja3MgdGhlIGVycm9yIGJ5IGFuYWxvZ3k6ICJPbmUgbWlnaHQganVzdCBhcyB3ZWxsIHByb3ZlIHRoYXQgYSBtYW51ZmFjdHVyZXIgY291bGQgYnV5IGZhciBtb3JlIG9mIGhpcyBvd24geWFybiB3aXRoIGEgcHJvZml0IG9mIMKjNSB0aGFuIGhlIGZvcm1lcmx5IGNvdWxkIHdpdGggYSBwcm9maXQgb2YgwqMxMC4iIFRoZSBhbmFsb2d5IGV4cG9zZXMgdGhlIGZhbGxhY3kgb2YgdHJlYXRpbmcgYSAqcGh5c2ljYWwgcXVhbnRpdHkqIGFzIGlmIGl0IHdlcmUgYSBtZWFzdXJlIG9mIGVjb25vbWljIGdhaW4uIFRoZSByZWFsLXdvcmxkIGltcGxpY2F0aW9uIGlzIHRoYXQgInRoZSBsYW5kb3duaW5nIGdlbnRsZW1lbiwgaWYgdGhleSBhbHNvIGhhcHBlbiB0byBvd24gb3IgaGF2ZSBhIHNoYXJlIGluIG1hbnVmYWN0dXJpbmcsIHN1Z2FyIHJlZmluaW5nLCBzcGlyaXQgZGlzdGlsbGluZywgZXRjLiwgY2FuIHN0aWxsIGRyYXcgdmVyeSBjb25zaWRlcmFibGUgcHJvZml0cyB3aGlsZSBtb25leSByZW50cyBhcmUgZmFsbGluZywgYXMgcHJvZHVjZXJzIG9mIHRoZWlyIG93biByYXcgbWF0ZXJpYWxzLiIgSW4gb3RoZXIgd29yZHMsIGEgbGFuZGxvcmQgaW50ZWdyYXRlZCBpbnRvIHByb2Nlc3NpbmcgaGlzIG93biBhZ3JpY3VsdHVyYWwgcmF3IG1hdGVyaWFscyBnYWlucyBwcmVjaXNlbHkgYmVjYXVzZSB0aGUgcmF3IG1hdGVyaWFsIChoaXMgZmFsbGluZy1wcmljZSBjb3JuKSBpcyBjaGVhcCwgd2hpbGUgaGlzIG1hbnVmYWN0dXJlZCBvdXRwdXQgc2VsbHMgYXQgaW5kdXN0cmlhbCBwcmljZXMuCgojIyMjIEZvb3Rub3RlIDM0OiBFbmdlbHMncyBFZGl0b3JpYWwgQ2F2ZWF0CgpUaGUgc2VjdGlvbiBjbG9zZXMgd2l0aCBhbiBlZGl0b3IncyBub3RlIGJ5IEZyaWVkcmljaCBFbmdlbHMgdGhhdCBpcyB0aGVvcmV0aWNhbGx5IGltcG9ydGFudCBpbiBpdHMgb3duIHJpZ2h0LiBFbmdlbHMgcmVjb3JkcyB0aGF0ICJhbiBlcnJvciBpbiBjYWxjdWxhdGlvbiBydW5uaW5nIHRocm91Z2ggdGhlIGFib3ZlIHRhYmxlcyBJVmEgdG8gSVZkIG1hZGUgaXQgbmVjZXNzYXJ5IHRvIHJld29yayB0aGVtLiIgSGUgaW5zaXN0cywgaG93ZXZlciwgdGhhdCAidGhpcyBpbiBubyB3YXkgYWZmZWN0ZWQgdGhlIHRoZW9yZXRpY2FsIHBlcnNwZWN0aXZlcyBkZXZlbG9wZWQgZnJvbSB0aGUgdGFibGVzLCIgdGhvdWdoICJpdCBkaWQgbGVhZCBpbiBwbGFjZXMgdG8gcXVpdGUgbW9uc3Ryb3VzIG51bWVyaWNhbCByYXRpb3MgZm9yIHByb2R1Y3Rpb24gcGVyIGFjcmUuIiBIZSBkZWZlbmRzIHRoZXNlIHJhdGlvcyBieSBhbmFsb2d5IHdpdGggdG9wb2dyYXBoaWMgYW5kIHJlbGllZiBtYXBzLCB3aGljaCBsZWdpdGltYXRlbHkgdXNlIGEgbGFyZ2VyIHZlcnRpY2FsIHRoYW4gaG9yaXpvbnRhbCBzY2FsZS4gSGUgb2ZmZXJzIGEgcHJhY3RpY2FsIGZpeDogdGhlIHJlYWRlciBtYXkgbXVsdGlwbHkgdGhlIG51bWJlciBvZiBhY3JlcyBieSBhbnkgZmlndXJlLCBvciBpbnRlcnByZXQgdGhlICIxLCAyLCAzLCA0IHFycyBwZXIgYWNyZSIgb2YgVGFibGUgSSBhcyAiMTAsIDEyLCAxNCwgMTYgYnVzaGVscyAoOCBidXNoZWxzID0gMSBxcikuIiBUaGUgY29uY2x1c2lvbiDigJQgInRoZSByZWxhdGlvbnNoaXAgYmV0d2VlbiByaXNlIGluIHJlbnQgYW5kIHJpc2UgaW4gY2FwaXRhbCwgc3RpbGwgY29tZXMgb3V0IGp1c3QgdGhlIHNhbWUiIOKAlCBpcyBhIHZhbHVhYmxlIG1ldGhvZG9sb2dpY2FsIHJlbWluZGVyIHRoYXQgdGhlICoqcmVsYXRpb25hbCBzdHJ1Y3R1cmUqKiBvZiB0aGUgdGFibGVzLCBub3QgdGhlIGFic29sdXRlIG1hZ25pdHVkZXMsIGlzIHdoYXQgY2FycmllcyB0aGUgdGhlb3J5LgoKIyMjIFNlY3Rpb24gSUk6IEEgRmFsbGluZyBSYXRlIG9mIFByb2R1Y3Rpdml0eSBmb3IgdGhlIEV4dHJhIENhcGl0YWwKClRoaXMgc2VjdGlvbiBpcyBkZWxpYmVyYXRlbHkgYnJpZWYsIGJlY2F1c2UgaXRzIHByaW5jaXBhbCBmaW5kaW5nIGhhcyBhbHJlYWR5IGJlZW4gZXN0YWJsaXNoZWQuIE1hcnggc3RhdGVzOiAiTm90aGluZyBuZXcgaXMgaW52b2x2ZWQgaGVyZSBleGNlcHQgdGhhdCB0aGUgcHJvZHVjdGlvbiBwcmljZSBjYW4gYWxzbyBmYWxsLCBhcyBpbiB0aGUgY2FzZSBsYXN0IGNvbnNpZGVyZWQsIGlmIHRoZSBleHRyYSBjYXBpdGFsIGludmVzdG1lbnRzIG9uIGJldHRlciB0eXBlcyBvZiBsYW5kIHRoYW4gQSBtYWtlIEEncyBwcm9kdWN0IHN1cGVyZmx1b3VzIGFuZCBoZW5jZSBjYXVzZSBjYXBpdGFsIHRvIGJlIHdpdGhkcmF3biBmcm9tIEEsIG9yIGlmIEEgaXMgYXBwbGllZCB0byB0aGUgcHJvZHVjdGlvbiBvZiBhIGRpZmZlcmVudCBjcm9wLiIgVGhlICptZWNoYW5pc20qIG9mIHRoZSBwcmljZSBmYWxsIGlzIGlkZW50aWNhbCB0byBWYXJpYW50IEkuIFRoZSBkaWZmZXJlbmNlIGlzIHRoZSAqdGVjaG5pY2FsKiBwcmVtaXNlOiBub3cgdGhlIGFkZGl0aW9uYWwgY2FwaXRhbCBhZHZhbmNlcyB5aWVsZCAqbGVzcyogdGhhbiBwcm9wb3J0aW9uYWxseSBtb3JlIHByb2R1Y2Ug4oCUIHRoZSAibGF3IG9mIGRpbWluaXNoaW5nIHJldHVybnMiIG9mIHN1Y2Nlc3NpdmUgaW52ZXN0bWVudCwgaW4gTWFyeCdzIHRyZWF0bWVudCBub3QgYXMgYSBuYXR1cmFsIGxhdyBidXQgYXMgYSBoaXN0b3JpY2FsbHkgY29udGluZ2VudCB0ZW5kZW5jeSBvZiBpbnRlbnNpdmUgY3VsdGl2YXRpb24uCgpIZSByZW1pbmRzIHVzIHRoYXQgInRoZSBjb3JuIGFuZCBtb25leSByZW50cyBwZXIgYWNyZSBtYXkgZ3JvdywgZGVjbGluZSwgb3IgcmVtYWluIHRoZSBzYW1lLCIgYW5kIHJlcHJvZHVjZXMgVGFibGUgSSBpbiBpdHMgb3JpZ2luYWwgZm9ybSBmb3IgY29tcGFyaXNvbjoKCioqVGFibGUgSSBbYV0qKiDigJQgdGhlIGJhc2VsaW5lOgoKfCBUeXBlIHwgQWNyZXMgfCBDYXBpdGFsICjCoykgfCBQcm9maXQgKMKjKSB8IFByaWNlIG9mIHByb2QuIHBlciBxciAowqMpIHwgT3V0cHV0IChxcnMpIHwgQ29ybiByZW50IChxcnMpIHwgTW9uZXkgcmVudCAowqMpIHwgUmF0ZSBvZiBzdXJwbHVzIHByb2ZpdCB8CnwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwKfCBBIHwgMSB8IDLCvSB8IMK9IHwgMyB8IDEgfCAwIHwgMCB8IDAgfAp8IEIgfCAxIHwgMsK9IHwgwr0gfCAxwr0gfCAyIHwgMSB8IDMgfCAxMjAlIHwKfCBDIHwgMSB8IDLCvSB8IMK9IHwgMSB8IDMgfCAyIHwgNiB8IDI0MCUgfAp8IEQgfCAxIHwgMsK9IHwgwr0gfCDCviB8IDQgfCAzIHwgOSB8IDM2MCUgfAp8ICoqVG90YWwqKiB8ICoqNCoqIHwgKioxMCoqIHwgKioyKiogfCB8ICoqMTAqKiB8ICoqNioqIHwgKioxOCoqIHwgKioxODAlKiogfAoKVHdvIGZlYXR1cmVzIG9mIHRoaXMgdGFibGUgYXJlIHdvcnRoIG5vdGluZyBiZWNhdXNlIHRoZXkgZnJhbWUgdGhlIHdob2xlIGNoYXB0ZXIuIEZpcnN0LCB0aGUgKioicHJpY2Ugb2YgcHJvZHVjdGlvbiBwZXIgcXIiKiogY29sdW1uIGRlY2xpbmVzIHdpdGggcXVhbGl0eSAoMywgMcK9LCAxLCDCviksIHJlZmxlY3RpbmcgaGlnaGVyIGZlcnRpbGl0eTogd2l0aCDCozMgb2YgcHJvZHVjdGlvbiBwcmljZSAoY2FwaXRhbCDCozLCvSArIHByb2ZpdCDCvSkgZWFjaCBsYW5kIHByb2R1Y2VzIG1vcmUgcXVhcnRlcnMsIHNvIGl0cyAqaW5kaXZpZHVhbCogY29zdCBwZXIgcXVhcnRlciBpcyBsb3dlci4gU2Vjb25kLCB0aGUgKipnb3Zlcm5pbmcqKiBwcmljZSBpcyBBJ3MgwqMzIHBlciBxdWFydGVyOyByZW50IGlzIHRoZSBleGNlc3Mgb2YgdGhlIGdvdmVybmluZyBwcmljZSBvdmVyIGVhY2ggbGFuZCdzIGluZGl2aWR1YWwgcHJvZHVjdGlvbiBwcmljZS4gQSB5aWVsZHMgbm8gcmVudDsgRCB5aWVsZHMgdGhlIGxhcmdlc3QuCgpOb3csIE1hcnggYXNzdW1lcyAidGhhdCBhIGZpZ3VyZSBvZiAxNiBxcnMgc3VwcGxpZWQgYnkgQiwgQyBhbmQgRCwgd2l0aCBhIGRlY2xpbmluZyByYXRlIG9mIHByb2R1Y3Rpdml0eSwgaXMgc3VmZmljaWVudCB0byByZW1vdmUgQSBmcm9tIGN1bHRpdmF0aW9uLCIgc28gdGhhdCBUYWJsZSBJSUkgaXMgdHJhbnNmb3JtZWQgaW50byBUYWJsZSBWOgoKKipUYWJsZSBWKiog4oCUIGZhbGxpbmcgcHJvZHVjdGl2aXR5LCBwcmljZSBmYWxscywgQSBldmljdGVkOgoKfCBUeXBlIHwgQWNyZXMgfCBJbnZlc3RtZW50IG9mIGNhcGl0YWwgKMKjKSB8IFByb2ZpdCAowqMpIHwgT3V0cHV0IChxcnMpIHwgU2VsbGluZyBwcmljZSAowqMvcXIpIHwgUHJvY2VlZHMgKMKjKSB8IENvcm4gcmVudCAocXJzKSB8IE1vbmV5IHJlbnQgKMKjKSB8IFJhdGUgb2Ygc3VycGx1cyBwcm9maXQgfAp8LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfAp8IEIgfCAxIHwgMsK9KzLCvSA9IDUgfCAxIHwgMiArIDHCvSA9IDPCvSB8IDHCvSB8IDYgfCAwIHwgMCB8IDAgfAp8IEMgfCAxIHwgNSB8IDEgfCAzICsgMiA9IDUgfCAxwr0gfCA4wr0gfCAxwr0gfCAywr0gfCA1MeKFkyUgfAp8IEQgfCAxIHwgNSB8IDEgfCA0ICsgM8K9ID0gN8K9IHwgMcK9IHwgMTLCvSB8IDQgfCA2wr0gfCAxMzfCvSUgfAp8ICoqVG90YWwqKiB8ICoqMyoqIHwgKioxNSoqIHwgKiozKiogfCAqKjE2KiogfCB8ICoqMjfCvSoqIHwgKio1wr0qKiB8ICoqOcK9KiogfCB8CgpUaGUgY3JpdGljYWwgY29tcGFyYXRpdmUgcmVzdWx0cyBhcmU6Cgo+ICJIZXJlLCB3aXRoIGEgZGVjbGluaW5nIHJhdGUgb2YgcHJvZHVjdGl2aXR5IG9uIHRoZSBleHRyYSBjYXBpdGFscyBhbmQgYSB2YXJ5aW5nIGRlY2xpbmUgb24gdGhlIGRpZmZlcmVudCB0eXBlcyBvZiBsYW5kLCB0aGUgZ292ZXJuaW5nIHByb2R1Y3Rpb24gcHJpY2UgaGFzIGZhbGxlbiBmcm9tIMKjMyB0byDCozHCvS4gVGhlIGNhcGl0YWwgaW52ZXN0bWVudCBoYXMgcmlzZW4gYnkgaGFsZiwgZnJvbSDCozEwIHRvIMKjMTUuIFRoZSBtb25leSByZW50IGhhcyBmYWxsZW4gYnkgYWxtb3N0IGhhbGYsIGZyb20gwqMxOCB0byDCoznCvSwgYnV0IHRoZSBjb3JuIHJlbnQgYnkgb25seSBhIHR3ZWxmdGgsIGZyb20gNiBxcnMgdG8gNcK9IHFycy4gVGhlIHRvdGFsIHByb2R1Y3QgaGFzIHJpc2VuIGZyb20gMTAgcXJzIHRvIDE2IHFycywgb3IgYnkgNjAgcGVyIGNlbnQuIFRoZSBjb3JuIHJlbnQgaXMgc29tZXdoYXQgb3ZlciBhIHRoaXJkIG9mIHRoZSB0b3RhbCBwcm9kdWN0LiBUaGUgY2FwaXRhbCBhZHZhbmNlZCBzdGFuZHMgaW4gYSByYXRpbyBvZiAxNSA6IDnCvSB0byB0aGUgbW9uZXkgcmVudCwgd2hlcmVhcyB0aGUgcHJldmlvdXMgcmF0aW8gd2FzIDEwIDogMTguIgoKVGhlIGxlc3NvbiBlbWJlZGRlZCBoZXJlIGlzIGEgc3RyaWtpbmcgYXN5bW1ldHJ5IGJldHdlZW4gY29ybiBhbmQgbW9uZXkgcmVudDogY2FwaXRhbCByaXNlcyA1MCUsIG91dHB1dCByaXNlcyA2MCUsIHlldCBtb25leSByZW50IGNvbGxhcHNlcyBieSBhbG1vc3QgaGFsZiAqd2hpbGUqIGNvcm4gcmVudCBmYWxscyBieSBvbmx5IG9uZS10d2VsZnRoLiBUaGUgcmVhc29uIGlzIHRoZSBoYWx2aW5nIG9mIHRoZSBnb3Zlcm5pbmcgcHJpY2UsIHdoaWNoIHNsYXNoZXMgdGhlICptb25leSB2YWx1YXRpb24qIG9mIGEgbmVhcmx5IGNvbnN0YW50ICpjb3JuKiBzdXJwbHVzLiBBcyBhIHNoYXJlIG9mIG91dHB1dCwgY29ybiByZW50IGZhbGxzIGZyb20gdGhyZWUtZmlmdGhzICg2IG9mIDEwKSB0byAic29tZXdoYXQgb3ZlciBhIHRoaXJkIiAoNcK9IG9mIDE2KS4gVGhpcyBpcyB0aGUgImZhbGxpbmcgcHJvZHVjdGl2aXR5IiBjYXNlIHdoZXJlIG1vbmV5IHJlbnQgaXMgaGFyZGVzdCBoaXQgcmVsYXRpdmUgdG8gcHJvZHVjdGlvbiDigJQgYnV0IGNydWNpYWxseSwgaXQgc3RpbGwgKmlzKiByZW50LCBhbmQgdGhlIG1lY2hhbmlzbSAoZXZpY3Rpb24gb2YgQSwgbmV3IERpZmZlcmVudGlhbCBSZW50IEkgb24gQikgaXMgaWRlbnRpY2FsIHRvIFZhcmlhbnQgSS4KCiMjIyBTZWN0aW9uIElJSTogQSBSaXNpbmcgUmF0ZSBvZiBQcm9kdWN0aXZpdHkgZm9yIHRoZSBFeHRyYSBDYXBpdGFsCgojIyMjIFRoZSBTcGVjaWFsIFBvc2l0aW9uIG9mIExhbmQgQQoKTWFyeCBvcGVucyBieSBkaXN0aW5ndWlzaGluZyB0aGlzIHZhcmlhbnQgZnJvbSBWYXJpYW50IEkgInNpbXBseSBieSB0aGUgd2F5IHRoYXQsIGlmIGEgZ2l2ZW4gYWRkaXRpb25hbCBwcm9kdWN0IGlzIG5lZWRlZCB0byByZW1vdmUgbGFuZCBBIGZyb20gY3VsdGl2YXRpb24sIHRoaXMgaGFwcGVucyBtb3JlIHNwZWVkaWx5IGluIHRoZSBwcmVzZW50IGNhc2UiIOKAlCBiZWNhdXNlIHJpc2luZyBwcm9kdWN0aXZpdHkgb24gdGhlIGV4dHJhIGNhcGl0YWwgbWVhbnMgdGhhdCBhICpzbWFsbGVyKiBjYXBpdGFsIG91dGxheSBzdWZmaWNlcyB0byBnZW5lcmF0ZSB0aGUgc3VycGx1cyBwcm9kdWN0IHRoYXQgZXZpY3RzIEEuIEJ1dCBoZSBpbW1lZGlhdGVseSBhZGRzIGEgY2F2ZWF0OiB0aGUgZWZmZWN0ICJjYW4gYmUgdmVyeSB1bmV2ZW4sIGFjY29yZGluZyB0byBob3cgdGhlIGludmVzdG1lbnRzIGFyZSBkaXN0cmlidXRlZCBvdmVyIHRoZSBkaWZmZXJlbnQgdHlwZXMgb2YgbGFuZC4iIERlcGVuZGluZyBvbiB3aGV0aGVyIHRoZSB2YXJ5aW5nIGVmZmVjdCAidGVuZHMgdG8gZXZlbiBvdXQgdGhlIGRpZmZlcmVuY2VzIG9yIHRvIGludGVuc2lmeSB0aGVtLCB0aGUgZGlmZmVyZW50aWFsIHJlbnQgb24gdGhlIGJldHRlciB0eXBlcyBvZiBsYW5kIHdpbGwgZmFsbCBvciByaXNlLCBhbmQgc28gdG9vIOKApiB3aWxsIHRoZSB0b3RhbCByZW50YWwsIGFzIHdhcyBhbHJlYWR5IHRoZSBjYXNlIHdpdGggZGlmZmVyZW50aWFsIHJlbnQgSS4iIEV2ZXJ5dGhpbmcgZGVwZW5kcyBvbiB0aGUgInNpemUgb2YgdGhlIGxhbmQgYXJlYSBhbmQgY2FwaXRhbCB0aGF0IGlzIGRpc3BsYWNlZCB3aXRoIEEiIGFuZCAidGhlIHJlbGF0aXZlIGFtb3VudCBvZiBjYXBpdGFsIHdoaWNoIGhhcyB0byBiZSBhZHZhbmNlZC4iCgpUaGUgc2VjdGlvbidzIGRpc3RpbmN0aXZlIGFuYWx5dGljYWwgY29udHJpYnV0aW9uIGlzIGl0cyB0cmVhdG1lbnQgb2YgKipsYW5kIEEgdW5kZXIgcmlzaW5nIHByb2R1Y3Rpdml0eSoqLiBNYXJ4IHJlaGVhcnNlcyB0aGUgbG9naWMgb2YgdGhlIHByaW9yIHZhcmlhbnRzIHRvIGlzb2xhdGUgd2hhdCBpcyBuZXc6CgotIEluIHRoZSBjYXNlIG9mIGEgKmNvbnN0YW50IHByaWNlKiwgInRoZSBleGNlc3MgY2FwaXRhbCB0aGF0IG1pZ2h0IGJlIGludmVzdGVkIG9uIGxhbmQgQSBpcyBxdWl0ZSBpbW1hdGVyaWFsIGZvciB0aGUgZGlmZmVyZW50aWFsIHJlbnQgYXMgc3VjaCwgc2luY2Ugbm93IGFzIGJlZm9yZSBsYW5kIEEgYmVhcnMgbm8gcmVudC4iCi0gSW4gVmFyaWFudCBJIChmYWxsaW5nIHByaWNlLCBjb25zdGFudCBwcm9kdWN0aXZpdHkpLCAibGFuZCBBIG5lY2Vzc2FyaWx5IGRyb3BzIG91dCwgYW5kIHN0aWxsIG1vcmUgc28gaW4gdmFyaWFudCBJSSAoZmFsbGluZyBwcm9kdWN0aW9uIHByaWNlIHdpdGggYSBmYWxsaW5nIHJhdGUgb2YgcHJvZHVjdGl2aXR5KSwgc2luY2Ugb3RoZXJ3aXNlIHRoZSBleGNlc3MgY2FwaXRhbCBvbiBsYW5kIEEgd291bGQgbmVjZXNzYXJpbHkgaW5jcmVhc2UgdGhlIHByb2R1Y3Rpb24gcHJpY2UuIgotIEJ1dCBpbiBWYXJpYW50IElJSSDigJQgZmFsbGluZyBwcmljZSBiZWNhdXNlIHByb2R1Y3Rpdml0eSBvZiB0aGUgZXhjZXNzIGNhcGl0YWwgKnJpc2VzKiDigJQgInRoaXMgYWRkaXRpb25hbCBjYXBpdGFsIGNhbiB1bmRlciBjZXJ0YWluIGNpcmN1bXN0YW5jZXMgYmUgaW52ZXN0ZWQgYXMgd2VsbCBvbiBsYW5kIEEgYXMgb24gdGhlIGJldHRlciB0eXBlcyBvZiBsYW5kLiIKClRoaXMgaXMgdGhlIHBpdm90LiBXaGVyZWFzIHVuZGVyIGNvbnN0YW50IG9yIGZhbGxpbmcgcHJvZHVjdGl2aXR5LCBleHRyYSBjYXBpdGFsIG9uIEEgd291bGQgKnJhaXNlKiBBJ3MgaW5kaXZpZHVhbCBwcm9kdWN0aW9uIHByaWNlIGFuZCB0aHVzIHRoZSBnb3Zlcm5pbmcgcHJpY2UgKGRlZmVhdGluZyB0aGUgdmVyeSBwdXJwb3NlKSwgdW5kZXIgKnJpc2luZyogcHJvZHVjdGl2aXR5IG9uIEEsIEEncyBpbmRpdmlkdWFsIHByb2R1Y3Rpb24gcHJpY2UgY2FuICpmYWxsKiwgc28gZXh0cmEgY2FwaXRhbCBvbiBBIGlzIGNvbXBhdGlibGUgd2l0aCBhIGZhbGxpbmcgZ292ZXJuaW5nIHByaWNlLiBUaGlzIG1ha2VzIHRoZSAiaW1wcm92ZW1lbnQiIG9mIHRoZSB3b3JzdCBsYW5kIGEgZ2VudWluZSBjb21wZXRpdGl2ZSBwb3NzaWJpbGl0eS4KCiMjIyMgVGFibGUgVkk6IFJpc2luZyBQcm9kdWN0aXZpdHkgb24gQWxsIExhbmRzCgpNYXJ4IGFzc3VtZXMgImFuIGV4dHJhIGNhcGl0YWwgb2YgwqMywr0gaW52ZXN0ZWQgb24gbGFuZCBBIHByb2R1Y2VzIDHCvSBxcnMgaW5zdGVhZCBvZiAxIHFyLCIgYW5kIGFwcGxpZXMgdGhlIHNhbWUgcHJvcG9ydGlvbmFsIGltcHJvdmVtZW50IHRvIHRoZSBiZXR0ZXIgbGFuZHM6CgoqKlRhYmxlIFZJKiog4oCUIHJpc2luZyBwcm9kdWN0aXZpdHksIGZhbGxpbmcgcHJpY2U6Cgp8IFR5cGUgfCBBY3JlcyB8IENhcGl0YWwgKMKjKSB8IFByb2ZpdCAowqMpIHwgUHJpY2Ugb2YgcHJvZC4gKMKjKSB8IE91dHB1dCAocXJzKSB8IFNlbGxpbmcgcHJpY2UgKMKjL3FyKSB8IFByb2NlZWRzICjCoykgfCBDb3JuIHJlbnQgKHFycykgfCBNb25leSByZW50ICjCoykgfCBSYXRlIG9mIHN1cnBsdXMgcHJvZml0IHwKfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18CnwgQSB8IDEgfCAywr0gKyAywr0gPSA1IHwgMSB8IDYgfCAywr0gfCB+MuKFliB8IDYgfCAwIHwgMCB8IDAgfAp8IEIgfCAxIHwgNSB8IDEgfCA2IHwgfjTCvSB8IH4y4oWWIHwgMTIgfCB+MsK8IHwgNiB8IDEyMCUgfAp8IEMgfCAxIHwgNSB8IDEgfCA2IHwgfjbCviB8IH4y4oWWIHwgMTggfCB+NMK9IHwgMTIgfCAyNDAlIHwKfCBEIHwgMSB8IDUgfCAxIHwgNiB8IH45IHwgfjLihZYgfCAyNCB8IH42wr4gfCAxOCB8IDM2MCUgfAp8ICoqVG90YWwqKiB8ICoqNCoqIHwgKioyMCoqIHwgKio0KiogfCAqKjI0KiogfCAqKn4yMioqIHwgfCAqKjYwKiogfCAqKn4xM8K9KiogfCAqKjM2KiogfCAqKjI0MCUqKiB8CgooVGhlIG1hbnVzY3JpcHQncyBmaWd1cmVzLCBhcyBFbmdlbHMgYWNrbm93bGVkZ2VzIGluIGZvb3Rub3RlIDM0LCBjb250YWluIGludGVybmFsIGFyaXRobWV0aWMgcm91Z2huZXNzOyB0aGUgbW9uZXkgcmVudHMgwqM2L8KjMTIvwqMxOCBhbmQgdGhlIHJhdGVzIG9mIHN1cnBsdXMgcHJvZml0IDEyMCUvMjQwJS8zNjAlIGFyZSB0aGUgbG9hZC1iZWFyaW5nIHZhbHVlcy4pCgpUaGUga2V5IGNvbXBhcmlzb25zOiAidGhlIGNvcm4gcmVudCBoYXMgcmlzZW4gdG8gbW9yZSB0aGFuIGRvdWJsZSBhcyBhZ2FpbnN0IFRhYmxlIEksIGFuZCBieSAxwr0gcXJzIGFzIGFnYWluc3QgVGFibGUgSUk7IHdoaWxlIHRoZSBtb25leSByZW50IGhhcyBkb3VibGVkIGFzIGFnYWluc3QgSSwgYnV0IGlzIHVuY2hhbmdlZCBmcm9tIElJLiIgVGhhdCBpcywgbW9uZXkgcmVudCByZXR1cm5zIHRvIHRoZSBUYWJsZSBJSSBsZXZlbCAowqMzNikgd2hpbGUgY29ybiByZW50ICpleGNlZWRzKiBUYWJsZSBJSSdzICgxM8K9ID4gMTIpLiBUaGUgcmF0ZSBvZiBzdXJwbHVzIHByb2ZpdCwgMjQwJSwgaXMgKmhpZ2hlciogdGhhbiB0aGUgMTgwJSBvZiBUYWJsZSBJLiBNYXJ4IGFkZHMgdGhhdCByZW50ICJ3b3VsZCBoYXZlIGdyb3duIHNpZ25pZmljYW50bHkgZWl0aGVyIGlmIHRoZSBleHRyYSBjYXBpdGFsIGhhZCBmYWxsZW4gbW9yZSBvbiB0aGUgYmV0dGVyIHR5cGVzIG9mIGxhbmQsIG9yIGFsdGVybmF0aXZlbHkgaWYgdGhlIGVmZmVjdCBvZiB0aGUgZXh0cmEgY2FwaXRhbCBoYWQgYmVlbiBsZXNzIG9uIEEsIHNvIHRoYXQgdGhlIGdvdmVybmluZyBhdmVyYWdlIHByaWNlIHBlciBxciBmcm9tIEEgd2FzIGhpZ2hlci4iCgojIyMjIFdoeSBhIFJlbnQgQ2FuIEFwcGVhciBvbiBBIOKAlCBhbmQgSG93IEl0IElzICJBdmVyYWdlZCBBd2F5IgoKTWFyeCBub3cgZGV2ZWxvcHMgdGhlIGRlZXBlc3QgY29uY2VwdHVhbCBtYXRlcmlhbCBvZiB0aGUgY2hhcHRlci4gSGUgYXNrcyB3aGF0IHdvdWxkIGhhcHBlbiBpZiB0aGUgcHJpY2UgZGlkICpub3QqIGZhbGwgYnV0IHJlbWFpbmVkIGF0IMKjMy4gQSDigJQgcHJldmlvdXNseSByZW50bGVzcyB3aXRoIMKjMsK9IG9mIGNhcGl0YWwg4oCUIHdvdWxkIG5vdyB5aWVsZCBhIHJlbnQsICp3aXRob3V0KiBhbnkgaW5mZXJpb3IgbGFuZCBiZWluZyBkcmF3biBpbiwgYmVjYXVzZSBwcm9kdWN0aXZpdHkgaW5jcmVhc2VkIG9uIHRoZSBzYW1lIGxhbmQgZm9yICpwYXJ0KiBvZiB0aGUgY2FwaXRhbC4gIlRoZSBmaXJzdCDCozMgaW4gcHJvZHVjdGlvbiBjb3N0cyBicmluZ3MgaW4gMSBxcjsgdGhlIHNlY29uZCDCozMgYnJpbmdzIGluIDHCvSBxcnM7IHRoZSB0b3RhbCBwcm9kdWN0IG9mIDLCvSBxcnMsIGhvd2V2ZXIsIGlzIG5vdyBzb2xkIGF0IGl0cyBhdmVyYWdlIHByaWNlLiIgU2luY2UgdGhlIHJhdGUgb2YgcHJvZHVjdGl2aXR5IGdyb3dzIHdpdGggdGhlIGV4dHJhIGNhcGl0YWwsIHRoaXMgImltcGxpZXMgYW4gaW1wcm92ZW1lbnQsIiB3aGljaCBtYXkgY29uc2lzdCBlaXRoZXIgaW4gInRoZSBhcHBsaWNhdGlvbiBvZiBtb3JlIGNhcGl0YWwgYXMgc3VjaCB0byBlYWNoIGFjcmUgKG1vcmUgZmVydGlsaXplciwgbW9yZSBtZWNoYW5pemVkIGxhYm91ciwgZXRjLikiIG9yIGluIHRoZSBmYWN0ICJ0aGF0IGl0IGlzIG9ubHkgd2l0aCB0aGlzIGV4dHJhIGNhcGl0YWwgdGhhdCBhIHF1YWxpdGF0aXZlbHkgZGlmZmVyZW50IGFuZCBtb3JlIHByb2R1Y3RpdmUgaW52ZXN0bWVudCBvZiBjYXBpdGFsIGNhbiBiZSBicm91Z2h0IGFib3V0LiIKCkJ1dCB0aGlzIHJlbnQgb24gQSBpcyB0cmFuc2l0b3J5IGFuZCBjb25kaXRpb25hbC4gIkxlYXZpbmcgYXNpZGUgdHJhbnNpdG9yeSBtYXJrZXQgY29uZGl0aW9ucywgdGhlIHByb2R1Y3Qgb2YgbGFuZCBBIGNvdWxkIGNvbnRpbnVlIHRvIGJlIHNvbGQgYXQgYSBoaWdoZXIgcHJvZHVjdGlvbiBwcmljZSDigKYgb25seSBpZiBhIHNpZ25pZmljYW50IGFyZWEgb2YgY2xhc3MgQSBsYW5kIGNvbnRpbnVlZCB0byBiZSBjdWx0aXZhdGVkIHdpdGggYSBjYXBpdGFsIG9mIG9ubHkgwqMywr0gcGVyIGFjcmUuIEJ1dCBhcyBzb29uIGFzIHRoZSBuZXcgcHJvcG9ydGlvbiBvZiDCozUgcGVyIGFjcmUsIGFuZCBoZW5jZSB0aGlzIGltcHJvdmVkIG1vZGUgb2Ygb3BlcmF0aW9uLCBiZWNhbWUgdW5pdmVyc2FsLCB0aGUgZ292ZXJuaW5nIHByb2R1Y3Rpb24gcHJpY2Ugd291bGQgaGF2ZSB0byBmYWxsIHRvIMKjMuKFli4iIEF0IHRoYXQgcG9pbnQsICJ0aGUgZGlzdGluY3Rpb24gYmV0d2VlbiB0aGUgdHdvIHBvcnRpb25zIG9mIGNhcGl0YWwgd291bGQgZGlzYXBwZWFyLCIgYW5kIGFuIGFjcmUgb2YgQSB0aWxsZWQgd2l0aCBvbmx5IMKjMsK9ICJ3b3VsZCBiZSBhYm5vcm1hbCBhbmQgd291bGQgbm90IGJlIHRpbGxlZCBhY2NvcmRpbmcgdG8gdGhlIG5ldyBjb25kaXRpb25zIG9mIHByb2R1Y3Rpb24uIFRoZSBkaXN0aW5jdGlvbiB3b3VsZCBubyBsb25nZXIgYmUgYmV0d2VlbiB0aGUgcHJvZHVjdHMgb2YgZGlmZmVyZW50IHBvcnRpb25zIG9mIGNhcGl0YWwgb24gdGhlIHNhbWUgYWNyZSwgYnV0IHJhdGhlciBiZXR3ZWVuIGEgc2F0aXNmYWN0b3J5IHRvdGFsIGNhcGl0YWwgaW52ZXN0bWVudCBwZXIgYWNyZSBhbmQgYW4gdW5zYXRpc2ZhY3Rvcnkgb25lLiIKCkZyb20gdGhpcyBNYXJ4IGV4dHJhY3RzICoqdHdvIGdlbmVyYWwgbGVzc29ucyoqOgoKMS4gKipJbmFkZXF1YXRlIGNhcGl0YWwgbWltaWNzIG5hdHVyYWwgaW5mZXJ0aWxpdHkuKiogIldoZW4gYSBsYXJnZSBudW1iZXIgb2YgZmFybWVycyBoYXZlIGluc3VmZmljaWVudCBjYXBpdGFsIChpdCBoYXMgdG8gYmUgYSBsYXJnZSBudW1iZXIsIGZvciBhIHNtYWxsIG51bWJlciB3b3VsZCBzaW1wbHkgYmUgY29tcGVsbGVkIHRvIHNlbGwgYmVsb3cgdGhlaXIgcHJvZHVjdGlvbiBwcmljZSksIHRoaXMgaGFzIGp1c3QgdGhlIHNhbWUgZWZmZWN0IGFzIHRoZSBkaWZmZXJlbnRpYXRpb24gb2YgdHlwZXMgb2YgbGFuZCB0aGVtc2VsdmVzIGluIGEgZGltaW5pc2hpbmcgc2VyaWVzLiBUaGUgcG9vcmVyIHR5cGUgb2YgYWdyaWN1bHR1cmUgb24gd29yc2Ugc29pbCBpbmNyZWFzZXMgdGhlIHJlbnQgb24gdGhlIGJldHRlcjsgaXQgY2FuIGV2ZW4gY3JlYXRlIGEgcmVudCBvbiBiZXR0ZXIgY3VsdGl2YXRlZCBsYW5kIG9mIHRoZSBzYW1lIHBvb3IgcXVhbGl0eSwgd2hpY2ggdGhpcyB3b3VsZCBub3Qgb3RoZXJ3aXNlIHlpZWxkLiIgVGhpcyBpcyBhIGNydWNpYWwgc29jaW9sb2dpY2FsIHBvaW50OiByZW50IGNhbiBiZSAqc29jaWFsbHkgbWFudWZhY3R1cmVkKiBvdXQgb2YgZGlmZmVyZW5jZXMgaW4gY2FwaXRhbCBlbmRvd21lbnQgcmF0aGVyIHRoYW4gbmF0dXJhbCBmZXJ0aWxpdHkuIFVuZGVyLWNhcGl0YWxpemF0aW9uIG9uIHRoZSBwb29yIHNvaWxzIGZ1bmN0aW9ucyBhcyBhICJkaW1pbmlzaGluZyBzZXJpZXMiIGFuZCBwcm9wcyB1cCByZW50IG9uIHRoZSBiZXR0ZXItY3VsdGl2YXRlZCBsYW5kLgoKMi4gKipTdWNjZXNzaXZlIGludmVzdG1lbnRzIGFyZSBhdmVyYWdlZCBpbnRvIGFuIGluZGlzdGluZ3Vpc2hhYmxlIG5vcm0uKiogImRpZmZlcmVudGlhbCByZW50LCBpbiBzbyBmYXIgYXMgaXQgYXJpc2VzIGZyb20gc3VjY2Vzc2l2ZSBpbnZlc3RtZW50cyBvZiBjYXBpdGFsIG9uIHRoZSBzYW1lIHRvdGFsIGFyZWEsIGlzIGFjdHVhbGx5IHJlZHVjZWQgdG8gYW4gYXZlcmFnZSBpbiB3aGljaCB0aGUgZWZmZWN0cyBvZiB0aGUgZGlmZmVyZW50IGNhcGl0YWwgaW52ZXN0bWVudHMgY2FuIG5vIGxvbmdlciBiZSByZWNvZ25pemVkIG9yIGRpc3Rpbmd1aXNoZWQuIiBUaGVzZSBpbnZlc3RtZW50cyBkbyBub3QgcHJvZHVjZSByZW50IG9uIHRoZSB3b3JzdCBsYW5kczsgcmF0aGVyLCB0aGV5ICgxKSAibWFrZSB0aGUgYXZlcmFnZSBwcmljZSBvZiB0aGUgdG90YWwgcHJvZHVjdCwgc2F5IG9uIGFuIGFjcmUgb2YgQSwgaW50byB0aGUgbmV3IGdvdmVybmluZyBwcmljZSwiIGFuZCAoMikgInByZXNlbnQgdGhlbXNlbHZlcyBhcyBjaGFuZ2VzIGluIHRoZSB0b3RhbCBhbW91bnQgb2YgY2FwaXRhbCBwZXIgYWNyZSByZXF1aXJlZCB1bmRlciB0aGUgbmV3IGNvbmRpdGlvbnMgZm9yIHNhdGlzZmFjdG9yeSBjdWx0aXZhdGlvbiBvZiB0aGlzIGxhbmQsIGluIHdoaWNoIGJvdGggdGhlIGluZGl2aWR1YWwgc3VjY2Vzc2l2ZSBjYXBpdGFsIGludmVzdG1lbnRzIGFuZCB0aGVpciByZXNwZWN0aXZlIGVmZmVjdHMgbWVsdCBpbmRpc3Rpbmd1aXNoYWJseSB0b2dldGhlci4iIFRoZSBzYW1lIGhvbGRzIGZvciB0aGUgZGlmZmVyZW50aWFsIHJlbnRzIG9mIHRoZSBiZXR0ZXIgbGFuZHMsIHdoaWNoICJhcmUgaW4gYW55IGNhc2UgZGV0ZXJtaW5lZCBieSB0aGUgZGlmZmVyZW5jZSBiZXR3ZWVuIHRoZSBhdmVyYWdlIHByb2R1Y3Qgb2YgdGhlIHR5cGUgb2YgbGFuZCBpbiBxdWVzdGlvbiBhbmQgdGhlIHByb2R1Y3Qgb2YgdGhlIHdvcnN0IGxhbmQsIGluIGEgc2l0dWF0aW9uIHdoZXJlIGFuIGluY3JlYXNlZCBpbnZlc3RtZW50IG9mIGNhcGl0YWwgaGFzIG5vdyBiZWNvbWUgbm9ybWFsLiIKCiMjIyMgVGhlICJOb3JtYWwiIE1pbmltdW0gQ2FwaXRhbCBhbmQgdGhlIFRlbmFuY3kgQ29udHJhY3QKCk1hcnggd2lkZW5zIHRoZSBhcmd1bWVudCB0byBhIGdlbmVyYWwgcHJpbmNpcGxlIG9mIHBvbGl0aWNhbCBlY29ub215OiAiTm8gbGFuZCB5aWVsZHMgYW55IHByb2R1Y3Qgd2l0aG91dCBhIGNhcGl0YWwgaW52ZXN0bWVudC4gVGhpcyBpcyB0cnVlIGV2ZW4gaW4gdGhlIGNhc2Ugb2Ygc2ltcGxlIGRpZmZlcmVudGlhbCByZW50LCBkaWZmZXJlbnRpYWwgcmVudCBJLiIgV2hlbmV2ZXIgd2Ugc2F5IHRoYXQgYW4gYWNyZSBvZiBBIHlpZWxkcyBzdWNoLWFuZC1zdWNoIGEgcHJvZHVjdCBhdCBzdWNoLWFuZC1zdWNoIGEgcHJpY2UsIGFuZCB0aGF0IEIsIEMsIEQgeWllbGQgZGlmZmVyZW50aWFsIHByb2R1Y3RzIGFuZCBoZW5jZSBncm91bmQtcmVudCwgInRoaXMgYWx3YXlzIGFzc3VtZXMgdGhhdCBhIGRlZmluaXRlIGNhcGl0YWwgaXMgYXBwbGllZCwgaS5lLiB0aGF0IGNvbnNpZGVyZWQgbm9ybWFsIHVuZGVyIHRoZSBnaXZlbiBjb25kaXRpb25zIG9mIHByb2R1Y3Rpb24uIEp1c3QgYXMgaW4gaW5kdXN0cnkgYSBkZWZpbml0ZSBtaW5pbXVtIG9mIGNhcGl0YWwgaXMgcmVxdWlyZWQgaW4gZWFjaCBsaW5lIG9mIGJ1c2luZXNzIHRvIHByb2R1Y2UgY29tbW9kaXRpZXMgYXQgdGhlaXIgcHJpY2Ugb2YgcHJvZHVjdGlvbi4iIFRoZSBhbmFsb2d5IHRvIGluZHVzdHJ5IGlzIGV4YWN0OiBqdXN0IGFzIGEgbWFudWZhY3R1cmVyIGJlbG93IHRoZSBub3JtYWwgbWluaW11bSBjYXBpdGFsIHdpbGwgZmFpbCB0byByZWFsaXplIHRoZSBhdmVyYWdlIHByb2ZpdCwgc28gYSBmYXJtZXIgY3VsdGl2YXRpbmcgd2l0aCBsZXNzIHRoYW4gdGhlIG5vcm1hbCBjYXBpdGFsIHBlciBhY3JlIHdpbGwgc2VsbCBiZWxvdyB0aGUgZ292ZXJuaW5nIHByaWNlLgoKV2hlbiB0aGlzIG1pbmltdW0gKmNoYW5nZXMqIGR1ZSB0byBzdWNjZXNzaXZlIGludmVzdG1lbnRzLCAiaXQgaGFwcGVucyBvbmx5IGdyYWR1YWxseS4iIEFzIGxvbmcgYXMgYSBjZXJ0YWluIG51bWJlciBvZiBhY3JlcyBvZiBBIGRvIG5vdCByZWNlaXZlIHRoZSBleHRyYSB3b3JraW5nIGNhcGl0YWwsIHJlbnQgb24gdGhlIGJldHRlciBjdWx0aXZhdGVkIGFjcmVzIG9mIEEgaXMgZ2VuZXJhdGVkICh0aGUgcHJpY2UgYmVpbmcgY29uc3RhbnQpLCBhbmQgdGhlIHJlbnRzIG9uIEIsIEMsIEQgYXJlIHRoZXJlYnkgaW5jcmVhc2VkLiAiQnV0IGFzIHNvb24gYXMgdGhlIG5ldyB0eXBlIG9mIGN1bHRpdmF0aW9uIGhhcyBzcHJlYWQgc3VmZmljaWVudGx5IHRvIGJlY29tZSBub3JtYWwsIHRoZSBwcm9kdWN0aW9uIHByaWNlIGZhbGxzOyB0aGUgcmVudCBmb3IgdGhlIGJldHRlciBsYW5kcyBmYWxscyBhZ2FpbiwgYW5kIHRoZSBwb3J0aW9uIG9mIGxhbmQgQSB0aGF0IGRvZXMgbm90IHBvc3Nlc3Mgd2hhdCBpcyBub3cgdGhlIGF2ZXJhZ2Ugd29ya2luZyBjYXBpdGFsIG11c3Qgc2VsbCBiZWxvdyBpdHMgaW5kaXZpZHVhbCBwcm9kdWN0aW9uIHByaWNlLCBpLmUuIGJlbG93IHRoZSBhdmVyYWdlIHByb2ZpdC4iCgpNYXJ4IHRoZW4gZ2l2ZXMgYSBjb25jcmV0ZSBoaXN0b3JpY2FsIGlsbHVzdHJhdGlvbjogInRoaXMgYXZlcmFnZSBjYXBpdGFsIGludmVzdG1lbnQsIGUuZy4gwqM4IHBlciBhY3JlIGJlZm9yZSAxODQ4IGluIEVuZ2xhbmQgYW5kIMKjMTIgcGVyIGFjcmUgYWZ0ZXJ3YXJkcywgaXMgd2hhdCBwcm92aWRlcyB0aGUgc3RhbmRhcmQgd2hlbiB0ZW5hbmN5IGNvbnRyYWN0cyBhcmUgZHJhd24gdXAuIiBUaGlzIGNvbm5lY3RzIHRoZSBhYnN0cmFjdCB0aGVvcnkgb2YgcmVudCB0byB0aGUgY29uY3JldGUgaW5zdGl0dXRpb24gb2YgdGhlIGxlYXNlLiAiRm9yIHRoZSBmYXJtZXIgd2hvIHNwZW5kcyBtb3JlIHRoYW4gdGhpcywgdGhlIHN1cnBsdXMgcHJvZml0IGlzIG5vdCB0cmFuc2Zvcm1lZCBpbnRvIHJlbnQgZm9yIHRoZSBkdXJhdGlvbiBvZiB0aGUgbGVhc2UuIFdoZXRoZXIgdGhpcyBoYXBwZW5zIHdoZW4gdGhlIGNvbnRyYWN0IGV4cGlyZXMgd2lsbCBkZXBlbmQgb24gdGhlIGNvbXBldGl0aW9uIG9mIHRob3NlIGZhcm1lcnMgaW4gYSBwb3NpdGlvbiB0byBtYWtlIHRoZSBzYW1lIGV4dHJhIGFkdmFuY2UuIiBIZSBjYXJlZnVsbHkgZGlzdGluZ3Vpc2hlcyB0aGlzIGZyb20gInBlcm1hbmVudCBpbXByb3ZlbWVudHMgdG8gdGhlIGxhbmQsIHdoaWNoIGNvbnRpbnVlIHRvIHByb3ZpZGUgYW4gaW5jcmVhc2VkIHByb2R1Y3Qgd2l0aCB0aGUgc2FtZSBvdXRsYXkgb2YgY2FwaXRhbCBvciBldmVuIGEgZGVjbGluaW5nIG9uZS4gQWx0aG91Z2ggdGhlc2UgYXJlIHRoZSBwcm9kdWN0IG9mIGNhcGl0YWwsIHRoZXkgb3BlcmF0ZSBqdXN0IGxpa2UgdGhlIG5hdHVyYWwgZGlmZmVyZW50aWFsIHF1YWxpdHkgb2YgdGhlIHNvaWwuIgoKIyMjIyBXaGF0IERpZmZlcmVudGlhbCBSZW50IElJIEFkZHMgdG8gRGlmZmVyZW50aWFsIFJlbnQgSQoKTWFyeCBoZXJlIGlzb2xhdGVzIHRoZSB0aGVvcmV0aWNhbCAqbm92dW0qIG9mIERpZmZlcmVudGlhbCBSZW50IElJOgoKPiAiZGlmZmVyZW50aWFsIHJlbnQgSUkgaW52b2x2ZXMgYW4gZWxlbWVudCB0aGF0IGRvZXMgbm90IGRldmVsb3AgYXMgc3VjaCBpbiB0aGUgY2FzZSBvZiBkaWZmZXJlbnRpYWwgcmVudCBJLCBzaW5jZSB0aGlzIGNhbiBwZXJzaXN0IGluZGVwZW5kZW50bHkgb2YgYW55IGNoYW5nZSBpbiB0aGUgbm9ybWFsIGNhcGl0YWwgaW52ZXN0bWVudCBwZXIgYWNyZS4iCgpUaHJlZSBlbGVtZW50cyBhcmUgbmV3LiBGaXJzdCwgInRoZSByZXN1bHRzIG9mIGRpZmZlcmVudCBjYXBpdGFsIGludmVzdG1lbnRzIG9uIHRoZSBwcmljZS1nb3Zlcm5pbmcgbGFuZCBBIGFyZSBibHVycmVkLCB0aGVpciBwcm9kdWN0IHNpbXBseSBhcHBlYXJpbmcgYXMgdGhlIG5vcm1hbCBhdmVyYWdlIHByb2R1Y3QgcGVyIGFjcmUuIiBTZWNvbmQsICJ0aGVyZSBpcyBhIGNoYW5nZSBpbiB0aGUgbm9ybWFsIG1pbmltdW0gb3IgYXZlcmFnZSBzaXplIG9mIHRoZSBjYXBpdGFsIG91dGxheSBwZXIgYWNyZSwgc28gdGhhdCB0aGlzIGNoYW5nZSBhcHBlYXJzIGFzIGEgcHJvcGVydHkgb2YgdGhlIHNvaWwuIiBUaGlyZCDigJQgb2YgcGFydGljdWxhciBpbnN0aXR1dGlvbmFsIGltcG9ydGFuY2Ug4oCUICJ0aGVyZSBpcyBhIGRpc3RpbmN0aW9uIGluIHRoZSB3YXkgdGhlIHN1cnBsdXMgcHJvZml0IGlzIHRyYW5zZm9ybWVkIGludG8gdGhlIGZvcm0gb2YgcmVudC4iIFdoZXJlYXMgaW4gRGlmZmVyZW50aWFsIFJlbnQgSSByZW50IGlzIGRldGVybWluZWQgYnkgdGhlIG5hdHVyYWwgZGlmZmVyZW5jZSBiZXR3ZWVuIGxhbmRzLCBpbiBEaWZmZXJlbnRpYWwgUmVudCBJSSBpdCBpcyAqYWxzbyogZGV0ZXJtaW5lZCBieSB0aGUgaGlzdG9yaWNhbC1zb2NpYWwgbm9ybWFsaXphdGlvbiBvZiBhIHBhcnRpY3VsYXIgY2FwaXRhbCBpbnRlbnNpdHksIHdoaWNoIHRoZW4gYmVjb21lcyB0aGUgeWFyZHN0aWNrIG9mIHRlbmFuY3kgYW5kIHJlbnQuCgojIyMjIFRoZSBDb25kaXRpb25zIFVuZGVyIFdoaWNoIFJlbnQgUmlzZXMgb3IgRmFsbHMKCk1hcnggY2xvc2VzIHRoZSBjaGFwdGVyIHdpdGggYSBzeXN0ZW1hdGljIGVudW1lcmF0aW9uIG9mIHRoZSBjb25kaXRpb25zIGRldGVybWluaW5nIHRoZSBtb3ZlbWVudCBvZiBjb3JuIGFuZCBtb25leSByZW50LiBUaGUgb3ZlcmFyY2hpbmcgZmluZGluZzogIndoZW4gdGhlIHByb2R1Y3Rpb24gcHJpY2UgZmFsbHMgYXMgYSByZXN1bHQgb2YgYSByaXNpbmcgcmF0ZSBvZiBwcm9kdWN0aXZpdHkgb24gdGhlIGV4dHJhIGNhcGl0YWwgaW52ZXN0bWVudCDigKYgdGhlIHJlbnQgcGVyIGFjcmUgZm9yIGEgZG91YmxlZCBjYXBpdGFsIGludmVzdG1lbnQsIHNheSwgbWF5IG5vdCBqdXN0IGRvdWJsZSwgYnV0IGNhbiBtb3JlIHRoYW4gZG91YmxlLiBIb3dldmVyLCBpdCBtaWdodCBhbHNvIGZhbGwsIGlmIHRoZSBwcm9kdWN0aW9uIHByaWNlIHdlcmUgdG8gZmFsbCBtdWNoIGxvd2VyIGFzIGEgcmVzdWx0IG9mIGEgcmFwaWQgZ3Jvd3RoIGluIHByb2R1Y3Rpdml0eSBvbiBsYW5kIEEuIgoKSGUgaWxsdXN0cmF0ZXMgdGhlIGZhbGxpbmcgY2FzZSB3aXRoIFRhYmxlIFZJYSwgaW4gd2hpY2ggInRoZSBhZGRpdGlvbmFsIGludmVzdG1lbnRzIG9mIGNhcGl0YWwsIG9uIEIgYW5kIEMgZm9yIGV4YW1wbGUsIGRpZCBub3QgaW5jcmVhc2UgcHJvZHVjdGl2aXR5IGluIHRoZSBzYW1lIHByb3BvcnRpb24gYXMgb24gQSwgc28gdGhhdCB0aGUgcHJvcG9ydGlvbmF0ZSBkaWZmZXJlbmNlcyBmb3IgQiBhbmQgQyB3b3VsZCBkZWNsaW5lIjoKCioqVGFibGUgVklhKiog4oCUIHVuZXZlbiBpbXByb3ZlbWVudCAoQSBhbmQgRCBpbXByb3ZlIG1vcmU7IEIsIEMgbGVzcyk6Cgp8IFR5cGUgfCBBY3JlcyB8IENhcGl0YWwgKMKjKSB8IFByb2ZpdCAowqMpIHwgT3V0cHV0IHBlciBhY3JlIChxcnMpIHwgU2VsbGluZyBwcmljZSAowqMvcXIpIHwgUHJvY2VlZHMgKMKjKSB8IENvcm4gcmVudCAocXJzKSB8IE1vbmV5IHJlbnQgKMKjKSB8CnwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18LS0tfC0tLXwKfCBBIHwgMSB8IDLCvSArIDLCvSA9IDUgfCAxIHwgMSArIDMgPSA0IHwgMcK9IHwgNiB8IDAgfCAwIHwKfCBCIHwgMSB8IDUgfCAxIHwgMiArIDLCvSA9IDTCvSB8IDHCvSB8IDbCviB8IMK9IHwgwr4gfAp8IEMgfCAxIHwgNSB8IDEgfCAzICsgNSA9IDggfCAxwr0gfCAxMiB8IDQgfCA2IHwKfCBEIHwgMSB8IDUgfCAxIHwgNCArIDEyID0gMTYgfCAxwr0gfCAyNCB8IDEyIHwgMTggfAp8ICoqVG90YWwqKiB8ICoqNCoqIHwgKioyMCoqIHwgKio0KiogfCAqKjMywr0qKiB8IHwgfCAqKjE2wr0qKiB8ICoqMjTCvioqIHwKCiJUaGUgcmVudCBvbiBEIHdvdWxkIHRoZW4gcmlzZSBhbmQgdGhhdCBvbiBCIGFuZCBDIGZhbGwsIGFzIGNvbXBhcmVkIHdpdGggdGhlIGNhc2Ugb2YgVGFibGUgSUkuIiBOb3RlIHRoYXQgaGVyZSBBJ3MgcHJvZHVjdGl2aXR5IHJpc2VzIHNvIG11Y2ggKGZyb20gMSB0byA0IHFycyBwZXIgwqM1LCBpLmUuIGEgNMOXIGltcHJvdmVtZW50KSB0aGF0IHRoZSBnb3Zlcm5pbmcgcHJpY2UgZmFsbHMgdG8gwqMxwr0sICpyYWlzaW5nKiBEJ3MgcmVudCBpbiBjb3JuICh0byAxMiBxcnMpIHdoaWxlICpsb3dlcmluZyogQidzIGFuZCBDJ3MuIFRoaXMgY29uZmlybXMgdGhlICJ1bmV2ZW5uZXNzIiB0aGVzaXM6IGRpZmZlcmVudGlhbCByZW50IGlzIG5vdCBtb25vdG9uZSBpbiBwcm9kdWN0aXZpdHk7IGl0IGlzIGRyaXZlbiBieSB0aGUgKnBhdHRlcm4qIG9mIHByb2R1Y3Rpdml0eSBjaGFuZ2UgYWNyb3NzIGxhbmRzLgoKTWFyeCB0aGVuIGxheXMgb3V0IHRoZSBmdWxsIHNldCBvZiBkaXJlY3Rpb25hbCBjb25kaXRpb25zOgoKLSAqKk1vbmV5IHJlbnQgcmlzZXMqKiBpZiAibW9yZSBjYXBpdGFsIGlzIGFkZGVkIHRvIHRoZSByZW50LWJlYXJpbmcgdGhhbiB0byB0aGUgbm9uLXJlbnQtYmVhcmluZyBsYW5kLCBpbiBjb25kaXRpb25zIHdoZXJlIHRoZSBwcm9wb3J0aW9uYXRlIGRpZmZlcmVuY2VzIGluIHRoZSBhZGRpdGlvbmFsIGZlcnRpbGl0eSByZW1haW4gdGhlIHNhbWUsIGFuZCBtb3JlIGNhcGl0YWwgaXMgYWRkZWQgdG8gdGhlIGxhbmRzIG9mIGhpZ2hlciByZW50IHRoYW4gdG8gdGhvc2Ugb2YgbG93ZXIgcmVudCwiICpvciogaWYgImdpdmVuIHRoZSBzYW1lIGFkZGl0aW9uYWwgY2FwaXRhbCwgdGhlIGZlcnRpbGl0eSBvbiB0aGUgYmV0dGVyIGFuZCBiZXN0IGxhbmRzIGdyb3dzIG1vcmUgdGhhbiBvbiBBLiIgSW4gdGhlIGxhdHRlciBjYXNlLCAidGhlIHJlbnQgcmlzZXMgaW4gcmVsYXRpb24gdG8gdGhlIGRlZ3JlZSB0byB3aGljaCB0aGUgaW5jcmVhc2UgaW4gZmVydGlsaXR5IGlzIGdyZWF0ZXIgaW4gdGhlIHN1cGVyaW9yIGNhdGVnb3JpZXMgb2YgbGFuZCB0aGFuIGluIHRoZSBpbmZlcmlvciBvbmVzLiIKLSAqKk1vbmV5IHJlbnQgZmFsbHMqKiAiaWYgdGhlIGltcHJvdmVtZW50IHJlc3VsdGluZyBmcm9tIGV4dHJhIGNhcGl0YWwgaW52ZXN0bWVudCByZWR1Y2VzIHRoZSBkaWZmZXJlbmNlcywgZWl0aGVyIGFsbCBvciBzb21lLCBieSBoYXZpbmcgbW9yZSBlZmZlY3Qgb24gQSB0aGFuIG9uIEIgYW5kIEMuIiBXaGV0aGVyIHRoZSBjb3JuIHJlbnQgcmlzZXMsIGZhbGxzLCBvciByZW1haW5zIHN0YXRpb25hcnkgImRlcGVuZHMgb24gdGhlIGRlZ3JlZSBvZiB1bmV2ZW5uZXNzIGluIHRoaXMgZWZmZWN0LiIKLSAqKkNvcm4gcmVudCoqIGZvbGxvd3MgbW9uZXkgcmVudCB3aGVyZSB0aGUgcHJpY2UgaXMgc3RhYmxlLCBidXQgY2FuIG1vdmUgaW5kZXBlbmRlbnRseSB3aGVuIHRoZSBwcmljZSBtb3Zlcy4KCiMjIyMgVGhlIEFic29sdXRlIENvbmNsdXNpb246IEFkZGl0aW9uYWwgQ2FwaXRhbCBhcyB0aGUgQ2F1c2Ugb2YgUmVudAoKVGhlIGNoYXB0ZXIncyBmaW5hbCBwYXJhZ3JhcGggZGVsaXZlcnMgdGhlICphYnNvbHV0ZSogdGhlb3JldGljYWwgcG9pbnQgdGhhdCB0cmFuc2NlbmRzIGFsbCB0aGUgcGFyYW1ldHJpYyB2YXJpYXRpb246Cgo+ICJVbmRlciBhbGwgY2lyY3Vtc3RhbmNlcywgaG93ZXZlciwgdGhlIHJlbnQgZXhwZXJpZW5jZXMgYSByZWxhdGl2ZSByaXNlIGlmIHRoZSBpbmNyZWFzZWQgcHJvZHVjdGl2aXR5IGlzIHRoZSByZXN1bHQgb2YgYSBuZXcgYWRkaXRpb24gb2YgY2FwaXRhbCBhbmQgbm90IHNpbXBseSBvZiBpbmNyZWFzZWQgZmVydGlsaXR5IGZvciBhIGNvbnN0YW50IGNhcGl0YWwgaW52ZXN0bWVudC4iCgpUaGlzIGlzIHRoZSAiYWJzb2x1dGUgcG9pbnQgb2Ygdmlldy4iIEl0IHNob3dzIHRoYXQsIGFzIGluIGFsbCBlYXJsaWVyIGNhc2VzLCAidGhlIHJlbnQgcGVyIGFjcmUg4oCmIGlzIHRoZSByZXN1bHQgb2YgaW5jcmVhc2VkIGNhcGl0YWwgaW52ZXN0bWVudCBvbiB0aGUgbGFuZCwiIHdoZXRoZXIgdGhhdCBjYXBpdGFsIGZ1bmN0aW9ucyAid2l0aCBhIGNvbnN0YW50IHJhdGUgb2YgcHJvZHVjdGl2aXR5IGluIGEgc2l0dWF0aW9uIG9mIGNvbnN0YW50IG9yIGZhbGxpbmcgcHJpY2VzLCB3aXRoIGEgZGVjbGluaW5nIHJhdGUgb2YgcHJvZHVjdGl2aXR5IGluIGEgc2l0dWF0aW9uIG9mIGNvbnN0YW50IG9yIGZhbGxpbmcgcHJpY2VzLCBvciB3aXRoIGFuIGluY3JlYXNpbmcgcmF0ZSBvZiBwcm9kdWN0aXZpdHkgaW4gYSBzaXR1YXRpb24gb2YgY29uc3RhbnQgb3IgZmFsbGluZyBwcmljZXMuIiBNYXJ4IHRoZW4gbWFrZXMgYW4gaW1wb3J0YW50IGxvZ2ljYWwgcmVkdWN0aW9uOiB0aGUgYXBwYXJlbnQgY29tYmluYXRvcmlhbCBleHBsb3Npb24gb2YgY2FzZXMg4oCUIGNvbnN0YW50IHByaWNlIHdpdGggY29uc3RhbnQvZmFsbGluZy9yaXNpbmcgcHJvZHVjdGl2aXR5LCBhbmQgZmFsbGluZyBwcmljZSB3aXRoIGNvbnN0YW50L2ZhbGxpbmcvcmlzaW5nIHByb2R1Y3Rpdml0eSDigJQgImNhbiBiZSByZWR1Y2VkIHRvIHRoZSBhc3N1bXB0aW9uIG9mIGEgY29uc3RhbnQgcmF0ZSBvZiBwcm9kdWN0aXZpdHkgZm9yIHRoZSBleGNlc3MgY2FwaXRhbCBpbiBhIHNpdHVhdGlvbiBvZiBjb25zdGFudCBvciBmYWxsaW5nIHByaWNlLCBhIGZhbGxpbmcgcmF0ZSBvZiBwcm9kdWN0aXZpdHkgaW4gYSBzaXR1YXRpb24gb2YgY29uc3RhbnQgb3IgZmFsbGluZyBwcmljZSwgW2FuZF0gYSByaXNpbmcgcmF0ZSBvZiBwcm9kdWN0aXZpdHkgd2l0aCBjb25zdGFudCBhbmQgZmFsbGluZyBwcmljZS4iIEFuZCB0aGUgaW52YXJpYW50IHRoYXQgc3Vydml2ZXMgYWxsIHBlcm11dGF0aW9ucyBpcyB0aGlzOiAiRXZlbiB0aG91Z2ggaW4gYWxsIHRoZXNlIGNhc2VzIHRoZSByZW50IG1heSByZW1haW4gc3RhdGlvbmFyeSBvciBldmVuIGZhbGwsIGl0IHdvdWxkIGZhbGwgZnVydGhlciBpZiB0aGUgYWRkaXRpb25hbCBhcHBsaWNhdGlvbiBvZiBjYXBpdGFsLCBpbiBvdGhlcndpc2UgdW5jaGFuZ2VkIGNvbmRpdGlvbnMsIHdlcmUgbm90IHRoZSBjb25kaXRpb24gZm9yIGhpZ2hlciBmZXJ0aWxpdHkuIFRoZSBhZGRpdGlvbmFsIGNhcGl0YWwgaXMgdGhlbiBhbHdheXMgdGhlIGNhdXNlIG9mIHRoZSByZWxhdGl2ZWx5IGhpZ2ggbGV2ZWwgb2YgcmVudCwgZXZlbiB0aG91Z2ggdGhpcyBtYXkgaGF2ZSBmYWxsZW4gaW4gYWJzb2x1dGUgdGVybXMuIgoKVGhpcyBpcyB0aGUgZGlhbGVjdGljYWwgY29uY2x1c2lvbiBvZiB0aGUgY2hhcHRlcjogKip0aGUgdmVyeSBmb3JjZXMgdGhhdCBjYW4gZGVwcmVzcyByZW50IGluIGFic29sdXRlIHRlcm1zIChmYWxsaW5nIHByaWNlcywgZXZpY3Rpb24gb2Ygd29yc3QgbGFuZHMpIGFyZSBpbnNlcGFyYWJsZSBmcm9tIHRoZSBmb3JjZXMgdGhhdCBzdXN0YWluIGl0IHJlbGF0aXZlbHkgKGludGVuc2lmaWVkIGNhcGl0YWwpLioqIFJlbnQgaXMgbm90IGEgbmF0dXJhbCBkYXR1bSBidXQgdGhlIHNvY2lhbCBmb3JtIGFzc3VtZWQgYnkgc3VycGx1cyBwcm9maXQgZ2VuZXJhdGVkIGJ5IGNhcGl0YWwgaW52ZXN0bWVudCBvbiBsYW5kZWQgcHJvcGVydHkuCgotLS0KCiMjIDMuIFNZTlRIRVNJUywgTEVTU09OUyAmIEJST0FERVIgSU1QTElDQVRJT05TCgojIyMgVGhlIEZ1bmRhbWVudGFsIFByaW5jaXBsZXMgUmV2ZWFsZWQKClNldmVyYWwgc3lzdGVtaWMgbGF3cyBlbWVyZ2UgZnJvbSB0aGUgY2hhcHRlcidzIGRlbnNlIGNvbXBhcmF0aXZlIHN0YXRpY3MuICoqRmlyc3QsIHJlbnQgaXMgcmVsYXRpb25hbCwgbm90IGludHJpbnNpYy4qKiBMYW5kIEIncyByZW50IHZhbmlzaGVzIHRoZSBtb21lbnQgQiBiZWNvbWVzIHRoZSBwcmljZS1nb3Zlcm5pbmcgYmVuY2htYXJrLCBldmVuIHRob3VnaCBCJ3MgZmVydGlsaXR5IGhhcyBub3QgY2hhbmdlZC4gV2hhdCBkZXRlcm1pbmVzIHJlbnQgaXMgbm90IHRoZSBsYW5kJ3MgaW5oZXJlbnQgcXVhbGl0eSBidXQgaXRzICpwb3NpdGlvbiB3aXRoaW4gdGhlIHNwZWN0cnVtKiBvZiBjdWx0aXZhdGVkIHNvaWxzIGFuZCB0aGUgKmlkZW50aXR5IG9mIHRoZSBtYXJnaW5hbCBsYW5kKiB0aGF0IHJlZ3VsYXRlcyB0aGUgcHJpY2UuIFRoaXMgcmVsYXRpb25hbCBjaGFyYWN0ZXIgaXMgd2hhdCBtYWtlcyByZW50IGEgc29jaWFsIGNhdGVnb3J5IHJhdGhlciB0aGFuIGEgcGh5c2ljYWwgcXVhbnRpdHkuCgoqKlNlY29uZCwgY29ybiByZW50IGFuZCBtb25leSByZW50IGFyZSBub3QgaW50ZXJjaGFuZ2VhYmxlIG1lYXN1cmVzLioqIFRoZSBjaGFwdGVyJ3Mgc2hhcnBlc3QgdGhlb3JldGljYWwgd2VhcG9uIGlzIHRoZSBkZW1vbnN0cmF0aW9uIHRoYXQgdGhlIHR3byBjYW4gbW92ZSBpbiBvcHBvc2l0ZSBkaXJlY3Rpb25zLiBJbiBUYWJsZXMgSVZjL0lWZCwgbW9uZXkgcmVudCBzdGF5cyBhdCDCozE4IHdoaWxlIGNvcm4gcmVudCAqZG91Ymxlcyo7IGluIFRhYmxlIFYsIG1vbmV5IHJlbnQgZmFsbHMgYnkgYWxtb3N0IGhhbGYgd2hpbGUgY29ybiByZW50IGZhbGxzIGJ5IG9ubHkgYSB0d2VsZnRoOyBpbiBUYWJsZSBWSSwgbW9uZXkgcmVudCBkb3VibGVzIHJlbGF0aXZlIHRvIFRhYmxlIEkgd2hpbGUgY29ybiByZW50IG1vcmUgdGhhbiBkb3VibGVzLiBNYXJ4J3MgcG9sZW1pYyDigJQgdGhhdCAiaXQgaXMgb25seSB0cmFkaXRpb24iIHdoaWNoIGdpdmVzIGNvcm4gcmVudCBhIHJvbGUgaW4gZWNvbm9taWNzIOKAlCBkaXNtYW50bGVzIHRoZSBpbGx1c2lvbiB0aGF0IHBoeXNpY2FsIHByb2R1Y2UgbWVhc3VyZXMgZWNvbm9taWMgZ2Fpbi4gVGhlIGxhbmRsb3JkIHdobyByZWNlaXZlcyBmZXdlciBxdWFydGVycyBvZiB3aGVhdCBtYXkgbm9uZXRoZWxlc3MgY29tbWFuZCBtb3JlIHZhbHVlLCBhbmQgdmljZSB2ZXJzYS4KCioqVGhpcmQsIHRoZSByYXRlIG9mIHJlbnQgYW5kIHRoZSB0b3RhbCByZW50IGFyZSBkaXN0aW5jdCBtYWduaXR1ZGVzLCBhbmQgYm90aCBhcmUgZGlzdGluY3QgZnJvbSB0aGUgcmVudCdzIHNoYXJlIG9mIG91dHB1dC4qKiBUYWJsZSBJVmMvSVZkIHNob3dzIHJlbnQgcGVyIGFjcmUgKnJpc2luZyogd2hpbGUgcmVudCBhcyBhIHNoYXJlIG9mIHRvdGFsIHByb2R1Y3QgKmZhbGxzKiBhbmQgdGhlIHJhdGUgb2YgcmVudCBvbiBjYXBpdGFsICpmYWxscyouIFRoaXMgdGhyZWUtd2F5IGRpdmVyZ2VuY2UgaXMgb25lIG9mIHRoZSBtb3N0IHNvcGhpc3RpY2F0ZWQgcmVzdWx0cyBpbiB0aGUgZW50aXJlIHRoZW9yeSBvZiByZW50LgoKKipGb3VydGgsIGRpZmZlcmVudGlhbCByZW50IElJIGludHJvZHVjZXMgYSBzb2Npby1oaXN0b3JpY2FsICJub3JtIiBvZiBjdWx0aXZhdGlvbi4qKiBUaGUgIm5vcm1hbCIgY2FwaXRhbCBwZXIgYWNyZSAowqM4IGJlZm9yZSAxODQ4LCDCozEyIGFmdGVyLCBpbiBFbmdsYW5kKSBpcyBhICpzb2NpYWwqIGF2ZXJhZ2UgdGhhdCBmdW5jdGlvbnMsIGluIHRlbmFuY3kgY29udHJhY3RzIGFuZCBpbiB0aGUgdmVyeSBkZXRlcm1pbmF0aW9uIG9mIHJlbnQsIGFzIHRob3VnaCBpdCB3ZXJlIGEgbmF0dXJhbCBwcm9wZXJ0eSBvZiB0aGUgc29pbC4gVGhpcyBzaG93cyB0aGF0IHJlbnQgdW5kZXIgYWR2YW5jZWQgY2FwaXRhbGlzbSBpcyBnb3Zlcm5lZCBub3Qgb25seSBieSBuYXR1cmUgYnV0IGJ5IHRoZSBoaXN0b3JpY2FsbHkgZXN0YWJsaXNoZWQgaW50ZW5zaXR5IG9mIGZhcm1pbmcsIGl0c2VsZiBhIHByb2R1Y3Qgb2YgY2FwaXRhbCBhY2N1bXVsYXRpb24uCgoqKkZpZnRoLCB1bmRlci1jYXBpdGFsaXphdGlvbiBjYW4gY3JlYXRlIHJlbnQuKiogVGhlIGRlbW9uc3RyYXRpb24gdGhhdCBhICJsYXJnZSBudW1iZXIgb2YgZmFybWVycyB3aXRoIGluc3VmZmljaWVudCBjYXBpdGFsIiBhY3RzIGp1c3QgbGlrZSBhICJkaW1pbmlzaGluZyBzZXJpZXMiIG9mIG5hdHVyYWwgc29pbCBxdWFsaXRpZXMg4oCUIGdlbmVyYXRpbmcgcmVudCBvbiBiZXR0ZXItY3VsdGl2YXRlZCBsYW5kIG9mIHRoZSBzYW1lIHBvb3IgcXVhbGl0eSDigJQgZ3JvdW5kcyByZW50IGluIHRoZSAqZGlzdHJpYnV0aW9uIG9mIGNhcGl0YWwqIHJhdGhlciB0aGFuIGV4Y2x1c2l2ZWx5IGluIHRoZSBkaXN0cmlidXRpb24gb2YgZmVydGlsaXR5LgoKIyMjIEJyb2FkZXIgUHJhY3RpY2FsLCBUaGVvcmV0aWNhbCwgYW5kIFBoaWxvc29waGljYWwgSW1wbGljYXRpb25zCgpQcmFjdGljYWxseSwgdGhlIGNoYXB0ZXIgZXhwbGFpbnMgdGhlIGR5bmFtaWNzIG9mIHRoZSB0ZW5hbmN5IHJlbGF0aW9uc2hpcCB3aXRoIHVudXN1YWwgcHJlY2lzaW9uLiBUaGUgZGlzdGluY3Rpb24gYmV0d2VlbiAiYXZlcmFnZSIgYW5kICJleGNlc3MiIGNhcGl0YWwgcGVyIGFjcmUgZGV0ZXJtaW5lcyB3aG8gY2FwdHVyZXMgdGhlIHN1cnBsdXMgcHJvZml0OiB0aGUgZmFybWVyIGVuam95cyBpdCBkdXJpbmcgdGhlIGxlYXNlIChhcyBoZSBpcyBub3QgY2hhcmdlZCBmb3IgaW1wcm92ZW1lbnRzIGhlIGFsb25lIGZpbmFuY2VkKSwgd2hpbGUgdGhlIGxhbmRsb3JkIGNhcHR1cmVzIGl0IGF0IHJlbmV3YWwgdGhyb3VnaCBjb21wZXRpdGlvbiBhbW9uZyBmYXJtZXJzIGFibGUgdG8gbWFrZSB0aGUgc2FtZSBhZHZhbmNlLiBUaGlzIGlzIGEgY29uY3JldGUgdGhlb3J5IG9mIHdoeSBhZ3JpY3VsdHVyYWwgaW1wcm92ZW1lbnQgcmVkaXN0cmlidXRlcyBpbmNvbWUgYmV0d2VlbiB0ZW5hbnQgYW5kIGxhbmRsb3JkLCBhbmQgd2h5IHRoZSBkdXJhdGlvbiBhbmQgcmVuZXdhbCBvZiBsZWFzZXMgbWF0dGVycyBlY29ub21pY2FsbHkuCgpUaGVvcmV0aWNhbGx5LCB0aGUgY2hhcHRlciBjb21wbGV0ZXMgYW5kIHJlZmluZXMgdGhlIGdlbmVyYWwgdGhlb3J5IG9mIERpZmZlcmVudGlhbCBSZW50IElJIGJ5IG1hcHBpbmcgdGhlIGZhbGxpbmctcHJpY2UgY2FzZSBhY3Jvc3MgYWxsIHRocmVlIHByb2R1Y3Rpdml0eSB2YXJpYW50cy4gSXQgc2hvd3MgdGhhdCB0aGUgcmVudCBsYXcgZXN0YWJsaXNoZWQgZm9yIHRoZSAiZmlyc3QgY2FzZSIgKHJpc2luZyBwcmljZSwgZGV2ZWxvcGVkIGVhcmxpZXIpIGlzIG5vdCBwZWN1bGlhciB0byByaXNpbmcgcHJpY2VzOiB0aGUgc2FtZSByZWxhdGlvbmFsIGxvZ2ljIOKAlCBzdXJwbHVzIHByb2ZpdCBhcyB0aGUgZXhjZXNzIG9mIHRoZSBnb3Zlcm5pbmcgb3ZlciB0aGUgaW5kaXZpZHVhbCBwcm9kdWN0aW9uIHByaWNlIOKAlCBnb3Zlcm5zIHRoZSBmYWxsaW5nLXByaWNlIGNhc2UsIHNpbXBseSB3aXRoIEIgc3Vic3RpdHV0ZWQgZm9yIEEgYXMgdGhlIGJlbmNobWFyay4gVGhlIGNvbWJpbmF0b3JpYWwgcmVkdWN0aW9uIGF0IHRoZSBlbmQg4oCUIGNvbGxhcHNpbmcgc2l4IGNvbmZpZ3VyYXRpb25zIGludG8gdGhyZWUgY2Fub25pY2FsIG9uZXMg4oCUIHJldmVhbHMgdGhlIHVuZGVybHlpbmcgdW5pdHkgYmVuZWF0aCB0aGUgYmV3aWxkZXJpbmcgdGFibGUgbWFjaGluZXJ5LgoKUGhpbG9zb3BoaWNhbGx5LCB0aGUgY2hhcHRlciBpcyBhIHN1c3RhaW5lZCBkZW1vbnN0cmF0aW9uIG9mIE1hcngncyBkaWFsZWN0aWNhbCBtZXRob2QuIFRoZSBjYXRlZ29yaWVzIG9mIGNvcm4gYW5kIG1vbmV5IHJlbnQsIG9mIHdvcnN0IGFuZCBiZXN0IGxhbmQsIG9mIGNvbnN0YW50IGFuZCBmYWxsaW5nIHByb2R1Y3Rpdml0eSwgYXJlIHNob3duIHRvIGJlICptdXR1YWxseSBkZXRlcm1pbmluZyogcmF0aGVyIHRoYW4gZml4ZWQuIFJlbnQgYXBwZWFycyBoZXJlIG5laXRoZXIgYXMgYSBuYXR1cmFsIHJlbnQgb2YgbGFuZCBub3IgYXMgYSBzaW1wbGUgZGVkdWN0aW9uIGZyb20gb3V0cHV0LCBidXQgYXMgdGhlICpzb2NpYWwgZm9ybSogaW1wcmVzc2VkIHVwb24gYSBzdXJwbHVzIHByb2ZpdCB0aGF0IGlzIGl0c2VsZiB0aGUgcHJvZHVjdCBvZiBjYXBpdGFsIGFjY3VtdWxhdGVkIG9uIGxhbmRlZCBwcm9wZXJ0eS4gVGhlIGZpbmFsIGFuZCAiYWJzb2x1dGUiIGNvbmNsdXNpb24g4oCUIHRoYXQgYWRkaXRpb25hbCBjYXBpdGFsIGlzICJhbHdheXMgdGhlIGNhdXNlIG9mIHRoZSByZWxhdGl2ZWx5IGhpZ2ggbGV2ZWwgb2YgcmVudCwgZXZlbiB0aG91Z2ggdGhpcyBtYXkgaGF2ZSBmYWxsZW4gaW4gYWJzb2x1dGUgdGVybXMiIOKAlCBpcyB0aGUgbWF0dXJlIGV4cHJlc3Npb24gb2YgdGhlIE1hcnhpYW4gaW5zaWdodCB0aGF0IGluIGNhcGl0YWxpc3QgYWdyaWN1bHR1cmUsIGFzIGluIGluZHVzdHJ5LCBpdCBpcyBjYXBpdGFsIHRoYXQgKnByb2R1Y2VzKiB2YWx1ZSwgd2hpbGUgbGFuZGVkIHByb3BlcnR5IG1lcmVseSAqYXBwcm9wcmlhdGVzKiBhIHBvcnRpb24gb2YgaXQuIE5hdHVyZSBjb25kaXRpb25zIHRoZSBkaWZmZXJlbmNlczsgY2FwaXRhbCBhbmQgc29jaWFsIHJlbGF0aW9ucyBkZXRlcm1pbmUgd2hhdCB0aG9zZSBkaWZmZXJlbmNlcyBhcmUgKndvcnRoKiwgYW5kIHRvIHdob20u</script>
+
+</body>
+</html>

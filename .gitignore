@@ -1,0 +1,16 @@
+# PDFs (original book PDFs kept locally on laptop)
+*.pdf
+
+# AI Documentation and Agent Rules (kept on laptop only)
+AI_CONTEXT.md
+.cursorrules
+
+# Local Brainstorming & Future Roadmap (kept on laptop only)
+FUTURE_IDEAS.txt
+IDEAS.txt
+*.local.txt
+
+# Local OS & Temporary Files
+.DS_Store
+Thumbs.db
+*.tmp
