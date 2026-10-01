@@ -485,11 +485,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const savedSize = localStorage.getItem('capital_reader_size') || 'md';
   setFontSize(savedSize);
 
-  // Render Base64 Markdown (only if substantial content exists, preserving pre-rendered HTML)
+  // Render Base64 Markdown (only if content element is empty, preserving pre-rendered HTML)
   const rawMarkdown = getDecodedMarkdown();
   const contentEl = document.getElementById('content');
 
-  if (rawMarkdown && rawMarkdown.trim().length > 100 && contentEl && typeof marked !== 'undefined') {
+  if (contentEl && (!contentEl.children || contentEl.children.length === 0) && rawMarkdown && rawMarkdown.trim().length > 100 && typeof marked !== 'undefined') {
     marked.setOptions({
       gfm: true,
       breaks: false,
@@ -741,6 +741,9 @@ function initPaletteIntegration() {
       if (!window.openCommandPalette) {
         loadScript('../../assets/palette-engine.js');
       }
+      if (typeof updateNavigationElements === 'function') {
+        updateNavigationElements();
+      }
     });
   } else if (!window.openCommandPalette) {
     loadScript('../../assets/palette-engine.js');
@@ -765,7 +768,7 @@ function initPaletteIntegration() {
 }
 
 // --- B. Chapter Navigation System (Top Toolbar, Floating Thumb Pill & Keyboard Shortcuts) ---
-function initChapterNavigation() {
+function getAdjacentChapters() {
   const bottomNav = document.querySelector('.chapter-nav-bottom');
   let prev = null;
   let next = null;
@@ -773,13 +776,13 @@ function initChapterNavigation() {
   if (bottomNav) {
     const prevEl = bottomNav.querySelector('.chapter-nav-btn.prev');
     const nextEl = bottomNav.querySelector('.chapter-nav-btn.next');
-    if (prevEl) {
+    if (prevEl && prevEl.getAttribute('href')) {
       prev = {
         href: prevEl.getAttribute('href'),
         title: prevEl.querySelector('.nav-btn-title')?.textContent?.trim() || 'Previous Chapter'
       };
     }
-    if (nextEl) {
+    if (nextEl && nextEl.getAttribute('href')) {
       next = {
         href: nextEl.getAttribute('href'),
         title: nextEl.querySelector('.nav-btn-title')?.textContent?.trim() || 'Next Chapter'
@@ -787,9 +790,107 @@ function initChapterNavigation() {
     }
   }
 
+  // Fallback or complement from window.CAPITAL_CATALOG
+  if ((!prev || !next) && window.CAPITAL_CATALOG && window.CAPITAL_CATALOG.chapters) {
+    const chapters = window.CAPITAL_CATALOG.chapters;
+    const path = decodeURIComponent(window.location.pathname).replace(/\\/g, '/').toLowerCase();
+    const curIdx = chapters.findIndex(c => {
+      const normHref = decodeURIComponent(c.href).replace(/\\/g, '/').toLowerCase();
+      return path.endsWith(normHref) || path.split('/').slice(-3).join('/') === normHref;
+    });
+
+    if (curIdx !== -1) {
+      if (!prev && curIdx > 0) {
+        prev = {
+          href: '../../' + chapters[curIdx - 1].href,
+          title: `${chapters[curIdx - 1].volume} • ${chapters[curIdx - 1].title}: ${chapters[curIdx - 1].subtitle}`
+        };
+      }
+      if (!next && curIdx < chapters.length - 1) {
+        next = {
+          href: '../../' + chapters[curIdx + 1].href,
+          title: `${chapters[curIdx + 1].volume} • ${chapters[curIdx + 1].title}: ${chapters[curIdx + 1].subtitle}`
+        };
+      }
+    }
+  }
+
+  return { prev, next };
+}
+
+function updateNavigationElements() {
+  const { prev, next } = getAdjacentChapters();
+
+  // 1. Top Prev Button
+  const topPrev = document.getElementById('reader-top-prev-btn');
+  if (topPrev) {
+    if (prev && prev.href) {
+      topPrev.setAttribute('href', prev.href);
+      topPrev.classList.remove('disabled');
+      topPrev.title = `Previous: ${prev.title} (← ArrowLeft)`;
+      topPrev.style.pointerEvents = 'auto';
+      topPrev.style.opacity = '1';
+    } else {
+      topPrev.removeAttribute('href');
+      topPrev.classList.add('disabled');
+      topPrev.title = 'First Chapter';
+      topPrev.style.pointerEvents = 'none';
+      topPrev.style.opacity = '0.35';
+    }
+  }
+
+  // 2. Top Next Button
+  const topNext = document.getElementById('reader-top-next-btn');
+  if (topNext) {
+    if (next && next.href) {
+      topNext.setAttribute('href', next.href);
+      topNext.classList.remove('disabled');
+      topNext.title = `Next: ${next.title} (→ ArrowRight)`;
+      topNext.style.pointerEvents = 'auto';
+      topNext.style.opacity = '1';
+    } else {
+      topNext.removeAttribute('href');
+      topNext.classList.add('disabled');
+      topNext.title = 'Last Chapter';
+      topNext.style.pointerEvents = 'none';
+      topNext.style.opacity = '0.35';
+    }
+  }
+
+  // 3. Floating Pill Buttons
+  const floatNav = document.getElementById('floating-chapter-nav');
+  if (floatNav) {
+    const floatPrev = floatNav.querySelector('.float-nav-btn.prev');
+    if (floatPrev) {
+      if (prev && prev.href) {
+        floatPrev.setAttribute('href', prev.href);
+        floatPrev.classList.remove('disabled');
+        floatPrev.title = `Previous: ${prev.title}`;
+      } else {
+        floatPrev.removeAttribute('href');
+        floatPrev.classList.add('disabled');
+      }
+    }
+    const floatNext = floatNav.querySelector('.float-nav-btn.next');
+    if (floatNext) {
+      if (next && next.href) {
+        floatNext.setAttribute('href', next.href);
+        floatNext.classList.remove('disabled');
+        floatNext.title = `Next: ${next.title}`;
+      } else {
+        floatNext.removeAttribute('href');
+        floatNext.classList.add('disabled');
+      }
+    }
+  }
+}
+
+function initChapterNavigation() {
+  const { prev, next } = getAdjacentChapters();
+
   // 1. Top Toolbar Navigation Buttons
   const actions = document.querySelector('.toolbar .actions');
-  if (actions) {
+  if (actions && !document.getElementById('reader-top-prev-btn')) {
     const mobileToc = document.getElementById('mobile-toc-btn');
     const navGroup = document.createElement('div');
     navGroup.className = 'top-nav-step-group';
@@ -797,39 +898,29 @@ function initChapterNavigation() {
     navGroup.style.gap = '6px';
     navGroup.style.alignItems = 'center';
 
+    const prevA = document.createElement('a');
+    prevA.className = 'btn btn-nav-step prev' + (prev && prev.href ? '' : ' disabled');
+    prevA.id = 'reader-top-prev-btn';
     if (prev && prev.href) {
-      const prevA = document.createElement('a');
       prevA.href = prev.href;
-      prevA.className = 'btn btn-nav-step prev';
-      prevA.id = 'reader-top-prev-btn';
       prevA.title = `Previous: ${prev.title} (← ArrowLeft)`;
-      prevA.innerHTML = '<span>← Prev</span>';
-      navGroup.appendChild(prevA);
     } else {
-      const prevSpan = document.createElement('span');
-      prevSpan.className = 'btn btn-nav-step prev disabled';
-      prevSpan.id = 'reader-top-prev-btn';
-      prevSpan.title = 'First Chapter';
-      prevSpan.innerHTML = '<span>← Prev</span>';
-      navGroup.appendChild(prevSpan);
+      prevA.title = 'First Chapter';
     }
+    prevA.innerHTML = '<span>← Prev</span>';
+    navGroup.appendChild(prevA);
 
+    const nextA = document.createElement('a');
+    nextA.className = 'btn btn-nav-step next' + (next && next.href ? '' : ' disabled');
+    nextA.id = 'reader-top-next-btn';
     if (next && next.href) {
-      const nextA = document.createElement('a');
       nextA.href = next.href;
-      nextA.className = 'btn btn-nav-step next';
-      nextA.id = 'reader-top-next-btn';
       nextA.title = `Next: ${next.title} (→ ArrowRight)`;
-      nextA.innerHTML = '<span>Next →</span>';
-      navGroup.appendChild(nextA);
     } else {
-      const nextSpan = document.createElement('span');
-      nextSpan.className = 'btn btn-nav-step next disabled';
-      nextSpan.id = 'reader-top-next-btn';
-      nextSpan.title = 'Last Chapter';
-      nextSpan.innerHTML = '<span>Next →</span>';
-      navGroup.appendChild(nextSpan);
+      nextA.title = 'Last Chapter';
     }
+    nextA.innerHTML = '<span>Next →</span>';
+    navGroup.appendChild(nextA);
 
     if (mobileToc && mobileToc.nextSibling) {
       actions.insertBefore(navGroup, mobileToc.nextSibling);
@@ -848,21 +939,19 @@ function initChapterNavigation() {
     floatNav.setAttribute('aria-label', 'Quick Chapter Navigation');
 
     floatNav.innerHTML = `
-      ${prev && prev.href
-        ? `<a href="${prev.href}" class="float-nav-btn prev" title="Previous: ${prev.title}"><span class="float-nav-arrow">←</span> <span>Prev</span></a>`
-        : `<span class="float-nav-btn disabled"><span class="float-nav-arrow">←</span> <span>Prev</span></span>`}
+      <a ${prev && prev.href ? `href="${prev.href}"` : ''} class="float-nav-btn prev ${prev && prev.href ? '' : 'disabled'}" title="${prev ? `Previous: ${prev.title}` : 'First Chapter'}"><span class="float-nav-arrow">←</span> <span>Prev</span></a>
       <button type="button" class="float-nav-btn jump" id="float-nav-jump-btn" title="Jump to Chapter (Ctrl+K)"><span>🔍</span> <span>Jump</span></button>
       <button type="button" class="float-nav-btn toc" id="float-nav-toc-btn" title="Table of Contents"><span>📑</span> <span>TOC</span></button>
-      ${next && next.href
-        ? `<a href="${next.href}" class="float-nav-btn next" title="Next: ${next.title}"><span>Next</span> <span class="float-nav-arrow">→</span></a>`
-        : `<span class="float-nav-btn disabled"><span>Next</span> <span class="float-nav-arrow">→</span></span>`}
+      <a ${next && next.href ? `href="${next.href}"` : ''} class="float-nav-btn next ${next && next.href ? '' : 'disabled'}" title="${next ? `Next: ${next.title}` : 'Last Chapter'}"><span>Next</span> <span class="float-nav-arrow">→</span></a>
     `;
 
     document.body.appendChild(floatNav);
 
     const floatJump = document.getElementById('float-nav-jump-btn');
     if (floatJump) {
-      floatJump.addEventListener('click', () => {
+      floatJump.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         if (typeof window.openCommandPalette === 'function') {
           window.openCommandPalette();
         }
@@ -871,7 +960,9 @@ function initChapterNavigation() {
 
     const floatToc = document.getElementById('float-nav-toc-btn');
     if (floatToc) {
-      floatToc.addEventListener('click', () => {
+      floatToc.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const mobileTocBtn = document.getElementById('mobile-toc-btn');
         if (mobileTocBtn) {
           mobileTocBtn.click();
@@ -910,14 +1001,27 @@ function initChapterNavigation() {
     const paletteBackdrop = document.getElementById('palette-backdrop');
     if (paletteBackdrop && paletteBackdrop.classList.contains('open')) return;
 
-    if (e.key === 'ArrowLeft' && prev && prev.href) {
-      showToast(`Navigating to ${prev.title}`);
-      window.location.href = prev.href;
-    } else if (e.key === 'ArrowRight' && next && next.href) {
-      showToast(`Navigating to ${next.title}`);
-      window.location.href = next.href;
+    const curNav = getAdjacentChapters();
+
+    if (e.key === 'ArrowLeft' && curNav.prev && curNav.prev.href) {
+      showToast(`Navigating to ${curNav.prev.title}`);
+      window.location.href = curNav.prev.href;
+    } else if (e.key === 'ArrowRight' && curNav.next && curNav.next.href) {
+      showToast(`Navigating to ${curNav.next.title}`);
+      window.location.href = curNav.next.href;
     }
   });
+
+  // If catalog wasn't ready yet, poll briefly to update elements
+  if (!window.CAPITAL_CATALOG) {
+    const checkInterval = setInterval(() => {
+      if (window.CAPITAL_CATALOG) {
+        clearInterval(checkInterval);
+        updateNavigationElements();
+      }
+    }, 250);
+    setTimeout(() => clearInterval(checkInterval), 4000);
+  }
 }
 
 // --- C. Mobile Streamlined Header Settings Menu ---
