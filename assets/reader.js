@@ -1017,6 +1017,16 @@ function initChapterNavigation() {
       }
       lastScrollY = currentScrollY;
     }, { passive: true });
+
+    // Reveal floating nav when mouse hovers near the bottom of desktop
+    window.addEventListener('mousemove', (e) => {
+      if (window.innerHeight - e.clientY < 75) {
+        if (isNavHidden) {
+          floatNav.classList.remove('nav-hidden');
+          isNavHidden = false;
+        }
+      }
+    }, { passive: true });
   }
 
   // 3. Desktop Keyboard Shortcuts
@@ -1026,6 +1036,14 @@ function initChapterNavigation() {
 
     const paletteBackdrop = document.getElementById('palette-backdrop');
     if (paletteBackdrop && paletteBackdrop.classList.contains('open')) return;
+
+    if (e.key === 'b' || e.key === 'B') {
+      e.preventDefault();
+      if (typeof window.toggleBookmark === 'function') {
+        window.toggleBookmark();
+      }
+      return;
+    }
 
     const curNav = getAdjacentChapters();
 
@@ -1364,6 +1382,39 @@ function initReadingPositionSystem() {
         floatBtn.classList.remove('bookmarked');
         floatBtn.title = 'Bookmark current position';
       }
+    }
+
+    const sideBtn = document.getElementById('sidebar-bookmark-btn');
+    if (sideBtn) {
+      if (isMarked) {
+        sideBtn.classList.add('bookmarked');
+        sideBtn.title = `Bookmark saved at ${bookmarks[meta.key].progress}%. Click to move here or clear.`;
+        const label = sideBtn.querySelector('.bookmark-label');
+        if (label) label.textContent = `Bookmarked (${bookmarks[meta.key].progress}%)`;
+      } else {
+        sideBtn.classList.remove('bookmarked');
+        sideBtn.title = 'Bookmark current position (Press B)';
+        const label = sideBtn.querySelector('.bookmark-label');
+        if (label) label.textContent = 'Bookmark Spot (B)';
+      }
+    }
+  }
+
+  // Sticky Sidebar Bookmark Button (Desktop)
+  const sidebar = document.querySelector('.sidebar');
+  const sidebarTitle = document.querySelector('.sidebar-title');
+  if (sidebar && !document.getElementById('sidebar-bookmark-btn')) {
+    const sbBtn = document.createElement('button');
+    sbBtn.type = 'button';
+    sbBtn.id = 'sidebar-bookmark-btn';
+    sbBtn.className = 'sidebar-bookmark-btn';
+    sbBtn.innerHTML = '<span>🔖</span> <span class="bookmark-label">Bookmark Spot (B)</span>';
+    sbBtn.title = 'Bookmark current reading position (Press B)';
+    sbBtn.addEventListener('click', () => toggleBookmark());
+    if (sidebarTitle) {
+      sidebar.insertBefore(sbBtn, sidebarTitle);
+    } else {
+      sidebar.appendChild(sbBtn);
     }
   }
 
