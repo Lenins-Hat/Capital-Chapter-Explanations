@@ -906,9 +906,10 @@ function initChapterNavigation() {
     markBtn.className = 'btn btn-bookmark';
     markBtn.innerHTML = '<span>🔖</span> <span class="bookmark-label">Bookmark</span>';
     markBtn.title = 'Bookmark current reading position';
-    markBtn.addEventListener('click', () => {
+    markBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (typeof window.toggleBookmark === 'function') {
-        window.toggleBookmark();
+        window.toggleBookmark(markBtn);
       }
     });
     navGroup.appendChild(markBtn);
@@ -980,7 +981,7 @@ function initChapterNavigation() {
         e.preventDefault();
         e.stopPropagation();
         if (typeof window.toggleBookmark === 'function') {
-          window.toggleBookmark();
+          window.toggleBookmark(floatMark);
         }
       });
     }
@@ -1045,10 +1046,18 @@ function initChapterNavigation() {
     const tocBackdrop = document.getElementById('quick-toc-backdrop');
     if (tocBackdrop && tocBackdrop.classList.contains('open')) return;
 
+    if ((e.key === 'b' || e.key === 'B') && e.shiftKey) {
+      e.preventDefault();
+      if (typeof window.jumpToBookmark === 'function') {
+        window.jumpToBookmark();
+      }
+      return;
+    }
+
     if (e.key === 'b' || e.key === 'B') {
       e.preventDefault();
       if (typeof window.toggleBookmark === 'function') {
-        window.toggleBookmark();
+        window.toggleBookmark(document.getElementById('float-nav-bookmark-btn') || document.getElementById('reader-bookmark-btn'));
       }
       return;
     }
@@ -1426,7 +1435,10 @@ function initReadingPositionSystem() {
     sbBtn.className = 'sidebar-bookmark-btn';
     sbBtn.innerHTML = '<span>🔖</span> <span class="bookmark-label">Bookmark Spot (B)</span>';
     sbBtn.title = 'Bookmark current reading position (Press B)';
-    sbBtn.addEventListener('click', () => toggleBookmark());
+    sbBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleBookmark(sbBtn);
+    });
     if (sidebarTitle) {
       sidebar.insertBefore(sbBtn, sidebarTitle);
     } else {
@@ -1434,7 +1446,100 @@ function initReadingPositionSystem() {
     }
   }
 
-  function toggleBookmark() {
+  let activePopover = null;
+
+  function closeBookmarkPopover() {
+    if (activePopover) {
+      activePopover.classList.remove('open');
+      const toRemove = activePopover;
+      activePopover = null;
+      setTimeout(() => {
+        if (toRemove && toRemove.parentNode) {
+          toRemove.remove();
+        }
+      }, 180);
+    }
+  }
+
+  function openBookmarkPopover(anchorBtn, bm) {
+    closeBookmarkPopover();
+    if (!anchorBtn) return;
+
+    const currentScroll = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const currentProgress = docHeight > 0 ? Math.min(100, Math.max(0, Math.round((currentScroll / docHeight) * 100))) : 0;
+
+    const isTopBar = anchorBtn.id === 'reader-bookmark-btn';
+
+    const popover = document.createElement('div');
+    popover.className = 'bookmark-actions-popover' + (isTopBar ? ' top-bar-popover' : '');
+    popover.setAttribute('role', 'dialog');
+    popover.setAttribute('aria-label', 'Bookmark Actions');
+
+    popover.innerHTML = `
+      <div class="bookmark-popover-header">
+        <span class="bookmark-popover-title">🔖 Bookmark at ${bm.progress}%</span>
+        <span class="bookmark-popover-sub" title="${escapeStr(bm.heading || '')}">${escapeStr(bm.heading || '')}</span>
+      </div>
+      <button type="button" class="bookmark-popover-action jump" id="bm-popover-jump">
+        <span>📍</span> <span>Jump to Bookmark (${bm.progress}%)</span>
+      </button>
+      <button type="button" class="bookmark-popover-action move" id="bm-popover-move">
+        <span>🔖</span> <span>Move Bookmark Here (${currentProgress}%)</span>
+      </button>
+      <button type="button" class="bookmark-popover-action delete" id="bm-popover-delete">
+        <span>🗑️</span> <span>Remove Bookmark</span>
+      </button>
+    `;
+
+    if (anchorBtn.id === 'float-nav-bookmark-btn') {
+      const floatNav = document.getElementById('floating-chapter-nav');
+      if (floatNav) {
+        floatNav.appendChild(popover);
+      } else {
+        document.body.appendChild(popover);
+      }
+    } else {
+      anchorBtn.parentElement.style.position = 'relative';
+      anchorBtn.parentElement.appendChild(popover);
+    }
+
+    setTimeout(() => {
+      popover.classList.add('open');
+    }, 20);
+
+    activePopover = popover;
+
+    popover.querySelector('#bm-popover-jump')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeBookmarkPopover();
+      jumpToBookmark();
+    });
+
+    popover.querySelector('#bm-popover-move')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeBookmarkPopover();
+      saveCurrentBookmark();
+    });
+
+    popover.querySelector('#bm-popover-delete')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeBookmarkPopover();
+      removeBookmark();
+    });
+
+    const docDismiss = (e) => {
+      if (!popover.contains(e.target) && e.target !== anchorBtn && !anchorBtn.contains(e.target)) {
+        closeBookmarkPopover();
+        document.removeEventListener('click', docDismiss);
+      }
+    };
+    setTimeout(() => {
+      document.addEventListener('click', docDismiss);
+    }, 50);
+  }
+
+  function saveCurrentBookmark() {
     const meta = getReadingMetadata();
     const bookmarks = getBookmarks();
     const currentScroll = window.scrollY;
@@ -1442,33 +1547,35 @@ function initReadingPositionSystem() {
     const progress = docHeight > 0 ? Math.min(100, Math.max(0, Math.round((currentScroll / docHeight) * 100))) : 0;
     const heading = getCurrentHeading();
 
-    const existing = bookmarks[meta.key];
-    if (existing) {
-      if (Math.abs(currentScroll - existing.scrollY) < 140) {
-        delete bookmarks[meta.key];
-        saveBookmarks(bookmarks);
-        showToast('Bookmark removed');
-      } else {
-        bookmarks[meta.key] = {
-          scrollY: Math.round(currentScroll),
-          progress: progress,
-          heading: heading || meta.subtitle || meta.title,
-          savedAt: Date.now()
-        };
-        saveBookmarks(bookmarks);
-        showToast(`🔖 Bookmark moved to ${progress}%`);
-      }
-    } else {
-      bookmarks[meta.key] = {
-        scrollY: Math.round(currentScroll),
-        progress: progress,
-        heading: heading || meta.subtitle || meta.title,
-        savedAt: Date.now()
-      };
-      saveBookmarks(bookmarks);
-      showToast(`🔖 Bookmark saved at ${progress}%`);
-    }
+    bookmarks[meta.key] = {
+      scrollY: Math.round(currentScroll),
+      progress: progress,
+      heading: heading || meta.subtitle || meta.title,
+      savedAt: Date.now()
+    };
+    saveBookmarks(bookmarks);
+    showToast(`🔖 Bookmark saved at ${progress}%`);
     updateBookmarkUI();
+  }
+
+  function removeBookmark() {
+    const meta = getReadingMetadata();
+    const bookmarks = getBookmarks();
+    delete bookmarks[meta.key];
+    saveBookmarks(bookmarks);
+    showToast('Bookmark removed');
+    updateBookmarkUI();
+  }
+
+  function toggleBookmark(anchorBtn) {
+    const meta = getReadingMetadata();
+    const bookmarks = getBookmarks();
+    const bm = bookmarks[meta.key];
+    if (!bm) {
+      saveCurrentBookmark();
+    } else {
+      openBookmarkPopover(anchorBtn || document.getElementById('float-nav-bookmark-btn') || document.getElementById('reader-bookmark-btn'), bm);
+    }
   }
 
   function jumpToBookmark() {
@@ -1487,6 +1594,15 @@ function initReadingPositionSystem() {
   window.jumpToBookmark = jumpToBookmark;
 
   // 4. Polite Resume Prompt & Direct Resume
+  const initialMeta = getReadingMetadata();
+  const curBm = getBookmarks()[initialMeta.key];
+  if (curBm && typeof curBm.scrollY === 'number' && window.location.hash === '#bookmark') {
+    setTimeout(() => {
+      window.scrollTo({ top: curBm.scrollY, behavior: 'smooth' });
+      showToast(`Jumped to bookmark (${curBm.progress}%)`);
+    }, 300);
+  }
+
   let savedProgress = null;
   try {
     const raw = localStorage.getItem('capital_progress_' + chapterKey);
@@ -1507,6 +1623,7 @@ function initReadingPositionSystem() {
       banner.setAttribute('aria-label', 'Resume Reading');
 
       const headingHtml = savedProgress.heading ? ` • <em>${escapeStr(savedProgress.heading)}</em>` : '';
+      const hasDistinctBookmark = curBm && typeof curBm.scrollY === 'number' && Math.abs(curBm.scrollY - savedProgress.scrollY) > 200;
 
       banner.innerHTML = `
         <div class="resume-info">
@@ -1518,6 +1635,7 @@ function initReadingPositionSystem() {
         </div>
         <div class="resume-actions">
           <button type="button" class="btn-resume-jump" id="btn-resume-jump">Resume</button>
+          ${hasDistinctBookmark ? `<button type="button" class="btn-resume-jump" id="btn-resume-bm" style="background:#eab308;color:#0b0f19;">📍 Bookmark (${curBm.progress}%)</button>` : ''}
           <button type="button" class="btn-resume-dismiss" id="btn-resume-dismiss" title="Dismiss">✕</button>
         </div>
       `;
@@ -1535,6 +1653,11 @@ function initReadingPositionSystem() {
       document.getElementById('btn-resume-jump')?.addEventListener('click', () => {
         window.scrollTo({ top: savedProgress.scrollY, behavior: 'smooth' });
         showToast(`Resumed at ${savedProgress.progress}%`);
+        dismissPrompt();
+      });
+
+      document.getElementById('btn-resume-bm')?.addEventListener('click', () => {
+        jumpToBookmark();
         dismissPrompt();
       });
 
@@ -1634,6 +1757,32 @@ function initQuickTOCModal() {
 
     let matchCount = 0;
     items = [];
+
+    try {
+      const bms = JSON.parse(localStorage.getItem('capital_bookmarks') || '{}');
+      const bmKey = (typeof getReadingMetadata === 'function') ? getReadingMetadata().key : '';
+      const bm = bmKey ? bms[bmKey] : null;
+      if (bm && typeof bm.scrollY === 'number' && !q) {
+        const bmItem = document.createElement('div');
+        bmItem.className = 'quick-toc-item';
+        bmItem.style.background = 'rgba(234, 179, 8, 0.12)';
+        bmItem.style.border = '1px solid rgba(234, 179, 8, 0.35)';
+        bmItem.style.color = '#eab308';
+        bmItem.style.fontWeight = '700';
+        bmItem.style.marginBottom = '6px';
+        bmItem.innerHTML = `
+          <span class="quick-toc-icon" style="font-size:1.1rem; line-height:1;">🔖</span>
+          <span class="quick-toc-text" style="color:var(--text-main);">Saved Bookmark: <strong style="color:#eab308;">${bm.progress}%</strong>${bm.heading ? ` • <em>${escapeStr(bm.heading)}</em>` : ''}</span>
+          <span class="quick-toc-active-chip" style="background:#eab308;color:#0b0f19;">Jump 📍</span>
+        `;
+        bmItem.addEventListener('click', () => {
+          closeQuickTOC();
+          window.scrollTo({ top: bm.scrollY, behavior: 'smooth' });
+          showToast(`Jumped to bookmark (${bm.progress}%)`);
+        });
+        listEl.appendChild(bmItem);
+      }
+    } catch (e) {}
 
     headings.forEach((h) => {
       const rawText = h.textContent.replace(/^#+\s*/, '').replace(/#$/, '').trim();

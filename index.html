@@ -3901,6 +3901,12 @@
         return;
       }
 
+      let bookmark = null;
+      try {
+        const bms = JSON.parse(localStorage.getItem('capital_bookmarks') || '{}');
+        if (bms[lastRead.path]) bookmark = bms[lastRead.path];
+      } catch (e) {}
+
       const vClass = lastRead.volume === 'Volume 1' ? 'chip-vol-1' : (lastRead.volume === 'Volume 2' ? 'chip-vol-2' : 'chip-vol-3');
       const vBadge = lastRead.volume === 'Volume 1' ? 'Vol 1' : (lastRead.volume === 'Volume 2' ? 'Vol 2' : 'Vol 3');
 
@@ -3926,10 +3932,17 @@
                 <span class="continue-progress-stat">${lastRead.progress}%</span>
               </div>
             </div>
-            <a href="${escapeHtml(lastRead.path)}#resume" class="continue-resume-link">
-              <span>Resume Chapter</span>
-              <svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 16 16"><path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
-            </a>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              ${bookmark ? `
+                <a href="${escapeHtml(lastRead.path)}#bookmark" class="continue-resume-link" style="background: rgba(234, 179, 8, 0.16); border-color: rgba(234, 179, 8, 0.45); color: #eab308;" title="Jump to saved bookmark at ${bookmark.progress}%">
+                  <span>📍 Bookmark (${bookmark.progress}%)</span>
+                </a>
+              ` : ''}
+              <a href="${escapeHtml(lastRead.path)}#resume" class="continue-resume-link">
+                <span>Resume Chapter</span>
+                <svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 16 16"><path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       `;
@@ -3946,6 +3959,9 @@
     }
 
     function renderChapterCardsProgress() {
+      let bms = {};
+      try { bms = JSON.parse(localStorage.getItem('capital_bookmarks') || '{}'); } catch(e){}
+
       cards.forEach(card => {
         const link = card.querySelector('a.card-title-link');
         if (!link) return;
@@ -3958,6 +3974,30 @@
           const raw = localStorage.getItem('capital_progress_' + normKey);
           if (raw) saved = JSON.parse(raw);
         } catch (e) {}
+
+        const cardBm = bms[normKey];
+        let bmPill = card.querySelector('.card-bookmark-pill');
+        if (cardBm) {
+          if (!bmPill) {
+            bmPill = document.createElement('span');
+            bmPill.className = 'card-bookmark-pill';
+            bmPill.style.display = 'inline-flex';
+            bmPill.style.alignItems = 'center';
+            bmPill.style.gap = '3px';
+            bmPill.style.fontSize = '0.72rem';
+            bmPill.style.fontWeight = '700';
+            bmPill.style.padding = '2px 7px';
+            bmPill.style.borderRadius = '999px';
+            bmPill.style.background = 'rgba(234, 179, 8, 0.14)';
+            bmPill.style.color = '#eab308';
+            bmPill.style.border = '1px solid rgba(234, 179, 8, 0.4)';
+            card.querySelector('.card-top')?.appendChild(bmPill);
+          }
+          bmPill.title = `Saved bookmark at ${cardBm.progress}%`;
+          bmPill.innerHTML = `🔖 ${cardBm.progress}%`;
+        } else if (bmPill) {
+          bmPill.remove();
+        }
 
         let pill = card.querySelector('.card-progress-pill');
         let fill = card.querySelector('.card-progress-track');

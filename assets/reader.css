@@ -1362,6 +1362,110 @@ body.tts-active-mode .content h4:hover {
   background: rgba(234, 179, 8, 0.12);
 }
 
+/* Bookmark Actions Popover */
+.bookmark-actions-popover {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
+  padding: 12px 14px;
+  z-index: 1200;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.bookmark-actions-popover.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.bookmark-actions-popover.top-bar-popover {
+  bottom: auto;
+  top: calc(100% + 8px);
+  left: 0;
+  transform: translateY(-4px);
+}
+
+.bookmark-actions-popover.top-bar-popover.open {
+  transform: translateY(0);
+}
+
+.bookmark-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 6px;
+  margin-bottom: 2px;
+}
+
+.bookmark-popover-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #eab308;
+}
+
+.bookmark-popover-sub {
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 190px;
+}
+
+.bookmark-popover-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--code-bg);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.bookmark-popover-action:hover {
+  background: var(--callout-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.bookmark-popover-action.jump {
+  background: rgba(234, 179, 8, 0.12);
+  border-color: rgba(234, 179, 8, 0.35);
+  color: #eab308;
+}
+
+.bookmark-popover-action.jump:hover {
+  background: rgba(234, 179, 8, 0.22);
+}
+
+.bookmark-popover-action.delete {
+  color: var(--text-muted);
+}
+
+.bookmark-popover-action.delete:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #ef4444;
+}
+
 /* Dynamic Reading Time Badge Styling */
 .badge.reading-time-dynamic {
   transition: color 0.2s ease, border-color 0.2s ease;
