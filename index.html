@@ -532,6 +532,7 @@
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: var(--card-shadow);
       position: relative;
+      overflow: hidden;
     }
 
     .chapter-card:hover {
@@ -539,6 +540,214 @@
       border-color: var(--border-focus);
       box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
       background: var(--bg-surface-hover);
+    }
+
+    /* Card Progress Pills & Track */
+    .card-progress-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.16rem 0.52rem;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .card-progress-pill.in-progress {
+      background: rgba(234, 179, 8, 0.15);
+      color: #eab308;
+      border: 1px solid rgba(234, 179, 8, 0.35);
+    }
+
+    .card-progress-pill.completed {
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+
+    .card-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .card-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .card-progress-fill.completed {
+      background: #22c55e;
+    }
+
+    /* Dashboard Continue Reading Banner */
+    .continue-reading-card {
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.09) 0%, var(--bg-surface) 100%);
+      border: 1px solid var(--accent);
+      border-radius: 14px;
+      padding: 1.2rem 1.45rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 28px -5px rgba(0, 0, 0, 0.4), 0 0 18px var(--accent-glow);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: all 0.2s ease;
+      animation: fadeInBanner 0.3s ease-out;
+    }
+
+    @keyframes fadeInBanner {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .continue-reading-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .continue-label-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .continue-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .continue-dismiss-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 6px;
+      line-height: 1;
+      transition: all 0.15s ease;
+    }
+
+    .continue-dismiss-btn:hover {
+      background: var(--callout-bg);
+      color: var(--text-main);
+    }
+
+    .continue-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .continue-chapter-info {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .continue-chapter-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .continue-chapter-sub {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .continue-chapter-sub strong {
+      color: var(--accent);
+    }
+
+    .continue-chapter-sub em {
+      font-style: normal;
+      color: var(--text-dim);
+    }
+
+    .continue-progress-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .continue-progress-track {
+      flex: 1;
+      min-width: 140px;
+      max-width: 240px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    [data-theme="light"] .continue-progress-track,
+    [data-theme="sepia"] .continue-progress-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .continue-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 9999px;
+      transition: width 0.3s ease;
+    }
+
+    .continue-progress-stat {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .continue-time-stat {
+      font-size: 0.74rem;
+      color: var(--text-dim);
+    }
+
+    .continue-resume-link {
+      background: var(--accent);
+      color: #0b0f19;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 4px 14px var(--accent-glow);
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    [data-theme="light"] .continue-resume-link,
+    [data-theme="sepia"] .continue-resume-link {
+      color: #ffffff;
+    }
+
+    .continue-resume-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px var(--accent-glow);
     }
 
     .card-top {
@@ -1045,6 +1254,9 @@
   </header>
 
   <main id="mainContent">
+    <!-- Continue Reading Banner Container -->
+    <div id="continueReadingContainer"></div>
+
     <!-- Volume Banner -->
     <div id="volumeBanner" class="volume-header-banner" style="display: none;">
       <h2 id="bannerTitle">Volume</h2>
@@ -3527,6 +3739,7 @@
       });
 
       balanceCardSummaries();
+      if (typeof renderChapterCardsProgress === 'function') renderChapterCardsProgress();
 
       if (q || activeConcept !== "all") {
         chaptersSectionHeader.style.display = 'flex';
@@ -3666,6 +3879,142 @@
     // --- 5. Pretext Initial Execution ---
     initPretextSummaries();
     balanceCardSummaries();
+
+    // --- 6. Reading Progress & Continue Reading Dashboard Hub ---
+    function renderContinueReadingBanner() {
+      const container = document.getElementById('continueReadingContainer');
+      if (!container) return;
+
+      if (sessionStorage.getItem('dismiss_continue_reading') === 'true') {
+        container.innerHTML = '';
+        return;
+      }
+
+      let lastRead = null;
+      try {
+        const raw = localStorage.getItem('capital_last_read');
+        if (raw) lastRead = JSON.parse(raw);
+      } catch (e) {}
+
+      if (!lastRead || !lastRead.path || lastRead.progress < 2 || lastRead.progress > 98) {
+        container.innerHTML = '';
+        return;
+      }
+
+      const vClass = lastRead.volume === 'Volume 1' ? 'chip-vol-1' : (lastRead.volume === 'Volume 2' ? 'chip-vol-2' : 'chip-vol-3');
+      const vBadge = lastRead.volume === 'Volume 1' ? 'Vol 1' : (lastRead.volume === 'Volume 2' ? 'Vol 2' : 'Vol 3');
+
+      const headingText = lastRead.heading ? ` • <em>${escapeHtml(lastRead.heading)}</em>` : '';
+
+      container.innerHTML = `
+        <div class="continue-reading-card" id="continueReadingCard">
+          <div class="continue-reading-top">
+            <div class="continue-label-group">
+              <span class="continue-tag"><span>📖</span> <span>Continue Reading</span></span>
+              <span class="vol-chip ${vClass}">${vBadge}</span>
+            </div>
+            <button type="button" class="continue-dismiss-btn" id="dismissContinueBtn" title="Dismiss banner">✕</button>
+          </div>
+          <div class="continue-content">
+            <div class="continue-chapter-info">
+              <div class="continue-chapter-title">${escapeHtml(lastRead.title)}: ${escapeHtml(lastRead.subtitle)}</div>
+              <div class="continue-chapter-sub">Picked up at <strong>${lastRead.progress}%</strong>${headingText}</div>
+              <div class="continue-progress-row">
+                <div class="continue-progress-track">
+                  <div class="continue-progress-fill" style="width: ${lastRead.progress}%;"></div>
+                </div>
+                <span class="continue-progress-stat">${lastRead.progress}%</span>
+              </div>
+            </div>
+            <a href="${escapeHtml(lastRead.path)}#resume" class="continue-resume-link">
+              <span>Resume Chapter</span>
+              <svg style="width:14px;height:14px;fill:currentColor;" viewBox="0 0 16 16"><path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+            </a>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('dismissContinueBtn')?.addEventListener('click', () => {
+        sessionStorage.setItem('dismiss_continue_reading', 'true');
+        const card = document.getElementById('continueReadingCard');
+        if (card) {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(-6px)';
+          setTimeout(() => { container.innerHTML = ''; }, 200);
+        }
+      });
+    }
+
+    function renderChapterCardsProgress() {
+      cards.forEach(card => {
+        const link = card.querySelector('a.card-title-link');
+        if (!link) return;
+        const rawHref = link.getAttribute('href');
+        if (!rawHref) return;
+
+        const normKey = decodeURIComponent(rawHref).replace(/\\/g, '/');
+        let saved = null;
+        try {
+          const raw = localStorage.getItem('capital_progress_' + normKey);
+          if (raw) saved = JSON.parse(raw);
+        } catch (e) {}
+
+        let pill = card.querySelector('.card-progress-pill');
+        let fill = card.querySelector('.card-progress-track');
+
+        if (saved && saved.progress >= 2) {
+          if (saved.progress >= 95) {
+            if (!pill) {
+              pill = document.createElement('span');
+              pill.className = 'card-progress-pill completed';
+              card.querySelector('.card-top')?.appendChild(pill);
+            } else {
+              pill.className = 'card-progress-pill completed';
+            }
+            pill.innerHTML = '✓ Read';
+            pill.title = 'Finished reading';
+
+            if (!fill) {
+              fill = document.createElement('div');
+              fill.className = 'card-progress-track';
+              fill.innerHTML = '<div class="card-progress-fill completed" style="width: 100%;"></div>';
+              card.appendChild(fill);
+            }
+          } else {
+            if (!pill) {
+              pill = document.createElement('span');
+              pill.className = 'card-progress-pill in-progress';
+              card.querySelector('.card-top')?.appendChild(pill);
+            } else {
+              pill.className = 'card-progress-pill in-progress';
+            }
+            pill.innerHTML = `📖 ${saved.progress}%`;
+            pill.title = `Reading progress: ${saved.progress}%`;
+
+            if (!fill) {
+              fill = document.createElement('div');
+              fill.className = 'card-progress-track';
+              fill.innerHTML = `<div class="card-progress-fill" style="width: ${saved.progress}%;"></div>`;
+              card.appendChild(fill);
+            } else {
+              const bar = fill.querySelector('.card-progress-fill');
+              if (bar) bar.style.width = `${saved.progress}%`;
+            }
+          }
+        } else {
+          if (pill) pill.remove();
+          if (fill) fill.remove();
+        }
+      });
+    }
+
+    renderContinueReadingBanner();
+    renderChapterCardsProgress();
+
+    window.addEventListener('storage', () => {
+      renderContinueReadingBanner();
+      renderChapterCardsProgress();
+    });
   </script>
 
   <!-- Floating Back to Top Button -->

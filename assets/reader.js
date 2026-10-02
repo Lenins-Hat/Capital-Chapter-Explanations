@@ -714,6 +714,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // --- 8. Initialize Advanced GitHub Extensions ---
   initPaletteIntegration();
   initChapterNavigation();
+  initReadingPositionSystem();
   initMobileSettingsMenu();
   mountChapterSimulators();
 
@@ -898,6 +899,19 @@ function initChapterNavigation() {
     navGroup.style.gap = '6px';
     navGroup.style.alignItems = 'center';
 
+    const markBtn = document.createElement('button');
+    markBtn.type = 'button';
+    markBtn.id = 'reader-bookmark-btn';
+    markBtn.className = 'btn btn-bookmark';
+    markBtn.innerHTML = '<span>🔖</span> <span class="bookmark-label">Bookmark</span>';
+    markBtn.title = 'Bookmark current reading position';
+    markBtn.addEventListener('click', () => {
+      if (typeof window.toggleBookmark === 'function') {
+        window.toggleBookmark();
+      }
+    });
+    navGroup.appendChild(markBtn);
+
     const prevA = document.createElement('a');
     prevA.className = 'btn btn-nav-step prev' + (prev && prev.href ? '' : ' disabled');
     prevA.id = 'reader-top-prev-btn';
@@ -941,6 +955,7 @@ function initChapterNavigation() {
     floatNav.innerHTML = `
       <a ${prev && prev.href ? `href="${prev.href}"` : ''} class="float-nav-btn prev ${prev && prev.href ? '' : 'disabled'}" title="${prev ? `Previous: ${prev.title}` : 'First Chapter'}"><span class="float-nav-arrow">←</span> <span>Prev</span></a>
       <button type="button" class="float-nav-btn jump" id="float-nav-jump-btn" title="Jump to Chapter (Ctrl+K)"><span>🔍</span> <span>Jump</span></button>
+      <button type="button" class="float-nav-btn bookmark" id="float-nav-bookmark-btn" title="Bookmark Reading Position"><span>🔖</span> <span>Mark</span></button>
       <button type="button" class="float-nav-btn toc" id="float-nav-toc-btn" title="Table of Contents"><span>📑</span> <span>TOC</span></button>
       <a ${next && next.href ? `href="${next.href}"` : ''} class="float-nav-btn next ${next && next.href ? '' : 'disabled'}" title="${next ? `Next: ${next.title}` : 'Last Chapter'}"><span>Next</span> <span class="float-nav-arrow">→</span></a>
     `;
@@ -954,6 +969,17 @@ function initChapterNavigation() {
         e.stopPropagation();
         if (typeof window.openCommandPalette === 'function') {
           window.openCommandPalette();
+        }
+      });
+    }
+
+    const floatMark = document.getElementById('float-nav-bookmark-btn');
+    if (floatMark) {
+      floatMark.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof window.toggleBookmark === 'function') {
+          window.toggleBookmark();
         }
       });
     }
@@ -1124,6 +1150,343 @@ function initMobileSettingsMenu() {
       popover.classList.remove('open');
     });
   }
+}
+
+// --- D. Reading Position, Polite Resume, Bookmarks & Dynamic Time Left ---
+function initReadingPositionSystem() {
+  function escapeStr(s) {
+    if (!s) return '';
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function getNormalizedChapterKey() {
+    const normPath = decodeURIComponent(window.location.pathname).replace(/\\/g, '/');
+    const parts = normPath.split('/').filter(Boolean);
+    if (parts.length >= 3) {
+      return parts.slice(-3).join('/');
+    }
+    return normPath;
+  }
+
+  function getReadingMetadata() {
+    const normKey = getNormalizedChapterKey();
+    if (window.CAPITAL_CATALOG && window.CAPITAL_CATALOG.chapters) {
+      const found = window.CAPITAL_CATALOG.chapters.find(c => {
+        const normHref = decodeURIComponent(c.href).replace(/\\/g, '/').toLowerCase();
+        return normKey.toLowerCase().endsWith(normHref) || normKey.toLowerCase() === normHref;
+      });
+      if (found) {
+        return {
+          key: found.href,
+          volume: found.volume,
+          title: found.title,
+          subtitle: found.subtitle,
+          href: found.href
+        };
+      }
+    }
+
+    const h1 = document.getElementById('chapter-title') || document.querySelector('.content h1');
+    const text = h1 ? h1.textContent.trim() : document.title;
+    let vol = 'Volume 1';
+    if (text.includes('Volume 2')) vol = 'Volume 2';
+    if (text.includes('Volume 3')) vol = 'Volume 3';
+
+    let title = 'Chapter';
+    let subtitle = '';
+    if (text.includes(':')) {
+      const split = text.split(':');
+      title = split[0].trim();
+      subtitle = split.slice(1).join(':').trim();
+    } else {
+      title = text;
+    }
+
+    return {
+      key: normKey,
+      volume: vol,
+      title: title,
+      subtitle: subtitle,
+      href: normKey
+    };
+  }
+
+  function getCurrentHeading() {
+    const headings = document.querySelectorAll('#content h2, #content h3');
+    let current = '';
+    const targetY = window.scrollY + 140;
+    for (let i = 0; i < headings.length; i++) {
+      if (headings[i].offsetTop <= targetY) {
+        current = headings[i].textContent.trim().replace(/^§\s*/, '').replace(/^[0-9.]+\s*/, '');
+      } else {
+        break;
+      }
+    }
+    return current;
+  }
+
+  function getBookmarks() {
+    try {
+      return JSON.parse(localStorage.getItem('capital_bookmarks') || '{}');
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveBookmarks(b) {
+    try {
+      localStorage.setItem('capital_bookmarks', JSON.stringify(b));
+    } catch (e) {}
+  }
+
+  // 1. Dynamic Reading Time Countdown
+  const metaBadges = document.querySelector('.toolbar .meta-badges');
+  let timeBadge = null;
+  let totalMinutes = 0;
+  let originalTimeText = '';
+
+  if (metaBadges) {
+    const badges = metaBadges.querySelectorAll('.badge');
+    badges.forEach(b => {
+      const text = b.textContent || '';
+      const match = text.match(/(\d+)\s*min read/i);
+      if (match) {
+        timeBadge = b;
+        totalMinutes = parseInt(match[1], 10);
+        originalTimeText = text;
+      }
+    });
+    if (timeBadge && totalMinutes > 0) {
+      timeBadge.classList.add('reading-time-dynamic');
+    }
+  }
+
+  function updateDynamicTime(ratio, percent) {
+    if (!timeBadge || totalMinutes <= 0) return;
+    if (percent >= 98) {
+      timeBadge.innerHTML = '⏱️ Finished ✓';
+      timeBadge.classList.add('finished');
+      timeBadge.title = 'Chapter completed';
+    } else if (percent <= 1) {
+      timeBadge.textContent = originalTimeText;
+      timeBadge.classList.remove('finished');
+      timeBadge.title = `Estimated reading time: ~${totalMinutes} mins`;
+    } else {
+      timeBadge.classList.remove('finished');
+      const minLeft = Math.max(1, Math.ceil(totalMinutes * (1 - ratio)));
+      timeBadge.innerHTML = `⏱️ ${minLeft} min left <span style="opacity:0.75; font-size:0.88em;">(${percent}%)</span>`;
+      timeBadge.title = `${percent}% read • ~${minLeft} minutes remaining`;
+    }
+  }
+
+  // 2. Reading Position Saving (Debounced 350ms)
+  const chapterKey = getNormalizedChapterKey();
+  let saveTimer = null;
+
+  function persistProgress() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    const scrollY = window.scrollY;
+    const ratio = Math.min(1, Math.max(0, scrollY / docHeight));
+    const progress = Math.round(ratio * 100);
+    const meta = getReadingMetadata();
+    const heading = getCurrentHeading();
+
+    const data = {
+      key: meta.key,
+      path: meta.href,
+      volume: meta.volume,
+      title: meta.title,
+      subtitle: meta.subtitle,
+      scrollY: Math.round(scrollY),
+      progress: progress,
+      heading: heading || meta.subtitle || meta.title,
+      updatedAt: Date.now()
+    };
+
+    try {
+      localStorage.setItem('capital_progress_' + meta.key, JSON.stringify(data));
+      localStorage.setItem('capital_last_read', JSON.stringify(data));
+
+      let history = [];
+      try { history = JSON.parse(localStorage.getItem('capital_reading_history') || '[]'); } catch(e){}
+      if (!history.includes(meta.key)) {
+        history.push(meta.key);
+        localStorage.setItem('capital_reading_history', JSON.stringify(history));
+      }
+    } catch (e) {}
+  }
+
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0) {
+      const ratio = Math.min(1, Math.max(0, window.scrollY / docHeight));
+      const percent = Math.round(ratio * 100);
+      updateDynamicTime(ratio, percent);
+    }
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(persistProgress, 350);
+  }, { passive: true });
+
+  window.addEventListener('beforeunload', persistProgress);
+
+  // 3. Bookmarks Management
+  function updateBookmarkUI() {
+    const meta = getReadingMetadata();
+    const bookmarks = getBookmarks();
+    const isMarked = !!bookmarks[meta.key];
+
+    const topBtn = document.getElementById('reader-bookmark-btn');
+    if (topBtn) {
+      if (isMarked) {
+        topBtn.classList.add('bookmarked');
+        topBtn.title = `Bookmark saved at ${bookmarks[meta.key].progress}%. Click to move here or jump.`;
+        const label = topBtn.querySelector('.bookmark-label');
+        if (label) label.textContent = `${bookmarks[meta.key].progress}%`;
+      } else {
+        topBtn.classList.remove('bookmarked');
+        topBtn.title = 'Bookmark current reading position';
+        const label = topBtn.querySelector('.bookmark-label');
+        if (label) label.textContent = 'Bookmark';
+      }
+    }
+
+    const floatBtn = document.getElementById('float-nav-bookmark-btn');
+    if (floatBtn) {
+      if (isMarked) {
+        floatBtn.classList.add('bookmarked');
+        floatBtn.title = `Bookmark set at ${bookmarks[meta.key].progress}%`;
+      } else {
+        floatBtn.classList.remove('bookmarked');
+        floatBtn.title = 'Bookmark current position';
+      }
+    }
+  }
+
+  function toggleBookmark() {
+    const meta = getReadingMetadata();
+    const bookmarks = getBookmarks();
+    const currentScroll = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? Math.min(100, Math.max(0, Math.round((currentScroll / docHeight) * 100))) : 0;
+    const heading = getCurrentHeading();
+
+    const existing = bookmarks[meta.key];
+    if (existing) {
+      if (Math.abs(currentScroll - existing.scrollY) < 140) {
+        delete bookmarks[meta.key];
+        saveBookmarks(bookmarks);
+        showToast('Bookmark removed');
+      } else {
+        bookmarks[meta.key] = {
+          scrollY: Math.round(currentScroll),
+          progress: progress,
+          heading: heading || meta.subtitle || meta.title,
+          savedAt: Date.now()
+        };
+        saveBookmarks(bookmarks);
+        showToast(`🔖 Bookmark moved to ${progress}%`);
+      }
+    } else {
+      bookmarks[meta.key] = {
+        scrollY: Math.round(currentScroll),
+        progress: progress,
+        heading: heading || meta.subtitle || meta.title,
+        savedAt: Date.now()
+      };
+      saveBookmarks(bookmarks);
+      showToast(`🔖 Bookmark saved at ${progress}%`);
+    }
+    updateBookmarkUI();
+  }
+
+  function jumpToBookmark() {
+    const meta = getReadingMetadata();
+    const bookmarks = getBookmarks();
+    const bm = bookmarks[meta.key];
+    if (bm && typeof bm.scrollY === 'number') {
+      window.scrollTo({ top: bm.scrollY, behavior: 'smooth' });
+      showToast(`Jumped to bookmark (${bm.progress}%)`);
+    } else {
+      showToast('No bookmark set in this chapter');
+    }
+  }
+
+  window.toggleBookmark = toggleBookmark;
+  window.jumpToBookmark = jumpToBookmark;
+
+  // 4. Polite Resume Prompt & Direct Resume
+  let savedProgress = null;
+  try {
+    const raw = localStorage.getItem('capital_progress_' + chapterKey);
+    if (raw) savedProgress = JSON.parse(raw);
+  } catch (e) {}
+
+  if (savedProgress && savedProgress.scrollY > 120) {
+    if (window.location.hash === '#resume') {
+      setTimeout(() => {
+        window.scrollTo({ top: savedProgress.scrollY, behavior: 'smooth' });
+        showToast(`Resumed where you left off (${savedProgress.progress}%)`);
+      }, 300);
+    } else if (savedProgress.progress >= 3 && savedProgress.progress <= 96) {
+      const banner = document.createElement('div');
+      banner.id = 'reader-resume-banner';
+      banner.className = 'reader-resume-banner';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-label', 'Resume Reading');
+
+      const headingHtml = savedProgress.heading ? ` • <em>${escapeStr(savedProgress.heading)}</em>` : '';
+
+      banner.innerHTML = `
+        <div class="resume-info">
+          <span class="resume-icon">📖</span>
+          <div class="resume-text">
+            <div class="resume-title">Resume reading?</div>
+            <div class="resume-sub">Picked up at <strong>${savedProgress.progress}%</strong>${headingHtml}</div>
+          </div>
+        </div>
+        <div class="resume-actions">
+          <button type="button" class="btn-resume-jump" id="btn-resume-jump">Resume</button>
+          <button type="button" class="btn-resume-dismiss" id="btn-resume-dismiss" title="Dismiss">✕</button>
+        </div>
+      `;
+
+      document.body.appendChild(banner);
+
+      let isDismissed = false;
+      function dismissPrompt() {
+        if (isDismissed) return;
+        isDismissed = true;
+        banner.classList.add('dismissing');
+        setTimeout(() => banner.remove(), 260);
+      }
+
+      document.getElementById('btn-resume-jump')?.addEventListener('click', () => {
+        window.scrollTo({ top: savedProgress.scrollY, behavior: 'smooth' });
+        showToast(`Resumed at ${savedProgress.progress}%`);
+        dismissPrompt();
+      });
+
+      document.getElementById('btn-resume-dismiss')?.addEventListener('click', dismissPrompt);
+
+      const initialScroll = window.scrollY;
+      const scrollDismiss = () => {
+        if (Math.abs(window.scrollY - initialScroll) > 280) {
+          window.removeEventListener('scroll', scrollDismiss);
+          dismissPrompt();
+        }
+      };
+      window.addEventListener('scroll', scrollDismiss, { passive: true });
+
+      setTimeout(dismissPrompt, 14000);
+    }
+  }
+
+  updateBookmarkUI();
 }
 
 function getChapterInfo() {

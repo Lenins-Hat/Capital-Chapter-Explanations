@@ -859,6 +859,200 @@ body.tts-active-mode .content h4:hover {
   }
 }
 
+/* Reading Resume Polite Prompt Banner */
+.reader-resume-banner {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  max-width: 440px;
+  width: calc(100vw - 36px);
+  background: var(--bg-surface);
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 20px var(--accent-glow);
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 1050;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: slideUpResume 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+@keyframes slideUpResume {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.reader-resume-banner.dismissing {
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  pointer-events: none;
+}
+
+.resume-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.resume-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.resume-text {
+  min-width: 0;
+}
+
+.resume-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.resume-sub {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resume-sub strong {
+  color: var(--accent);
+}
+
+.resume-sub em {
+  font-style: normal;
+  color: var(--text-dim);
+}
+
+.resume-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-resume-jump {
+  background: var(--accent);
+  color: #0b0f19;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+[data-theme="light"] .btn-resume-jump,
+[data-theme="sepia"] .btn-resume-jump {
+  color: #ffffff;
+}
+
+.btn-resume-jump:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.btn-resume-dismiss {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  font-size: 1.1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-resume-dismiss:hover {
+  background: var(--callout-bg);
+  color: var(--text-main);
+}
+
+/* Mobile Placement for Resume Banner (above floating pill) */
+@media (max-width: 768px) {
+  .reader-resume-banner {
+    bottom: calc(64px + env(safe-area-inset-bottom, 14px));
+    right: 50%;
+    transform: translateX(50%);
+    width: calc(100vw - 28px);
+    max-width: 380px;
+    padding: 10px 12px;
+  }
+
+  @keyframes slideUpResume {
+    from {
+      opacity: 0;
+      transform: translateX(50%) translateY(24px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(50%) translateY(0) scale(1);
+    }
+  }
+
+  .reader-resume-banner.dismissing {
+    opacity: 0;
+    transform: translateX(50%) translateY(16px) scale(0.97);
+  }
+}
+
+/* Bookmark Button & Active State */
+.btn-bookmark {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.btn-bookmark.bookmarked {
+  color: #eab308;
+  border-color: rgba(234, 179, 8, 0.4);
+  background: rgba(234, 179, 8, 0.12);
+}
+
+.float-nav-btn.bookmark {
+  background: var(--code-bg);
+  border-color: var(--border-color);
+}
+
+.float-nav-btn.bookmark.bookmarked {
+  color: #eab308;
+  border-color: rgba(234, 179, 8, 0.4);
+  background: rgba(234, 179, 8, 0.12);
+}
+
+/* Dynamic Reading Time Badge Styling */
+.badge.reading-time-dynamic {
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.badge.reading-time-dynamic.finished {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.12);
+}
+
 /* Mobile Settings Popover (Typography & Audio) */
 .reader-settings-wrapper {
   position: relative;

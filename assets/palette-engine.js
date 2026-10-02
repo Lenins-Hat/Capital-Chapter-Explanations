@@ -217,7 +217,28 @@
   }
 
   function getQuickActions() {
-    const actions = [
+    const actions = [];
+
+    // Quick Action: Resume Last Read Chapter (if available)
+    try {
+      const rawLast = localStorage.getItem('capital_last_read');
+      if (rawLast) {
+        const lastRead = JSON.parse(rawLast);
+        if (lastRead && lastRead.path && lastRead.progress > 0 && lastRead.progress < 98) {
+          actions.push({
+            type: 'action',
+            icon: '📖',
+            title: `Resume: ${lastRead.volume} • ${lastRead.title} (${lastRead.progress}%)`,
+            badge: 'Resume',
+            action: () => {
+              window.location.href = rootPrefix + lastRead.path + '#resume';
+            }
+          });
+        }
+      }
+    } catch (e) {}
+
+    actions.push(
       {
         type: 'action',
         icon: '🌙',
@@ -248,10 +269,28 @@
           else if (typeof switchTheme === 'function') switchTheme('sepia');
         }
       }
-    ];
+    );
 
     if (isReader) {
       actions.push(
+        {
+          type: 'action',
+          icon: '🔖',
+          title: 'Bookmark Current Position (Toggle)',
+          badge: 'Bookmark',
+          action: () => {
+            if (typeof window.toggleBookmark === 'function') window.toggleBookmark();
+          }
+        },
+        {
+          type: 'action',
+          icon: '📍',
+          title: 'Jump to Bookmark in This Chapter',
+          badge: 'Bookmark',
+          action: () => {
+            if (typeof window.jumpToBookmark === 'function') window.jumpToBookmark();
+          }
+        },
         {
           type: 'action',
           icon: '🔊',
