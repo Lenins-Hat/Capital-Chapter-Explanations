@@ -716,6 +716,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initChapterNavigation();
   initReadingPositionSystem();
   initMobileSettingsMenu();
+  initQuickTOCModal();
   mountChapterSimulators();
 
   // Service Worker Registration for Offline Use (when served over http/https)
@@ -989,12 +990,16 @@ function initChapterNavigation() {
       floatToc.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const mobileTocBtn = document.getElementById('mobile-toc-btn');
-        if (mobileTocBtn) {
-          mobileTocBtn.click();
+        if (typeof window.openQuickTOC === 'function') {
+          window.openQuickTOC();
         } else {
-          const sidebar = document.querySelector('.sidebar');
-          if (sidebar) sidebar.classList.add('open');
+          const mobileTocBtn = document.getElementById('mobile-toc-btn');
+          if (mobileTocBtn) {
+            mobileTocBtn.click();
+          } else {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) sidebar.classList.add('open');
+          }
         }
       });
     }
@@ -1037,10 +1042,21 @@ function initChapterNavigation() {
     const paletteBackdrop = document.getElementById('palette-backdrop');
     if (paletteBackdrop && paletteBackdrop.classList.contains('open')) return;
 
+    const tocBackdrop = document.getElementById('quick-toc-backdrop');
+    if (tocBackdrop && tocBackdrop.classList.contains('open')) return;
+
     if (e.key === 'b' || e.key === 'B') {
       e.preventDefault();
       if (typeof window.toggleBookmark === 'function') {
         window.toggleBookmark();
+      }
+      return;
+    }
+
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      if (typeof window.toggleQuickTOC === 'function') {
+        window.toggleQuickTOC();
       }
       return;
     }
@@ -1538,6 +1554,232 @@ function initReadingPositionSystem() {
   }
 
   updateBookmarkUI();
+}
+
+// --- E. Interactive Quick Table of Contents Modal ---
+function initQuickTOCModal() {
+  if (document.getElementById('quick-toc-backdrop')) return;
+
+  const contentEl = document.getElementById('content');
+  if (!contentEl) return;
+
+  // Build the backdrop and modal container
+  const backdrop = document.createElement('div');
+  backdrop.id = 'quick-toc-backdrop';
+  backdrop.className = 'quick-toc-backdrop';
+  backdrop.setAttribute('role', 'dialog');
+  backdrop.setAttribute('aria-modal', 'true');
+  backdrop.setAttribute('aria-label', 'Table of Contents');
+
+  // Get chapter title / metadata
+  const h1 = contentEl.querySelector('h1') || document.getElementById('chapter-title');
+  const chapterTitle = h1 ? h1.textContent.replace(/^#+\s*/, '').replace(/#$/, '').trim() : document.title;
+
+  backdrop.innerHTML = `
+    <div class="quick-toc-dialog" role="document">
+      <div class="quick-toc-header">
+        <div class="quick-toc-title-wrap">
+          <span class="quick-toc-icon" aria-hidden="true">📑</span>
+          <div>
+            <div class="quick-toc-title">Table of Contents</div>
+            <div class="quick-toc-sub" title="${chapterTitle}">${chapterTitle}</div>
+          </div>
+        </div>
+        <button type="button" class="quick-toc-close" id="quick-toc-close-btn" aria-label="Close Table of Contents">✕</button>
+      </div>
+      <div class="quick-toc-search-wrap">
+        <input type="text" class="quick-toc-search" id="quick-toc-search-input" placeholder="Search sections... (Press Esc to close)" autocomplete="off" spellcheck="false" aria-label="Search sections">
+      </div>
+      <div class="quick-toc-list" id="quick-toc-list" role="listbox"></div>
+      <div class="quick-toc-footer">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> navigate • <kbd>↵</kbd> jump • <kbd>Esc</kbd> close</span>
+        <span id="quick-toc-count" style="font-weight:600;"></span>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(backdrop);
+
+  const searchInput = document.getElementById('quick-toc-search-input');
+  const listEl = document.getElementById('quick-toc-list');
+  const countEl = document.getElementById('quick-toc-count');
+  const closeBtn = document.getElementById('quick-toc-close-btn');
+
+  let items = [];
+  let activeIndex = 0;
+
+  function renderList(filterQuery = '') {
+    listEl.innerHTML = '';
+    const q = filterQuery.toLowerCase().trim();
+
+    // Query headings from content
+    const headings = contentEl.querySelectorAll('h1, h2, h3');
+    if (!headings.length) {
+      listEl.innerHTML = '<div class="quick-toc-empty">No headings found in this chapter.</div>';
+      if (countEl) countEl.textContent = '0 sections';
+      return;
+    }
+
+    // Determine current section in view based on scroll position
+    let currentActiveId = '';
+    const targetY = window.scrollY + 140;
+    headings.forEach(h => {
+      if (h.offsetTop <= targetY) {
+        currentActiveId = h.id;
+      }
+    });
+    if (!currentActiveId && headings.length > 0) {
+      currentActiveId = headings[0].id;
+    }
+
+    let matchCount = 0;
+    items = [];
+
+    headings.forEach((h) => {
+      const rawText = h.textContent.replace(/^#+\s*/, '').replace(/#$/, '').trim();
+      if (!rawText) return;
+
+      if (q && !rawText.toLowerCase().includes(q)) {
+        return;
+      }
+
+      matchCount++;
+      const level = h.tagName.toLowerCase().replace('h', '');
+      const isCurrent = h.id === currentActiveId;
+
+      const itemEl = document.createElement('div');
+      itemEl.className = `quick-toc-item level-${level}` + (isCurrent ? ' active' : '');
+      itemEl.setAttribute('role', 'option');
+      itemEl.setAttribute('tabindex', '-1');
+      itemEl.dataset.id = h.id;
+
+      itemEl.innerHTML = `
+        <span class="quick-toc-level-indicator" aria-hidden="true"></span>
+        <span class="quick-toc-text">${rawText}</span>
+        ${isCurrent ? '<span class="quick-toc-active-chip">Current</span>' : ''}
+      `;
+
+      itemEl.addEventListener('click', () => {
+        jumpToHeading(h);
+      });
+
+      listEl.appendChild(itemEl);
+      items.push({
+        el: itemEl,
+        heading: h,
+        text: rawText,
+        id: h.id
+      });
+    });
+
+    if (countEl) {
+      countEl.textContent = `${matchCount} section${matchCount === 1 ? '' : 's'}`;
+    }
+
+    if (matchCount === 0) {
+      listEl.innerHTML = `<div class="quick-toc-empty">No sections matching "${filterQuery}"</div>`;
+    } else {
+      const activeIdx = items.findIndex(item => item.id === currentActiveId);
+      activeIndex = activeIdx >= 0 ? activeIdx : 0;
+      updateFocusedItem();
+    }
+  }
+
+  function updateFocusedItem() {
+    items.forEach((item, idx) => {
+      if (idx === activeIndex) {
+        item.el.classList.add('focused');
+        item.el.scrollIntoView({ block: 'nearest' });
+      } else {
+        item.el.classList.remove('focused');
+      }
+    });
+  }
+
+  function jumpToHeading(h) {
+    closeQuickTOC();
+    if (!h) return;
+    try {
+      history.pushState(null, '', '#' + h.id);
+    } catch (e) {}
+    h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (window.ttsEngine && window.ttsEngine.active) {
+      window.ttsEngine.playFromElement(h);
+    }
+  }
+
+  function openQuickTOC() {
+    backdrop.classList.add('open');
+    if (searchInput) searchInput.value = '';
+    renderList('');
+    setTimeout(() => {
+      if (searchInput) searchInput.focus();
+      const activeItem = listEl.querySelector('.quick-toc-item.active');
+      if (activeItem) {
+        activeItem.scrollIntoView({ block: 'center' });
+      }
+    }, 60);
+  }
+
+  function closeQuickTOC() {
+    backdrop.classList.remove('open');
+  }
+
+  function toggleQuickTOC() {
+    if (backdrop.classList.contains('open')) {
+      closeQuickTOC();
+    } else {
+      openQuickTOC();
+    }
+  }
+
+  // Event Listeners
+  if (closeBtn) closeBtn.addEventListener('click', closeQuickTOC);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) {
+      closeQuickTOC();
+    }
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      renderList(e.target.value);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (items.length > 0) {
+          activeIndex = (activeIndex + 1) % items.length;
+          updateFocusedItem();
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (items.length > 0) {
+          activeIndex = (activeIndex - 1 + items.length) % items.length;
+          updateFocusedItem();
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (items[activeIndex]) {
+          jumpToHeading(items[activeIndex].heading);
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        closeQuickTOC();
+      }
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && backdrop.classList.contains('open')) {
+      closeQuickTOC();
+    }
+  });
+
+  window.openQuickTOC = openQuickTOC;
+  window.closeQuickTOC = closeQuickTOC;
+  window.toggleQuickTOC = toggleQuickTOC;
 }
 
 function getChapterInfo() {

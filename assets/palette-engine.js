@@ -275,9 +275,18 @@
       actions.push(
         {
           type: 'action',
+          icon: '📑',
+          title: 'Open Table of Contents (TOC)',
+          badge: 'TOC (T)',
+          action: () => {
+            if (typeof window.openQuickTOC === 'function') window.openQuickTOC();
+          }
+        },
+        {
+          type: 'action',
           icon: '🔖',
           title: 'Bookmark Current Position (Toggle)',
-          badge: 'Bookmark',
+          badge: 'Bookmark (B)',
           action: () => {
             if (typeof window.toggleBookmark === 'function') window.toggleBookmark();
           }
